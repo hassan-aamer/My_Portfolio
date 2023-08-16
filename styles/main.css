@@ -190,10 +190,12 @@ header{
     border-radius: 50%;
     color: var(--bg-color);
     background: var(--container-color);
+    transition: 2s;
 }
 .social .bx:hover{
     background: var(--main-color);
     transition: 0.3s all linear;
+    transform: rotate(360deg);
 }
 /* Heading */
 .heading{
@@ -235,7 +237,7 @@ header{
     font-size: 1.2rem;
 }
 .btn:hover{
-    background: #546eff;
+    background: #1634dd;
     transition: 0.3s all linear;
 }
 .about-text p{
