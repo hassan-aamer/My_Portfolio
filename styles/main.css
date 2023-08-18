@@ -21,6 +21,13 @@ body{
     color: var(--bg-color);
     background: var(--body-color);
 }
+html::-webkit-scrollbar{
+    width: 100%;
+    background: transparent;
+}
+html::-webkit-scrollbar-thumb{
+    background: var(--heading-color);
+}
 img{
     width: 100%;
 }
@@ -45,6 +52,10 @@ header{
     left: 0;
     width: 100%;
     z-index: 100;
+}
+.header-active{
+    background: var(--box-color);
+    transition: 0.4s;
 }
 .nav{
     display: flex;
@@ -446,4 +457,50 @@ background: hsla(240, 81%, 4%, 0.7);
 .contact-form .send-btn:hover{
     background: #1634dd;
     transition: 0.3s all linear;
+}
+/* Footer */
+.footer{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    row-gap: 1.4rem;
+    padding: 30px 0;
+}
+.footer p{
+    font-size: 0.9rem;
+}
+.footer-links{
+    display: flex;
+    align-items: center;
+    column-gap: 1rem;
+}
+.footer-links a{
+    font-size: 1rem;
+    font-weight: 400;
+    color: var(--bg-color);
+}
+.footer-links a:hover{
+    color: var(--main-color);
+    transition: 0.3s all linear;
+}
+/* Scroll Top */
+.scroll-top{
+    position: fixed;
+    bottom: -100%;
+    right: 1.5rem;
+}
+.scroll-top .bx{
+    padding: 8px;
+    font-size: 1.3rem;
+    color: var(--bg-color);
+    background: var(--box-color);
+    border-radius: 0.2rem;
+}
+.scroll-top .bx:hover{
+    background: var(--container-color);
+    transition: 0.3s;
+}
+.scroll-active{
+    bottom: 2rem;
+    transition: 0.3rem;
 }
