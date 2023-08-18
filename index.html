@@ -13,6 +13,8 @@
     <title>Hassan Mohamed</title>
     <!-- Link to css -->
     <link rel="stylesheet" href="styles/main.css">
+    <!-- Link Swiper CSS -->
+    <link rel="stylesheet" href="styles/cdn.jsdelivr.net_npm_swiper@10.2.0_swiper-bundle.min.css">
     <!-- box Icon -->
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <!-- Icon portfolio -->
@@ -73,7 +75,7 @@
         <div class="about-content">
             <div class="about-data">
                 <span>About Me</span>
-                <h2>Web Developer</h2>
+                <h2>Web Developer <br> Front End & Back End</h2>
                 <a href="#" class="btn" download="HASSAN.MOHAMED.pdf">
                     Download CV
                     <i class='bx bxs-download'></i>
@@ -197,11 +199,107 @@
             </div>
         </div>
     </section>
-    <!-- Projects -->
+    <!-- Projects* -->
+    <section class="projects container" id="projects">
+        <!-- Heading -->
+        <h2 class="heading">Portfolio</h2>
+        <!-- projects content -->
+        <div class="projects-content">
+            <div class="projects-box">
+                <h2>285+</h2>
+                <span>Projects Full Stack</span>
+            </div>
+            <div class="projects-box">
+                <h2>190+</h2>
+                <span>Projects Front End</span>
+            </div>
+            <div class="projects-box">
+                <h2>200+</h2>
+                <span>Projects Back End</span>
+            </div>
+        </div>
+    </section>
+    <!-- Review -->
+    <section class="container reviews" id="reviews">
+        <!-- Heading -->
+        <h2 class="heading">Reviews</h2>
+        <!-- Review Content -->
+        <div class="review-content swiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <!-- Review Box -->
+                    <div class="review-box">
+                        <i class='bx bxs-quote-right'></i>
+                        <p class="review-text">
+                            Very good work really very cool
+                        </p>
+                        <div class="review-profile">
+                            <h2>Audrey Bella</h2>
+                            <span>From Finland</span>
+                            <img src="images/review-1.jpg" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <!-- Review Box -->
+                    <div class="review-box">
+                        <i class='bx bxs-quote-right'></i>
+                        <p class="review-text">
+                            This work is very good, good luck
+                        </p>
+                        <div class="review-profile">
+                            <h2>John Mark</h2>
+                            <span>From London, UK</span>
+                            <img src="images/review-2.jpg" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <!-- Review Box -->
+                    <div class="review-box">
+                        <i class='bx bxs-quote-right'></i>
+                        <p class="review-text">
+                            This work is very good, good luck
+                        </p>
+                        <div class="review-profile">
+                            <h2>Alexa</h2>
+                            <span>From USA</span>
+                            <img src="images/review-3.jpg" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+    </section>
+    <!-- contact Form -->
+    <section class="contact container" id="contact">
+        <!-- Heading -->
+        <h2 class="heading">Contact</h2>
+        <!-- Contact Form -->
+        <form action="" class="contact-form" id="contact-form">
+            <input type="text" placeholder="Your Name" class="name" required>
+            <input type="email" placeholder="Email address..." class="email" required>
+            <textarea name="" id="" cols="30" rows="10" placeholder="Write Massage here..." class="message" required></textarea>
+            <input type="submit" value="Send" class="send-btn">
+        </form>
+    </section>
 
 
 
 
+
+
+    <!-- Email JS Link -->
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+        emailjs.init('exvfQVRWsTuJSjCim')
+    </script>
+    <!-- Sweet Alert JS Link -->
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <!-- Link Swiper -->
+    <script src="scripts/cdn.jsdelivr.net_npm_swiper@10.2.0_swiper-bundle.min.js"></script>
     <!-- Link To JS -->
     <script src="scripts/main.js"></script>
 </body>
