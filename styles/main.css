@@ -69,7 +69,7 @@ header{
     color: var(--bg-color);
 }
 .logo .bx{
-    font-size: 1.9rem;
+    font-size: 2.5rem;
 }
 .navbar{
     display: flex;
