@@ -19,7 +19,7 @@ var swiper = new Swiper(".portfolio-content", {
         clickable: true,
     },
     autoplay:{
-        delay:5000,
+        delay:3000,
         disableOnInteraction:false,
     },
     breakpoints: {
