@@ -298,11 +298,6 @@ header{
     font-size: 0.9rem;
 }
 /* portfolio */
-.portfolio-content{
-    display: grid;
-    grid-template-columns: repeat(2,1fr);
-    gap: 2rem;
-}
 .portfolio-box{
     position: relative;
     width: 100%;

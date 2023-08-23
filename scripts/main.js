@@ -10,6 +10,35 @@ window.onscroll = () => {
     menu.classList.remove("move");
 }
 
+//Swiper
+var swiper = new Swiper(".portfolio-content", {
+    slidesPerView: 1,
+    spaceBetween: 10,
+    pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+    },
+    autoplay:{
+        delay:5000,
+        disableOnInteraction:false,
+    },
+    breakpoints: {
+            640: {
+            slidesPerView: 2,
+            spaceBetween: 10,
+        },
+            768: {
+            slidesPerView: 3,
+            spaceBetween: 15,
+        },
+            1068: {
+            slidesPerView: 2,
+            spaceBetween: 20,
+        },
+    },
+});
+
+
 // Email JS
 function validate(){
     let name = document.querySelector(".name");

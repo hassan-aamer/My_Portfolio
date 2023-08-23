@@ -78,6 +78,9 @@
         display: block;
         margin: 1rem 0;
     }
+    .services-content{
+        grid-template-columns: 1fr;
+    }
 }
 @media (max-width:635px){
     .about-content{
