@@ -66,7 +66,10 @@ header{
 .logo{
     font-size: 1.2rem;
     font-weight: 600;
-    color: var(--main-color);
+    color: var(--bg-color);
+}
+.logo .bx{
+    font-size: 1.9rem;
 }
 .navbar{
     display: flex;
@@ -503,4 +506,18 @@ background: hsla(240, 81%, 4%, 0.7);
 .scroll-active{
     bottom: 2rem;
     transition: 0.3rem;
+}
+/* Custom Scroll Bar */
+.progress{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    z-index: 300;
+}
+.progress-bar{
+    height: 4px;
+    background: var(--main-color);
+    width: 100%;
 }
