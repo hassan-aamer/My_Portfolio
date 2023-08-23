@@ -10,20 +10,6 @@ window.onscroll = () => {
     menu.classList.remove("move");
 }
 
-//Reviews Swiper
-var swiper = new Swiper(".review-content", {
-    spaceBetween: 30,
-    centeredSlides: true,
-    autoplay: {
-        delay: 2500,
-        disableOnInteraction: true,
-    },
-    pagination: {
-        el: ".swiper-pagination",
-        clickable: true,
-    },
-});
-
 // Email JS
 function validate(){
     let name = document.querySelector(".name");
