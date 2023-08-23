@@ -96,9 +96,6 @@
         font-size: 0.825rem;
         margin-bottom: 1.3rem;
     }
-    .projects-content{
-        grid-template-columns: 1fr;
-    }
     .services-content{
         grid-template-columns: 1fr;
     }
@@ -132,12 +129,8 @@
         margin: 0.6rem 0;
     }
     .services-content,
-    .portfolio-content,
-    .projects-content{
+    .portfolio-content{
         grid-template-columns: 1fr;
-    }
-    .review-box{
-        font-size: 0.82rem;
     }
     .footer-links{
         flex-direction: column;
@@ -147,8 +140,5 @@
 @media (max-width:325px){
     .navbar{
         width: 100%;
-    }
-    .projects-box{
-        height: 190px;
     }
 }
