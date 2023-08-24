@@ -343,6 +343,17 @@ background: hsla(240, 81%, 4%, 0.7);
     top: 0;
     transition: 0.3s all ease;
 }
+.swiper-pagination-bullet{
+    width: 6px !important;
+    height: 6px !important;
+    border-radius: 0.2rem !important;
+    background: var(--bg-color) !important;
+    opacity: 1 !important;
+}
+.swiper-pagination-bullet-active{
+    width: 1.5rem !important;
+    background: var(--main-color) !important;
+}
 /* Contact Form */
 .contact-form{
     max-width: 600px;
