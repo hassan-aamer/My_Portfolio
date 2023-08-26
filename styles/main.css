@@ -410,6 +410,9 @@ background: hsla(240, 81%, 4%, 0.7);
     color: var(--main-color);
     transition: 0.3s all linear;
 }
+.myName{
+    padding-bottom: 50px;
+}
 /* Scroll Top */
 .scroll-top{
     position: fixed;
