@@ -136,8 +136,8 @@ header{
 .home-img{
     width: 180px;
     height: 180px;
-    /* border-radius: 50%;
-    background: #98a7fc; */
+    border-radius: 50%;
+    /* background: #98a7fc; */
     overflow: hidden;
     margin-bottom: 2rem;
 }
