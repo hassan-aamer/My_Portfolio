@@ -395,6 +395,7 @@ background: hsla(240, 81%, 4%, 0.7);
 }
 .footer p{
     font-size: 0.9rem;
+    font-weight: bold;
 }
 .footer-links{
     display: flex;
@@ -412,6 +413,11 @@ background: hsla(240, 81%, 4%, 0.7);
 }
 .myName{
     padding-bottom: 50px;
+    font-weight: bold;
+    color: var(--bg-color);
+}
+.myName:hover{
+    color: var(--main-color);
 }
 /* Scroll Top */
 .scroll-top{

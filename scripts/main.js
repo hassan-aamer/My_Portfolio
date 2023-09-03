@@ -1,14 +1,14 @@
-let menu = document.querySelector('.menu-icon');
-let navbar = document.querySelector('.navbar');
+let menu = document.querySelector(".menu-icon");
+let navbar = document.querySelector(".navbar");
 
 menu.onclick = () => {
-    navbar.classList.toggle('open-menu')
+    navbar.classList.toggle("open-menu");
     menu.classList.toggle("move");
-}
+};
 window.onscroll = () => {
-    navbar.classList.remove('open-menu')
+    navbar.classList.remove("open-menu");
     menu.classList.remove("move");
-}
+};
 
 //Swiper
 var swiper = new Swiper(".portfolio-content", {
@@ -54,7 +54,7 @@ function validate(){
             success();
         }
     });
-}
+};
 validate();
 function sendmail(name, email, msg) {
     emailjs.send("service_36dwc6p","template_lyzevr4",{
@@ -62,21 +62,21 @@ function sendmail(name, email, msg) {
         to_name: name,
         message: msg,
         });
-}
+};
 function emptyerror() {
     swal({
         title: "Oh No....",
         text: "Fields Cannot be empty!",
         icon: "error",
     });
-}
+};
 function success() {
     swal({
         title: "Email Send Successfully",
         text: "We try to in 24 hours",
         icon: "success",
     });
-}
+};
 
 //Header background change on scroll
 let header = document.querySelector('header')
@@ -97,4 +97,4 @@ function mufunction(){
     var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
     var scrolled = (winScroll / height) * 100;
     document.getElementById('scroll-bar').style.width = scrolled + '%';
-}
+};
