@@ -98,3 +98,11 @@ function mufunction(){
     var scrolled = (winScroll / height) * 100;
     document.getElementById('scroll-bar').style.width = scrolled + '%';
 };
+
+//Loader
+onload = () =>{
+    const load = document.getElementById('loader');
+    setTimeout(() => {
+        load.style.display = "none";
+    },2500);
+}
