@@ -461,7 +461,7 @@ background: hsla(240, 81%, 4%, 0.7);
     left: 0;
     width: 100%;
     height: 100%;
-    background: black;
+    background: var(--body-color);
     display: grid;
     place-items: center;
     z-index: 1000;
