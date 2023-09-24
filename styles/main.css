@@ -140,6 +140,7 @@ header{
     /* background: #98a7fc; */
     overflow: hidden;
     margin-bottom: 2rem;
+    box-shadow: 0 1px 8px #b1bcf8;
 }
 .home-img{
     width: 180px;
