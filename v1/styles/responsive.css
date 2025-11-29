@@ -1,0 +1,147 @@
+:root{
+    --main-color:#647bff;
+    --body-color:#090a1a;
+    --container-color:#171b3c;
+    --heading-color:#222231;
+    --box-color:#0d0f26;
+    --bg-color:#fff;
+}
+
+@media (max-width:990px){
+    .container{
+        margin: 0 auto;
+        width: 90%;
+    }
+}
+@media (max-width:892px){
+    section{
+        padding: 2rem 0;
+    }
+    .nav{
+        padding: 12px 0;
+    }
+    .heading{
+        font-size: 4rem;
+    }
+    .portfolio-box{
+        height: 257px;
+    }
+}
+@media (max-width:775px){
+.nav{
+    padding: 10px 0;
+    }
+    .logo{
+        font-size: 1.1rem;
+    }
+    .home{
+        min-height: 500px;
+        padding: 6rem;
+    }
+    .home-text h3{
+        font-size: 1rem;
+    }
+    .home-text h2{
+        font-size: 3rem;
+        line-height: 3.8rem;
+    }
+    .home-text p{
+        font-size: 0.825rem;
+    }
+    .services-content{
+        grid-template-columns: repeat(2,1fr);
+    }
+    .portfolio-box{
+        height: 245px;
+    }
+    .menu-icon{
+        display: flex;
+    }
+    .navbar{
+        position: absolute;
+        top: 0;
+        right: -100%;
+        width: 300px;
+        height: 100vh;
+        background: var(--box-color);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 50px 20px;
+        transition: 0.5s all cubic-bezier(0.075, 0.82, 0.165, 1);
+    }
+    .open-menu{
+        right: 0;
+        transition: 0.5s all cubic-bezier(0.075, 0.82, 0.165, 1);
+    }
+    .nav-link{
+        display: block;
+        margin: 1rem 0;
+    }
+    .services-content{
+        grid-template-columns: 1fr;
+    }
+}
+@media (max-width:635px){
+    .about-content{
+        grid-template-columns: 1fr;
+    }
+    .about-data span{
+        font-size: 0.9rem;
+    }
+    .about-data h2{
+        font-size: 1.7rem;
+        line-height: 2.3rem;
+        font-weight: 600;
+        margin: 0.8rem 0;
+    }
+    .about-data p{
+        font-size: 0.825rem;
+        margin-bottom: 1.3rem;
+    }
+    .services-content{
+        grid-template-columns: 1fr;
+    }
+}
+@media (max-width:450px){
+    .home{
+        min-height: 485px;
+        padding-top: 5rem;
+    }
+    .home-img{
+        width: 140px;
+        height: 140px;
+    }
+    .home-img img{
+        width: 140px;
+        height: 140px;
+    }
+    .home-text h2{
+        font-size: 2.1rem;
+        line-height: 3.2rem;
+    }
+    .home-text p br {
+        display: contents;
+    }
+    .heading{
+        font-size: 3rem;
+    }
+    .about-data h2{
+        font-size: 1.5rem;
+        line-height: 2.1rem;
+        margin: 0.6rem 0;
+    }
+    .services-content,
+    .portfolio-content{
+        grid-template-columns: 1fr;
+    }
+    .footer-links{
+        flex-direction: column;
+        row-gap: 1rem;
+    }
+}
+@media (max-width:325px){
+    .navbar{
+        width: 100%;
+    }
+}
