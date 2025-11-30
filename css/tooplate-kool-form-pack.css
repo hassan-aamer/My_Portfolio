@@ -131,12 +131,12 @@ strong {
   SECTION               
 -----------------------------------------*/
 .section-padding {
-position: relative;
-    min-height: 100vh;
-    padding-top: 120px;
-    padding-bottom: 50px;
-    display: flex;
-    align-items: center;
+  position: relative;
+  min-height: 100vh;
+  padding-top: 120px;
+  padding-bottom: 50px;
+  display: flex;
+  align-items: center;
 }
 
 ::selection {
@@ -148,20 +148,23 @@ position: relative;
   GLASSMORPHISM & CARDS
 -----------------------------------------*/
 .glass-panel {
-  background: rgba(0, 0, 0, 0.65);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 2px solid rgba(224, 122, 95, 0.3);
+  border-top: 2px solid rgba(224, 122, 95, 0.4);
+  border-left: 2px solid rgba(224, 122, 95, 0.4);
   border-radius: 24px;
   padding: 40px;
   box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .glass-panel:hover {
   transform: translateY(-5px);
-  box-shadow: 0 12px 40px 0 rgba(0, 0, 0, 0.5);
-  border-color: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 15px 50px 0 rgba(0, 0, 0, 0.6);
+  border-color: rgba(224, 122, 95, 0.6);
+  background: rgba(255, 255, 255, 0.08);
 }
 
 .project-card {
@@ -542,10 +545,12 @@ position: relative;
 
 /* Hero Card Container */
 .hero-card {
-  background: rgba(0, 0, 0, 0.7);
-  backdrop-filter: blur(15px);
-  -webkit-backdrop-filter: blur(15px);
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
   border: 2px solid rgba(224, 122, 95, 0.3);
+  border-top: 2px solid rgba(224, 122, 95, 0.4);
+  border-left: 2px solid rgba(224, 122, 95, 0.4);
   border-radius: 30px;
   padding: 60px 40px;
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
@@ -554,8 +559,9 @@ position: relative;
 }
 
 .hero-card:hover {
-  border-color: rgba(224, 122, 95, 0.5);
-  box-shadow: 0 25px 70px rgba(0, 0, 0, 0.6);
+  border-color: rgba(224, 122, 95, 0.6);
+  box-shadow: 0 25px 70px rgba(0, 0, 0, 0.7);
+  background: rgba(255, 255, 255, 0.08);
 }
 
 @keyframes fadeIn {
