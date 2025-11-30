@@ -279,8 +279,8 @@ strong {
 .hero-section {
   position: relative;
   min-height: 100vh;
-  padding-top: 150px;
-  padding-bottom: 150px;
+  padding-top: 100px;
+  padding-bottom: 100px;
   display: flex;
   align-items: center;
 }
