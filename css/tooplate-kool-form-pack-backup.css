@@ -410,12 +410,6 @@ strong {
     margin: 5px 0;
     display: block;
   }
-
-  /* Mobile specific padding for sections */
-  .section-padding {
-    padding-top: 100px;
-    padding-bottom: 100px;
-  }
 }
 
 /*---------------------------------------
