@@ -131,8 +131,8 @@ strong {
   SECTION               
 -----------------------------------------*/
 .section-padding {
-  padding-top: 200px;
-  padding-bottom: 150px;
+  padding-top: 120px;
+  padding-bottom: 50px;
 }
 
 ::selection {
@@ -279,8 +279,8 @@ strong {
 .hero-section {
   position: relative;
   min-height: 100vh;
-  padding-top: 100px;
-  padding-bottom: 100px;
+  padding-top: 120px;
+  padding-bottom: 50px;
   display: flex;
   align-items: center;
 }
@@ -1288,9 +1288,7 @@ transition: width 0.3s;
 
   /* Mobile specific padding for sections */
   .section-padding {
-    padding-top: 100px;
-    padding-bottom: 100px;
+    padding-top: 120px;
+    padding-bottom: 50px;
   }
 }
-
-```
