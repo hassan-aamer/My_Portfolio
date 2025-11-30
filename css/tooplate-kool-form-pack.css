@@ -1096,47 +1096,88 @@ transition: width 0.3s;
     display: none;
   }
 }
+
 /*---------------------------------------
-  CUSTOM CURSOR EFFECT
+  PROFESSIONAL NAVIGATION
 -----------------------------------------*/
-* {
-  cursor: none !important;
+.navbar {
+  background: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  padding: 20px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
 }
 
-.cursor-dot,
-.cursor-outline {
-  pointer-events: none;
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  border-radius: 50%;
-  z-index: 10000;
-  transition: transform 0.2s ease;
+.navbar-brand {
+  color: var(--white-color);
+  font-family: var(--heading-font-family);
+  font-weight: 700;
+  font-size: 28px;
+  letter-spacing: -1px;
 }
 
-.cursor-dot {
-  width: 8px;
-  height: 8px;
-  background: var(--primary-color);
-  box-shadow: 0 0 10px var(--primary-color);
+.navbar-brand:hover {
+  color: var(--primary-color);
 }
 
-.cursor-outline {
-  width: 40px;
-  height: 40px;
-  border: 2px solid var(--secondary-color);
-  opacity: 0.5;
+.navbar-brand i {
+  color: var(--primary-color);
 }
 
-/* Hide custom cursor on touch devices */
-@media (hover: none) and (pointer: coarse) {
-  * {
-    cursor: auto !important;
+.nav-item {
+  margin: 0 5px;
+}
+
+.nav-link {
+  color: rgba(255, 255, 255, 0.8);
+  font-weight: 500;
+  font-size: 16px;
+  padding: 10px 20px !important;
+  border-radius: 50px;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: var(--white-color);
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.nav-link.active {
+  color: var(--primary-color);
+  background: rgba(224, 122, 95, 0.15);
+}
+
+.navbar-toggler {
+  border: none;
+  padding: 0;
+  color: var(--white-color);
+}
+
+.navbar-toggler:focus {
+  box-shadow: none;
+}
+
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+/* Mobile Menu Adjustments */
+@media screen and (max-width: 991px) {
+  .navbar-collapse {
+    background: rgba(0, 0, 0, 0.9);
+    backdrop-filter: blur(20px);
+    border-radius: 20px;
+    padding: 20px;
+    margin-top: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
   }
-  
-  .cursor-dot,
-  .cursor-outline {
-    display: none;
+
+  .nav-link {
+    display: block;
+    margin: 5px 0;
+    text-align: center;
   }
 }
