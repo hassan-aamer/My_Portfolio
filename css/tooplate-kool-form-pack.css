@@ -131,8 +131,12 @@ strong {
   SECTION               
 -----------------------------------------*/
 .section-padding {
-  padding-top: 120px;
-  padding-bottom: 50px;
+position: relative;
+    min-height: 100vh;
+    padding-top: 120px;
+    padding-bottom: 50px;
+    display: flex;
+    align-items: center;
 }
 
 ::selection {
