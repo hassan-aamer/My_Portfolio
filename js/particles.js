@@ -86,13 +86,16 @@ class ParticleNetwork {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     if (entry.target.id === 'projects' || entry.target.id === 'project-details') {
-                        // "Processing" mode for projects
-                        this.updateConfig('rgba(224, 122, 95, 0.5)', 'rgba(224, 122, 95, 0.15)', 0.8);
+                        // "Processing" mode - Orange/Copper for creativity and execution
+                        this.updateConfig('rgba(255, 165, 0, 0.6)', 'rgba(255, 165, 0, 0.2)', 0.8);
                     } else if (entry.target.id === 'about') {
-                        // "Analysis" mode for about/skills
-                        this.updateConfig('rgba(0, 255, 127, 0.5)', 'rgba(0, 255, 127, 0.15)', 0.6);
+                        // "Analysis" mode - Bright Neon Green for quality and clean code
+                        this.updateConfig('rgba(0, 255, 127, 0.6)', 'rgba(0, 255, 127, 0.2)', 0.6);
+                    } else if (entry.target.classList.contains('ai-section') || entry.target.id === 'ai-integration') {
+                        // "AI" mode - Electric Purple for AI and computational depth
+                        this.updateConfig('rgba(138, 43, 226, 0.6)', 'rgba(138, 43, 226, 0.2)', 1.0);
                     } else {
-                        // Default mode
+                        // Default mode - Cyan/Turquoise for network and technology
                         this.updateConfig('rgba(0, 255, 255, 0.5)', 'rgba(0, 255, 255, 0.15)', 0.5);
                     }
                 }
@@ -100,7 +103,7 @@ class ParticleNetwork {
         }, options);
 
         // Observe sections if they exist
-        const sections = ['hero', 'about', 'projects', 'contact', 'project-details'];
+        const sections = ['hero', 'about', 'projects', 'contact', 'project-details', 'ai-integration'];
         sections.forEach(id => {
             const el = document.getElementById(id);
             if (el) observer.observe(el);
