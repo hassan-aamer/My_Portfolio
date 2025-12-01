@@ -1973,20 +1973,12 @@ transition: width 0.3s;
 }
 
 /*---------------------------------------
-  LOADING ANIMATION
+  LOADING ANIMATION (LEGACY - HIDDEN)
 -----------------------------------------*/
 .loading-screen {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(135deg, #181717, #2a2a2a);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 9999;
-  transition: opacity 0.5s ease, visibility 0.5s ease;
+  display: none !important;
+  opacity: 0;
+  visibility: hidden;
 }
 
 .loading-screen.hidden {
@@ -2016,6 +2008,53 @@ transition: width 0.3s;
   color: var(--white-color);
   font-weight: 500;
   letter-spacing: 2px;
+}
+
+/*---------------------------------------
+  PROGRESSIVE LOADING - TOP PROGRESS BAR
+-----------------------------------------*/
+.progress-bar-top {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  width: 0%;
+  background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+  z-index: 99999;
+  transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease;
+  box-shadow: 0 0 10px rgba(224, 122, 95, 0.6),
+              0 0 20px rgba(224, 122, 95, 0.4);
+  opacity: 0;
+}
+
+.progress-bar-top.active {
+  opacity: 1;
+}
+
+.progress-bar-top.complete {
+  width: 100% !important;
+  transition: width 0.2s ease;
+}
+
+.progress-bar-top.hide {
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+/* Pulse animation for progress bar */
+@keyframes progressPulse {
+  0%, 100% {
+    box-shadow: 0 0 10px rgba(224, 122, 95, 0.6),
+                0 0 20px rgba(224, 122, 95, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 15px rgba(224, 122, 95, 0.8),
+                0 0 30px rgba(224, 122, 95, 0.6);
+  }
+}
+
+.progress-bar-top.active {
+  animation: progressPulse 1.5s ease-in-out infinite;
 }
 
 /*---------------------------------------

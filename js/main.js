@@ -7,16 +7,73 @@
     'use strict';
 
     /**
-     * Loading Screen
+     * Progressive Loading - Top Progress Bar
      */
-    function initLoadingScreen() {
+    function initProgressBar() {
+        const progressBar = document.getElementById('progress-bar');
+        if (!progressBar) return;
+
+        // Show progress bar immediately
+        progressBar.classList.add('active');
+        progressBar.style.width = '0%';
+
+        // Simulate initial loading progress
+        setTimeout(() => {
+            progressBar.style.width = '30%';
+        }, 100);
+
+        // Progress to 60% when DOM is ready
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', () => {
+                progressBar.style.width = '60%';
+            });
+        } else {
+            progressBar.style.width = '60%';
+        }
+
+        // Complete when page fully loads
         window.addEventListener('load', () => {
-            const loadingScreen = document.querySelector('.loading-screen');
-            if (loadingScreen) {
+            progressBar.style.width = '90%';
+
+            setTimeout(() => {
+                progressBar.classList.add('complete');
+                progressBar.style.width = '100%';
+
+                // Hide after completion
                 setTimeout(() => {
-                    loadingScreen.classList.add('hidden');
-                }, 500);
-            }
+                    progressBar.classList.add('hide');
+                    progressBar.classList.remove('active');
+
+                    // Reset for next navigation
+                    setTimeout(() => {
+                        progressBar.classList.remove('complete', 'hide');
+                        progressBar.style.width = '0%';
+                    }, 500);
+                }, 300);
+            }, 200);
+        });
+    }
+
+    /**
+     * Navigation Progress Bar (for page transitions)
+     */
+    function initNavigationProgress() {
+        const progressBar = document.getElementById('progress-bar');
+        if (!progressBar) return;
+
+        // Add click listeners to all navigation links
+        const navLinks = document.querySelectorAll('a[href$=".html"]');
+
+        navLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                // Show progress bar for navigation
+                progressBar.classList.add('active');
+                progressBar.style.width = '0%';
+
+                setTimeout(() => {
+                    progressBar.style.width = '70%';
+                }, 50);
+            });
         });
     }
 
@@ -313,7 +370,8 @@
      * Initialize all features when DOM is ready
      */
     function init() {
-        initLoadingScreen();
+        initProgressBar();
+        initNavigationProgress();
         initCustomCursor();
         initScrollAnimations();
         initStatsCounter();
