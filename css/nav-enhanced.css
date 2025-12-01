@@ -88,21 +88,20 @@
 
 /* Enhanced Toggler */
 .navbar-toggler {
-    border: 2px solid rgba(255, 255, 255, 0.35) !important;
-    padding: 10px 14px !important;
-    border-radius: 14px !important;
-    background: rgba(255, 255, 255, 0.12) !important;
-    transition: all 0.3s ease !important;
+    border: none !important;
+    padding: 0 !important;
+    background: transparent !important;
+    transition: transform 0.3s ease !important;
 }
 
 .navbar-toggler:hover {
-    background: rgba(224, 122, 95, 0.35) !important;
-    border-color: rgba(224, 122, 95, 0.8) !important;
-    transform: scale(1.08) !important;
+    background: transparent !important;
+    transform: scale(1.1) !important;
 }
 
 .navbar-toggler:focus {
-    box-shadow: 0 0 0 4px rgba(224, 122, 95, 0.35) !important;
+    box-shadow: none !important;
+    outline: none !important;
 }
 
 .navbar-toggler-icon {
@@ -269,21 +268,20 @@
 
         /* Enhanced Toggler */
         .navbar-toggler {
-            border: 2px solid rgba(255, 255, 255, 0.35) !important;
-            padding: 10px 14px !important;
-            border-radius: 14px !important;
-            background: rgba(255, 255, 255, 0.12) !important;
-            transition: all 0.3s ease !important;
+            border: none !important;
+            padding: 0 !important;
+            background: transparent !important;
+            transition: transform 0.3s ease !important;
         }
 
         .navbar-toggler:hover {
-            background: rgba(224, 122, 95, 0.35) !important;
-            border-color: rgba(224, 122, 95, 0.8) !important;
-            transform: scale(1.08) !important;
+            background: transparent !important;
+            transform: scale(1.1) !important;
         }
 
         .navbar-toggler:focus {
-            box-shadow: 0 0 0 4px rgba(224, 122, 95, 0.35) !important;
+            box-shadow: none !important;
+            outline: none !important;
         }
 
         .navbar-toggler-icon {
@@ -367,21 +365,37 @@
             }
 
             .offcanvas-body .nav-link {
-                border: none !important;
-                background: transparent !important;
+                background: rgba(255, 255, 255, 0.05) !important;
+                backdrop-filter: blur(10px) !important;
+                -webkit-backdrop-filter: blur(10px) !important;
+                border: 1px solid rgba(255, 255, 255, 0.1) !important;
+                border-radius: 15px !important;
                 padding: 15px !important;
                 text-align: center !important;
                 font-size: 1.1rem !important;
-                margin: 10px 0 !important;
+                margin: 10px 20px !important;
+                /* Added horizontal margin for better look */
                 display: flex !important;
                 justify-content: center !important;
                 align-items: center !important;
-                width: 100% !important;
+                width: auto !important;
+                /* Changed from 100% to auto to respect margins */
+                box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1) !important;
+                transition: all 0.3s ease !important;
             }
 
             .offcanvas-body .nav-link:hover {
-                background: rgba(255, 255, 255, 0.05) !important;
-                transform: scale(1.05) !important;
-                color: #E07A5F !important;
+                background: rgba(255, 255, 255, 0.15) !important;
+                border-color: rgba(224, 122, 95, 0.5) !important;
+                transform: translateY(-2px) scale(1.02) !important;
+                color: #ffffff !important;
+                box-shadow: 0 8px 25px rgba(224, 122, 95, 0.2) !important;
+            }
+
+            .offcanvas-body .nav-link.active {
+                background: linear-gradient(135deg, rgba(224, 122, 95, 0.4), rgba(242, 204, 143, 0.2)) !important;
+                border-color: rgba(224, 122, 95, 0.6) !important;
+                color: #ffffff !important;
+                box-shadow: 0 8px 20px rgba(224, 122, 95, 0.3) !important;
             }
         }
