@@ -464,7 +464,6 @@
 
 .fade-in-right {
   opacity: 0;
-  transform: translateX(50px);
   transition: opacity 0.6s ease, transform 0.6s ease;
 }
 
