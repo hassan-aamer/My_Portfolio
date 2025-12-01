@@ -4,8 +4,9 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="About Hassan Mohamed">
-    <meta name="author" content="">
+    <meta name="description"
+        content="About Hassan Mohamed - Full Stack Software Engineer with expertise in Laravel, Spring Boot, Vue.js, and AI integration">
+    <meta name="author" content="Hassan Mohamed">
 
     <title>About - Hassan Mohamed</title>
 
@@ -19,11 +20,18 @@
     <link href="css/bootstrap-icons.css" rel="stylesheet">
     <link href="css/tooplate-kool-form-pack.css" rel="stylesheet">
     <link href="css/nav-enhanced.css" rel="stylesheet">
+    <link href="css/enhancements.css" rel="stylesheet">
 
     <link rel="Icon" href="images/logo.png">
 </head>
 
 <body>
+    <!-- Loading Screen -->
+    <div class="loading-screen">
+        <div class="loader"></div>
+        <div class="loading-text">Loading...</div>
+    </div>
+
     <!-- Video Background -->
     <div class="video-wrap">
         <div class="video-overlay"></div>
@@ -60,6 +68,9 @@
                         <li class="nav-item">
                             <a class="nav-link" href="projects.html">Projects</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="contact.html">Contact</a>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -69,20 +80,20 @@
     <!-- About Section -->
     <section class="hero-section" id="about">
         <div class="container">
-            <div class="row  align-items-center justify-content-center">
+            <div class="row align-items-center justify-content-center">
                 <div class="col-lg-12 col-12 mx-auto">
-                    <div class="glass-panel">
+                    <div class="glass-panel fade-in">
                         <h2 class="text-center mb-4 mb-lg-5 gradient-text">About Me</h2>
                         <div class="row align-items-center">
                             <div class="col-lg-5 text-center mb-4 mb-lg-0">
                                 <img src="images/h.jpg" class="img-fluid rounded-circle profile-image-enhanced"
-                                    style="width: 250px; height: 250px; max-width: 100%;" alt="About Me">
+                                    style="width: 250px; height: 250px; max-width: 100%;" alt="Hassan Mohamed">
                             </div>
                             <div class="col-lg-7">
                                 <h3 class="mb-3 text-white">Software Engineer</h3>
                                 <p class="text-white-50 mb-4">
-                                    I am a results-driven Full Stack Software Engineer specializing in PHP/ Laravel,
-                                    Java/Spring , and modern web technologies. I build scalable, responsive, and
+                                    I am a results-driven Full Stack Software Engineer specializing in PHP/Laravel,
+                                    Java/Spring, and modern web technologies. I build scalable, responsive, and
                                     user-friendly applications, from intuitive front-end interfaces to robust backend
                                     systems and APIs. Experienced in AI integration and workflow automation with tools
                                     like n8n, I deliver high-quality, maintainable code that solves real-world problems
@@ -127,6 +138,78 @@
                                     </div>
                                 </div>
                             </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications Section -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h2 class="text-center mb-4 gradient-text fade-in">Certifications & Achievements</h2>
+                    <div class="certifications-grid">
+                        <!-- Certification 1 -->
+                        <div class="cert-card fade-in-left">
+                            <i class="bi-award-fill cert-icon"></i>
+                            <h4 class="cert-title">Full Stack Web Development</h4>
+                            <p class="cert-org">Professional Training</p>
+                            <p class="cert-date">2022</p>
+                            <p class="text-white-50 mb-3">Comprehensive training in modern web development technologies
+                                including Laravel, Vue.js, and database management.</p>
+                        </div>
+
+                        <!-- Certification 2 -->
+                        <div class="cert-card fade-in">
+                            <i class="bi-trophy-fill cert-icon"></i>
+                            <h4 class="cert-title">Laravel Expert</h4>
+                            <p class="cert-org">Self-Taught & Practiced</p>
+                            <p class="cert-date">2021 - Present</p>
+                            <p class="text-white-50 mb-3">Advanced expertise in Laravel framework, building scalable
+                                e-commerce platforms and business applications.</p>
+                        </div>
+
+                        <!-- Certification 3 -->
+                        <div class="cert-card fade-in-right">
+                            <i class="bi-gear-fill cert-icon"></i>
+                            <h4 class="cert-title">Workflow Automation</h4>
+                            <p class="cert-org">n8n Specialist</p>
+                            <p class="cert-date">2023</p>
+                            <p class="text-white-50 mb-3">Specialized in creating automated workflows and integrations
+                                using n8n platform for business process optimization.</p>
+                        </div>
+
+                        <!-- Certification 4 -->
+                        <div class="cert-card fade-in-left">
+                            <i class="bi-cpu-fill cert-icon"></i>
+                            <h4 class="cert-title">AI Integration</h4>
+                            <p class="cert-org">Modern AI Technologies</p>
+                            <p class="cert-date">2024</p>
+                            <p class="text-white-50 mb-3">Experience integrating AI capabilities into web applications
+                                for enhanced user experiences and automation.</p>
+                        </div>
+
+                        <!-- Certification 5 -->
+                        <div class="cert-card fade-in">
+                            <i class="bi-database-fill cert-icon"></i>
+                            <h4 class="cert-title">Database Design</h4>
+                            <p class="cert-org">MySQL & PostgreSQL</p>
+                            <p class="cert-date">2022</p>
+                            <p class="text-white-50 mb-3">Expert in designing efficient database schemas, optimization,
+                                and complex query management.</p>
+                        </div>
+
+                        <!-- Certification 6 -->
+                        <div class="cert-card fade-in-right">
+                            <i class="bi-git cert-icon"></i>
+                            <h4 class="cert-title">Version Control</h4>
+                            <p class="cert-org">Git & GitHub</p>
+                            <p class="cert-date">2021</p>
+                            <p class="text-white-50 mb-3">Proficient in Git workflows, collaborative development, and
+                                maintaining clean code repositories.</p>
                         </div>
                     </div>
                 </div>

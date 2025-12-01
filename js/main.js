@@ -1,10 +1,24 @@
 /**
- * Portfolio Main JavaScript
- * Handles custom cursor and security features
+ * Portfolio Main JavaScript - Enhanced Version
+ * Handles animations, counters, form validation, and interactive features
  */
 
-(function() {
+(function () {
     'use strict';
+
+    /**
+     * Loading Screen
+     */
+    function initLoadingScreen() {
+        window.addEventListener('load', () => {
+            const loadingScreen = document.querySelector('.loading-screen');
+            if (loadingScreen) {
+                setTimeout(() => {
+                    loadingScreen.classList.add('hidden');
+                }, 500);
+            }
+        });
+    }
 
     /**
      * Custom Cursor Functionality
@@ -13,10 +27,7 @@
         const cursorDot = document.querySelector('.cursor-dot');
         const cursorOutline = document.querySelector('.cursor-outline');
 
-        if (!cursorDot || !cursorOutline) {
-            console.warn('Custom cursor elements not found');
-            return;
-        }
+        if (!cursorDot || !cursorOutline) return;
 
         // Track mouse movement
         window.addEventListener('mousemove', (e) => {
@@ -29,21 +40,21 @@
             cursorOutline.animate({
                 left: `${posX}px`,
                 top: `${posY}px`
-            }, { 
-                duration: 500, 
-                fill: 'forwards' 
+            }, {
+                duration: 500,
+                fill: 'forwards'
             });
         });
 
         // Add hover effect on interactive elements
-        const hoverElements = document.querySelectorAll('a, button, .social-icon-link');
-        
+        const hoverElements = document.querySelectorAll('a, button, .social-icon-link, .filter-btn, .project-btn');
+
         hoverElements.forEach(element => {
             element.addEventListener('mouseenter', () => {
                 cursorDot.style.transform = 'translate(-50%, -50%) scale(1.5)';
                 cursorOutline.style.transform = 'translate(-50%, -50%) scale(1.5)';
             });
-            
+
             element.addEventListener('mouseleave', () => {
                 cursorDot.style.transform = 'translate(-50%, -50%) scale(1)';
                 cursorOutline.style.transform = 'translate(-50%, -50%) scale(1)';
@@ -52,8 +63,237 @@
     }
 
     /**
+     * Scroll Animations using Intersection Observer
+     */
+    function initScrollAnimations() {
+        const animatedElements = document.querySelectorAll('.fade-in, .fade-in-left, .fade-in-right, .scale-in');
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        });
+
+        animatedElements.forEach(element => {
+            observer.observe(element);
+        });
+    }
+
+    /**
+     * Statistics Counter Animation
+     */
+    function initStatsCounter() {
+        const statNumbers = document.querySelectorAll('.stat-number');
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const target = entry.target;
+                    const finalValue = parseInt(target.getAttribute('data-count'));
+                    animateCounter(target, finalValue);
+                    observer.unobserve(target);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        statNumbers.forEach(stat => observer.observe(stat));
+    }
+
+    function animateCounter(element, target) {
+        let current = 0;
+        const increment = target / 50;
+        const duration = 2000;
+        const stepTime = duration / 50;
+
+        const timer = setInterval(() => {
+            current += increment;
+            if (current >= target) {
+                element.textContent = target + '+';
+                clearInterval(timer);
+            } else {
+                element.textContent = Math.floor(current) + '+';
+            }
+        }, stepTime);
+    }
+
+    /**
+     * Skills Progress Bar Animation
+     */
+    function initSkillsAnimation() {
+        const skillBars = document.querySelectorAll('.progress-bar');
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        skillBars.forEach(bar => observer.observe(bar));
+    }
+
+    /**
+     * Project Filtering System
+     */
+    function initProjectFilters() {
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const projectItems = document.querySelectorAll('.project-item');
+
+        if (filterButtons.length === 0) return;
+
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const filter = button.getAttribute('data-filter');
+
+                // Update active button
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                button.classList.add('active');
+
+                // Filter projects
+                projectItems.forEach(item => {
+                    const category = item.getAttribute('data-category');
+
+                    if (filter === 'all' || category === filter) {
+                        item.classList.remove('hidden');
+                        setTimeout(() => {
+                            item.style.opacity = '1';
+                            item.style.transform = 'scale(1)';
+                        }, 10);
+                    } else {
+                        item.style.opacity = '0';
+                        item.style.transform = 'scale(0.8)';
+                        setTimeout(() => {
+                            item.classList.add('hidden');
+                        }, 300);
+                    }
+                });
+            });
+        });
+    }
+
+    /**
+     * Contact Form Validation
+     */
+    function initFormValidation() {
+        const form = document.getElementById('contactForm');
+        if (!form) return;
+
+        const nameInput = document.getElementById('name');
+        const emailInput = document.getElementById('email');
+        const subjectInput = document.getElementById('subject');
+        const messageInput = document.getElementById('message');
+        const submitBtn = form.querySelector('.submit-btn');
+
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+
+            let isValid = true;
+
+            // Validate name
+            if (nameInput.value.trim() === '') {
+                showError(nameInput, 'الرجاء إدخال الاسم / Please enter your name');
+                isValid = false;
+            } else {
+                removeError(nameInput);
+            }
+
+            // Validate email
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(emailInput.value)) {
+                showError(emailInput, 'الرجاء إدخال بريد إلكتروني صحيح / Please enter a valid email');
+                isValid = false;
+            } else {
+                removeError(emailInput);
+            }
+
+            // Validate subject
+            if (subjectInput.value.trim() === '') {
+                showError(subjectInput, 'الرجاء إدخال الموضوع / Please enter a subject');
+                isValid = false;
+            } else {
+                removeError(subjectInput);
+            }
+
+            // Validate message
+            if (messageInput.value.trim() === '') {
+                showError(messageInput, 'الرجاء إدخال الرسالة / Please enter your message');
+                isValid = false;
+            } else {
+                removeError(messageInput);
+            }
+
+            if (isValid) {
+                submitBtn.disabled = true;
+                submitBtn.textContent = 'Sending...';
+
+                // Simulate form submission (replace with actual EmailJS or backend call)
+                setTimeout(() => {
+                    form.reset();
+                    submitBtn.disabled = false;
+                    submitBtn.textContent = 'Send Message';
+                    showSuccess();
+                }, 1500);
+            }
+        });
+    }
+
+    function showError(input, message) {
+        input.classList.add('error');
+        const errorElement = input.nextElementSibling;
+        if (errorElement && errorElement.classList.contains('form-error')) {
+            errorElement.textContent = message;
+            errorElement.style.display = 'block';
+        }
+    }
+
+    function removeError(input) {
+        input.classList.remove('error');
+        const errorElement = input.nextElementSibling;
+        if (errorElement && errorElement.classList.contains('form-error')) {
+            errorElement.style.display = 'none';
+        }
+    }
+
+    function showSuccess() {
+        const successMessage = document.querySelector('.form-success');
+        if (successMessage) {
+            successMessage.classList.add('show');
+            setTimeout(() => {
+                successMessage.classList.remove('show');
+            }, 5000);
+        }
+    }
+
+    /**
+     * Smooth Scroll for Navigation Links
+     */
+    function initSmoothScroll() {
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+                if (href !== '#' && href.length > 1) {
+                    e.preventDefault();
+                    const target = document.querySelector(href);
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                }
+            });
+        });
+    }
+
+    /**
      * Security Features
-     * Prevents right-click and F12/DevTools shortcuts
      */
     function initSecurityFeatures() {
         // Prevent right-click context menu
@@ -73,7 +313,14 @@
      * Initialize all features when DOM is ready
      */
     function init() {
+        initLoadingScreen();
         initCustomCursor();
+        initScrollAnimations();
+        initStatsCounter();
+        initSkillsAnimation();
+        initProjectFilters();
+        initFormValidation();
+        initSmoothScroll();
         initSecurityFeatures();
     }
 
