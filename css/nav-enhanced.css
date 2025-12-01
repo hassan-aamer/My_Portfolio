@@ -178,224 +178,42 @@
     .btn-close:hover {
         opacity: 1;
         transform: rotate(90deg);
-        /*---------------------------------------
-  ENHANCED NAVIGATION BUTTONS
------------------------------------------*/
+    }
 
-        /* Enhanced Navbar */
-        .navbar {
-            background: rgba(0, 0, 0, 0.5) !important;
-            backdrop-filter: blur(25px) !important;
-            -webkit-backdrop-filter: blur(25px) !important;
-            padding: 12px 0 !important;
-            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.4) !important;
-        }
+    .offcanvas-body {
+        padding: 20px !important;
+    }
 
-        /* Enhanced Brand */
-        .navbar-brand {
-            transition: all 0.3s ease !important;
-        }
+    .offcanvas-body .nav-link {
+        background: rgba(255, 255, 255, 0.05) !important;
+        backdrop-filter: blur(10px) !important;
+        -webkit-backdrop-filter: blur(10px) !important;
+        border: 1px solid rgba(255, 255, 255, 0.1) !important;
+        border-radius: 15px !important;
+        padding: 15px !important;
+        text-align: center !important;
+        font-size: 1.1rem !important;
+        margin: 10px 20px !important;
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+        width: auto !important;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1) !important;
+        transition: all 0.3s ease !important;
+    }
 
-        .navbar-brand:hover {
-            transform: scale(1.05) !important;
-        }
+    .offcanvas-body .nav-link:hover {
+        background: rgba(255, 255, 255, 0.15) !important;
+        border-color: rgba(224, 122, 95, 0.5) !important;
+        transform: translateY(-2px) scale(1.02) !important;
+        color: #ffffff !important;
+        box-shadow: 0 8px 25px rgba(224, 122, 95, 0.2) !important;
+    }
 
-        .navbar-brand i {
-            transition: transform 0.5s ease !important;
-        }
-
-        .navbar-brand:hover i {
-            transform: rotate(360deg) !important;
-        }
-
-        /* Enhanced Nav Items */
-        .nav-item {
-            margin: 0 8px !important;
-        }
-
-        /* Beautiful Nav Links */
-        .nav-link {
-            color: rgba(255, 255, 255, 0.95) !important;
-            font-weight: 600 !important;
-            font-size: 15px !important;
-            padding: 12px 28px !important;
-            border-radius: 50px !important;
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
-            position: relative !important;
-            overflow: hidden !important;
-            background: rgba(255, 255, 255, 0.08) !important;
-            border: 1px solid rgba(255, 255, 255, 0.15) !important;
-            letter-spacing: 0.5px !important;
-        }
-
-        /* Ripple Effect */
-        .nav-link::before {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 0;
-            height: 0;
-            border-radius: 50%;
-            background: radial-gradient(circle, rgba(224, 122, 95, 0.4), transparent);
-            transform: translate(-50%, -50%);
-            transition: width 0.6s, height 0.6s;
-        }
-
-        .nav-link:hover::before {
-            width: 300px;
-            height: 300px;
-        }
-
-        /* Hover State */
-        .nav-link:hover {
-            color: #ffffff !important;
-            background: rgba(255, 255, 255, 0.18) !important;
-            border-color: rgba(224, 122, 95, 0.6) !important;
-            transform: translateY(-2px) !important;
-            box-shadow: 0 8px 25px rgba(224, 122, 95, 0.35) !important;
-        }
-
-        /* Active State */
-        .nav-link.active {
-            color: #ffffff !important;
-            background: linear-gradient(135deg, rgba(224, 122, 95, 0.4), rgba(242, 204, 143, 0.25)) !important;
-            border-color: rgba(224, 122, 95, 0.7) !important;
-            box-shadow: 0 6px 20px rgba(224, 122, 95, 0.45),
-                inset 0 1px 3px rgba(255, 255, 255, 0.25) !important;
-            font-weight: 700 !important;
-        }
-
-        /* Enhanced Toggler */
-        .navbar-toggler {
-            border: none !important;
-            padding: 0 !important;
-            background: transparent !important;
-            transition: transform 0.3s ease !important;
-        }
-
-        .navbar-toggler:hover {
-            background: transparent !important;
-            transform: scale(1.1) !important;
-        }
-
-        .navbar-toggler:focus {
-            box-shadow: none !important;
-            outline: none !important;
-        }
-
-        .navbar-toggler-icon {
-            width: 26px !important;
-            height: 26px !important;
-        }
-
-        /* Mobile Menu */
-        @media screen and (max-width: 991px) {
-            .navbar-collapse {
-                background: rgba(0, 0, 0, 0.96) !important;
-                backdrop-filter: blur(30px) !important;
-                border-radius: 20px !important;
-                padding: 25px 20px !important;
-                margin-top: 15px !important;
-                border: 1px solid rgba(255, 255, 255, 0.15) !important;
-                box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6) !important;
-            }
-
-            .nav-link {
-                display: block !important;
-                margin: 8px 0 !important;
-                text-align: center !important;
-                font-size: 16px !important;
-                padding: 14px 24px !important;
-            }
-
-            .nav-item {
-                margin: 0 !important;
-            }
-        }
-
-        /* Tablet Adjustments */
-        @media screen and (min-width: 768px) and (max-width: 991px) {
-            .nav-link {
-                font-size: 14px !important;
-                padding: 10px 20px !important;
-            }
-        }
-
-        /* Offcanvas Styles (Mobile Only) */
-        @media screen and (max-width: 991px) {
-            .offcanvas {
-                background: rgba(0, 0, 0, 0.95) !important;
-                backdrop-filter: blur(20px) !important;
-                -webkit-backdrop-filter: blur(20px) !important;
-                border-left: 1px solid rgba(255, 255, 255, 0.1) !important;
-                height: 100vh !important;
-                top: 0 !important;
-                bottom: 0 !important;
-                position: fixed !important;
-                z-index: 9999 !important;
-                width: 70% !important;
-                max-width: 300px !important;
-            }
-
-            .offcanvas-header {
-                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-                padding: 20px !important;
-            }
-
-            .offcanvas-title {
-                color: #ffffff;
-                font-weight: 700;
-                letter-spacing: 1px;
-            }
-
-            .btn-close {
-                filter: invert(1) grayscale(100%) brightness(200%);
-                opacity: 0.8;
-                transition: all 0.3s ease;
-            }
-
-            .btn-close:hover {
-                opacity: 1;
-                transform: rotate(90deg);
-            }
-
-            .offcanvas-body {
-                padding: 20px !important;
-            }
-
-            .offcanvas-body .nav-link {
-                background: rgba(255, 255, 255, 0.05) !important;
-                backdrop-filter: blur(10px) !important;
-                -webkit-backdrop-filter: blur(10px) !important;
-                border: 1px solid rgba(255, 255, 255, 0.1) !important;
-                border-radius: 15px !important;
-                padding: 15px !important;
-                text-align: center !important;
-                font-size: 1.1rem !important;
-                margin: 10px 20px !important;
-                /* Added horizontal margin for better look */
-                display: flex !important;
-                justify-content: center !important;
-                align-items: center !important;
-                width: auto !important;
-                /* Changed from 100% to auto to respect margins */
-                box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1) !important;
-                transition: all 0.3s ease !important;
-            }
-
-            .offcanvas-body .nav-link:hover {
-                background: rgba(255, 255, 255, 0.15) !important;
-                border-color: rgba(224, 122, 95, 0.5) !important;
-                transform: translateY(-2px) scale(1.02) !important;
-                color: #ffffff !important;
-                box-shadow: 0 8px 25px rgba(224, 122, 95, 0.2) !important;
-            }
-
-            .offcanvas-body .nav-link.active {
-                background: linear-gradient(135deg, rgba(224, 122, 95, 0.4), rgba(242, 204, 143, 0.2)) !important;
-                border-color: rgba(224, 122, 95, 0.6) !important;
-                color: #ffffff !important;
-                box-shadow: 0 8px 20px rgba(224, 122, 95, 0.3) !important;
-            }
-        }
+    .offcanvas-body .nav-link.active {
+        background: linear-gradient(135deg, rgba(224, 122, 95, 0.4), rgba(242, 204, 143, 0.2)) !important;
+        border-color: rgba(224, 122, 95, 0.6) !important;
+        color: #ffffff !important;
+        box-shadow: 0 8px 20px rgba(224, 122, 95, 0.3) !important;
+    }
+}

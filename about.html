@@ -126,31 +126,6 @@
                                         </div>
                                     </div>
                                 </div>
-                                <!-- <h5 class="text-white mt-3 mb-2">Programming & Tools</h5>
-                                <div class="d-flex gap-2 flex-wrap">
-                                    <span class="badge bg-primary">HTML</span>
-                                    <span class="badge bg-primary">CSS</span>
-                                    <span class="badge bg-primary">Bootstrap</span>
-                                    <span class="badge bg-primary">Tailwind CSS</span>
-                                    <span class="badge bg-primary">JavaScript</span>
-                                    <span class="badge bg-primary">jQuery</span>
-                                    <span class="badge bg-primary">Vue.js</span>
-                                    <span class="badge bg-primary">PHP</span>
-                                    <span class="badge bg-primary">Laravel</span>
-                                    <span class="badge bg-primary">Java</span>
-                                    <span class="badge bg-primary">Spring Boot</span>
-                                    <span class="badge bg-primary">Node.js</span>
-                                    <span class="badge bg-primary">Python</span>
-                                    <span class="badge bg-primary">MySQL</span>
-                                    <span class="badge bg-primary">PostgreSQL</span>
-                                    <span class="badge bg-primary">MongoDB</span>
-                                    <span class="badge bg-primary">AWS</span>
-                                    <span class="badge bg-primary">Firebase</span>
-                                    <span class="badge bg-primary">Git</span>
-                                    <span class="badge bg-primary">n8n</span>
-                                    <span class="badge bg-primary">Docker</span>
-                                    <span class="badge bg-primary">Linux</span>
-                                </div> -->
                             </div>
                         </div>
                     </div>
@@ -176,50 +151,7 @@
     <!-- JAVASCRIPT FILES -->
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.bundle.min.js"></script>
-
-    <!-- Custom Cursor Script -->
-    <script>
-        const cursorDot = document.querySelector('.cursor-dot');
-        const cursorOutline = document.querySelector('.cursor-outline');
-
-        window.addEventListener('mousemove', (e) => {
-            const posX = e.clientX;
-            const posY = e.clientY;
-
-            cursorDot.style.left = `${posX}px`;
-            cursorDot.style.top = `${posY}px`;
-
-            cursorOutline.animate({
-                left: `${posX}px`,
-                top: `${posY}px`
-            }, { duration: 500, fill: "forwards" });
-        });
-
-        // Add hover effect on links and buttons
-        const hoverElements = document.querySelectorAll('a, button, .social-icon-link');
-        hoverElements.forEach(element => {
-            element.addEventListener('mouseenter', () => {
-                cursorDot.style.transform = 'translate(-50%, -50%) scale(1.5)';
-                cursorOutline.style.transform = 'translate(-50%, -50%) scale(1.5)';
-            });
-            element.addEventListener('mouseleave', () => {
-                cursorDot.style.transform = 'translate(-50%, -50%) scale(1)';
-                cursorOutline.style.transform = 'translate(-50%, -50%) scale(1)';
-            });
-        });
-    </script>
-
-    <script>
-        document.addEventListener('contextmenu', function (e) {
-            e.preventDefault();
-        });
-
-        document.addEventListener('keydown', function (e) {
-            if (e.key === 'F12' || (e.ctrlKey && e.shiftKey && e.key === 'I')) {
-                e.preventDefault();
-            }
-        });
-    </script>
+    <script src="js/main.js"></script>
 
 </body>
 
