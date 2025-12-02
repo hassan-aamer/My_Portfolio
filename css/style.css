@@ -491,23 +491,7 @@ strong {
   ENHANCED HERO SECTION
 -----------------------------------------*/
 /* Enhanced Profile Image */
-.profile-image-enhanced {
-  width: 200px;
-  height: 200px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 5px solid var(--primary-color);
-  box-shadow: 0 0 40px rgba(0, 217, 255, 0.6),
-    0 0 80px rgba(0, 217, 255, 0.3);
-  transition: all 0.5s ease;
-  animation: float 3s ease-in-out infinite;
-}
 
-.profile-image-enhanced:hover {
-  transform: scale(1.1);
-  box-shadow: 0 0 60px rgba(0, 217, 255, 0.8),
-    0 0 120px rgba(0, 217, 255, 0.5);
-}
 
 @keyframes float {
 
@@ -696,8 +680,8 @@ strong {
   border-radius: 50%;
   object-fit: cover;
   border: 5px solid var(--primary-color);
-  box-shadow: 0 0 40px rgba(0, 217, 255, 0.6),
-    0 0 80px rgba(0, 217, 255, 0.3);
+  /* box-shadow: 0 0 40px rgba(0, 217, 255, 0.6),
+    0 0 80px rgba(0, 217, 255, 0.3); */
   transition: all 0.5s ease;
   animation: float 3s ease-in-out infinite;
 }
@@ -705,7 +689,7 @@ strong {
 .profile-image-enhanced:hover {
   transform: scale(1.1);
   box-shadow: 0 0 60px rgba(0, 217, 255, 0.8),
-    0 0 120px rgba(0, 217, 255, 0.5);
+    0 0 120px rgba(0, 217, 255, 0.3);
 }
 
 @keyframes float {
@@ -895,23 +879,7 @@ strong {
   ENHANCED HERO SECTION
 -----------------------------------------*/
 /* Enhanced Profile Image */
-.profile-image-enhanced {
-  width: 200px;
-  height: 200px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 5px solid var(--primary-color);
-  box-shadow: 0 0 40px rgba(0, 217, 255, 0.6),
-    0 0 80px rgba(0, 217, 255, 0.3);
-  transition: all 0.5s ease;
-  animation: float 3s ease-in-out infinite;
-}
 
-.profile-image-enhanced:hover {
-  transform: scale(1.1);
-  box-shadow: 0 0 60px rgba(0, 217, 255, 0.8),
-    0 0 120px rgba(0, 217, 255, 0.5);
-}
 
 @keyframes float {
 
