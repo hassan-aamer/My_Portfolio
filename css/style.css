@@ -515,10 +515,11 @@ strong {
 
 /* Gradient Text */
 .gradient-text {
-  background: linear-gradient(135deg, #E07A5F 0%, #F2CC8F 100%);
+  background: linear-gradient(135deg,#E07A5F 0%,#00FFFF 50%,#A972FF 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  text-shadow: 0 0 10px rgba(169, 114, 255, 0.5);
   animation: fadeInUp 1s ease;
   font-size: 3.5rem;
   font-weight: var(--font-weight-bold);
@@ -713,10 +714,11 @@ strong {
 
 /* Gradient Text */
 .gradient-text {
-  background: linear-gradient(135deg, #E07A5F 0%, #F2CC8F 100%);
+  background: linear-gradient(135deg,#E07A5F 0%,#00FFFF 50%,#A972FF 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  text-shadow: 0 0 10px rgba(169, 114, 255, 0.5);
   animation: fadeInUp 1s ease;
   font-size: 3.5rem;
   font-weight: var(--font-weight-bold);
@@ -909,10 +911,11 @@ transition: width 0.3s;
 
 /* Gradient Text */
 .gradient-text {
-  background: linear-gradient(135deg, #E07A5F 0%, #F2CC8F 100%);
+  background: linear-gradient(135deg,#E07A5F 0%,#00FFFF 50%,#A972FF 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  text-shadow: 0 0 10px rgba(169, 114, 255, 0.5);
   animation: fadeInUp 1s ease;
   font-size: 3.5rem;
   font-weight: var(--font-weight-bold);
