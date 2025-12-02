@@ -169,7 +169,7 @@ strong {
   border-left: 2px solid rgba(0, 217, 255, 0.4);
   border-radius: 24px;
   padding: 40px;
-  /* box-shadow: 0 8px 32px 0 rgba(0, 217, 255, 0.15), 0 0 20px rgba(0, 217, 255, 0.1); */
+
   transition: all 0.3s ease;
 }
 
@@ -629,7 +629,7 @@ strong {
 }
 
 .offcanvas-body ul li a:hover {
-  background:rgba(0, 217, 255, 0.6);
+  background: rgba(0, 217, 255, 0.6);
   color: var(--secondary-color) !important;
   transform: translateX(10px);
 }
@@ -1368,17 +1368,17 @@ strong {
 .nav-link:hover {
   color: #ffffff !important;
   background: rgba(255, 255, 255, 0.18) !important;
-  border-color: rgba( 0, 217, 255, 0.6) !important;
+  border-color: rgba(0, 217, 255, 0.6) !important;
   transform: translateY(-2px) !important;
-  box-shadow: 0 8px 25px rgba( 0, 217, 255, 0.35) !important;
+  box-shadow: 0 8px 25px rgba(0, 217, 255, 0.35) !important;
 }
 
 /* Active State */
 .nav-link.active {
   color: #ffffff !important;
-  background: linear-gradient(135deg, rgba( 0, 217, 255, 0.4), rgba(255, 255, 255, 0.25)) !important;
-  border-color: rgba( 0, 217, 255, 0.7) !important;
-  box-shadow: 0 6px 20px rgba( 0, 217, 255, 0.45),
+  background: linear-gradient(135deg, rgba(0, 217, 255, 0.4), rgba(255, 255, 255, 0.25)) !important;
+  border-color: rgba(0, 217, 255, 0.7) !important;
+  box-shadow: 0 6px 20px rgba(0, 217, 255, 0.45),
     inset 0 1px 3px rgba(255, 255, 255, 0.25) !important;
   font-weight: 700 !important;
 }
@@ -1501,17 +1501,17 @@ strong {
 
   .offcanvas-body .nav-link:hover {
     background: rgba(255, 255, 255, 0.15) !important;
-    border-color: rgba( 0, 217, 255, 0.5) !important;
+    border-color: rgba(0, 217, 255, 0.5) !important;
     transform: translateY(-2px) scale(1.02) !important;
     color: #ffffff !important;
-    box-shadow: 0 8px 25px rgba( 0, 217, 255, 0.2) !important;
+    box-shadow: 0 8px 25px rgba(0, 217, 255, 0.2) !important;
   }
 
   .offcanvas-body .nav-link.active {
-    background: linear-gradient(135deg, rgba( 0, 217, 255, 0.4), rgba(255, 255, 255, 0.25)) !important;
-    border-color: rgba( 0, 217, 255, 0.6) !important;
+    background: linear-gradient(135deg, rgba(0, 217, 255, 0.4), rgba(255, 255, 255, 0.25)) !important;
+    border-color: rgba(0, 217, 255, 0.6) !important;
     color: #ffffff !important;
-    box-shadow: 0 8px 20px rgba( 0, 217, 255, 0.3) !important;
+    box-shadow: 0 8px 20px rgba(0, 217, 255, 0.3) !important;
   }
 }
 
@@ -1569,7 +1569,7 @@ strong {
   .navbar-expand-lg .nav-link:hover {
     background: rgba(255, 255, 255, 0.18) !important;
     transform: translateY(-2px) !important;
-    box-shadow: 0 8px 25px rgba(0, 217, 255, 0.6)!important;
+    box-shadow: 0 8px 25px rgba(0, 217, 255, 0.6) !important;
   }
 }
 
@@ -2139,7 +2139,7 @@ strong {
   width: 0;
   height: 0;
   border-radius: 50%;
-  background:rgba(0, 217, 255, 0.6);
+  background: rgba(0, 217, 255, 0.6);
   transform: translate(-50%, -50%);
   transition: width 0.5s, height 0.5s;
 }
