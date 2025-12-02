@@ -2309,52 +2309,6 @@ strong {
 }
 
 /*---------------------------------------
-  RESPONSIVE ENHANCEMENTS
------------------------------------------*/
-@media screen and (max-width: 768px) {
-  .skills-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .stats-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-  }
-
-  .certifications-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .filter-buttons {
-    gap: 10px;
-  }
-
-  .filter-btn {
-    padding: 10px 20px;
-    font-size: 14px;
-  }
-
-  .stat-number {
-    font-size: 36px;
-  }
-
-  .stat-icon {
-    font-size: 40px;
-  }
-
-  .cursor-dot,
-  .cursor-outline {
-    display: none;
-  }
-}
-
-@media screen and (max-width: 480px) {
-  .stats-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-/*---------------------------------------
   INTERACTIVE PARTICLE NETWORK BACKGROUND
 -----------------------------------------*/
 #bg-canvas {
