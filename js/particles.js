@@ -85,19 +85,19 @@ class ParticleNetwork {
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    if (entry.target.id === 'projects' || entry.target.id === 'project-details') {
-                        // "Processing" mode - Orange/Copper for creativity and execution
-                        this.updateConfig('rgba(255, 165, 0, 0.6)', 'rgba(255, 165, 0, 0.2)', 0.8);
-                    } else if (entry.target.id === 'about') {
-                        // "Analysis" mode - Bright Neon Green for quality and clean code
-                        this.updateConfig('rgba(0, 255, 127, 0.6)', 'rgba(0, 255, 127, 0.2)', 0.6);
-                    } else if (entry.target.classList.contains('ai-section') || entry.target.id === 'ai-integration') {
-                        // "AI" mode - Electric Purple for AI and computational depth
-                        this.updateConfig('rgba(138, 43, 226, 0.6)', 'rgba(138, 43, 226, 0.2)', 1.0);
-                    } else {
-                        // Default mode - Cyan/Turquoise for network and technology
+                    // if (entry.target.id === 'projects' || entry.target.id === 'project-details') {
+                    //     // "Processing" mode - Orange/Copper for creativity and execution
+                    //     this.updateConfig('rgba(255, 165, 0, 0.6)', 'rgba(255, 165, 0, 0.2)', 0.8);
+                    // } else if (entry.target.id === 'about') {
+                    //     // "Analysis" mode - Bright Neon Green for quality and clean code
+                    //     this.updateConfig('rgba(0, 255, 127, 0.6)', 'rgba(0, 255, 127, 0.2)', 0.6);
+                    // } else if (entry.target.classList.contains('ai-section') || entry.target.id === 'ai-integration') {
+                    //     // "AI" mode - Electric Purple for AI and computational depth
+                    //     this.updateConfig('rgba(138, 43, 226, 0.6)', 'rgba(138, 43, 226, 0.2)', 1.0);
+                    // } else {
+                    //     // Default mode - Cyan/Turquoise for network and technology
                         this.updateConfig('rgba(0, 255, 255, 0.5)', 'rgba(0, 255, 255, 0.15)', 0.5);
-                    }
+                    // }
                 }
             });
         }, options);
