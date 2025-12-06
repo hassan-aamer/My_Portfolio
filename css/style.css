@@ -8,30 +8,30 @@ Bootstrap 5 Form Pack Template
   CUSTOM PROPERTIES ( VARIABLES )             
 -----------------------------------------*/
 :root {
-  /* Enhanced Background Colors - Deep dark for high-tech feel */
+  /* Enhanced Background Colors - Stable dark for better contrast */
   --body-bg-color: #0A0E27;
   --section-bg-overlay: rgba(10, 14, 39, 0.95);
 
-  /* Enhanced Text Colors - Better contrast */
-  --white-color: #E2E8F0;
-  --p-color: #CBD5E0;
+  /* Enhanced Text Colors - High contrast for readability */
+  --white-color: #F8FAFC;
+  --p-color: #E2E8F0;
 
-  /* Professional Color Palette - Cold Technology (Cyan Neon Focus) */
-  --primary-color: #00D9FF;
-  /* Cyan Neon - Main accent for AI/Tech theme */
-  --secondary-color: #A972FF;
-  /* Deep Purple - Secondary accent */
+  /* Refined Color Palette - Subtle neon accents */
+  --primary-color: #22D3EE;
+  /* Refined Cyan - Subtle accent for borders and highlights */
+  --secondary-color: #8B5CF6;
+  /* Refined Purple - Muted secondary accent */
   --tertiary-color: #1E3A8A;
   /* Deep Blue - Supporting color */
-  --accent-warm: #FF6B9D;
-  /* Pink accent - For highlights */
+  --accent-warm: #F472B6;
+  /* Soft Pink - For subtle highlights */
 
   /* Legacy color mappings for compatibility */
   --section-bg-color: #f0f8ff;
-  --custom-btn-bg-color: #00D9FF;
-  --custom-btn-bg-hover-color: #A972FF;
+  --custom-btn-bg-color: #22D3EE;
+  --custom-btn-bg-hover-color: #8B5CF6;
   --dark-color: #000000;
-  --link-hover-color: #00D9FF;
+  --link-hover-color: #22D3EE;
 
   --body-font-family: 'Poppins', sans-serif;
   --heading-font-family: 'Unbounded', sans-serif;
@@ -110,7 +110,7 @@ p {
   color: var(--p-color);
   font-size: var(--p-font-size);
   font-weight: var(--font-weight-normal);
-  line-height: 1.6;
+  line-height: 1.8;
 }
 
 ul li {
@@ -1094,7 +1094,9 @@ strong {
   }
 
   .cursor-dot,
-  background: transparent !important;
+  .cursor-outline {
+    display: none;
+  }
 }
 
 .offcanvas-body ul {
@@ -1584,11 +1586,11 @@ strong {
 }
 
 .skill-card {
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(15, 23, 42, 0.8);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  border: 2px solid rgba(0, 217, 255, 0.3);
-  border-radius: 20px;
+  border: 1px solid rgba(34, 211, 238, 0.2);
+  border-radius: 16px;
   padding: 30px;
   transition: all 0.3s ease;
   position: relative;
@@ -1601,7 +1603,8 @@ strong {
   top: 0;
   left: 0;
   width: 100%;
-  height: 4px;
+  height: 3px;
+  background: var(--primary-color);
   transform: scaleX(0);
   transform-origin: left;
   transition: transform 0.6s ease;
@@ -1612,39 +1615,39 @@ strong {
 }
 
 .skill-card:hover {
-  transform: translateY(-8px);
-  border-color: rgba(0, 217, 255, 0.6);
-  /* box-shadow: 0 15px 40px rgba(0, 217, 255, 0.3), 0 0 30px rgba(0, 217, 255, 0.2); */
-  background: rgba(255, 255, 255, 0.08);
+  transform: translateY(-5px);
+  border-color: rgba(34, 211, 238, 0.4);
+  background: rgba(15, 23, 42, 0.95);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
 }
 
 .skill-icon {
-  font-size: 48px;
+  font-size: 40px;
   margin-bottom: 20px;
-  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: var(--primary-color);
 }
 
 .skill-name {
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 600;
   color: var(--white-color);
   margin-bottom: 15px;
+  line-height: 1.4;
 }
 
 .skill-level {
-  font-size: 14px;
-  color: var(--secondary-color);
-  margin-bottom: 10px;
+  font-size: 13px;
+  color: var(--primary-color);
+  margin-bottom: 12px;
   font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
 .progress-bar-container {
   width: 100%;
-  height: 8px;
-  background: rgba(255, 255, 255, 0.1);
+  height: 6px;
+  background: rgba(34, 211, 238, 0.1);
   border-radius: 10px;
   overflow: hidden;
   position: relative;
@@ -1652,11 +1655,11 @@ strong {
 
 .progress-bar {
   height: 100%;
-  background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+  background: var(--primary-color);
   border-radius: 10px;
   transition: width 1.5s cubic-bezier(0.4, 0, 0.2, 1);
   width: 0;
-  box-shadow: 0 0 10px rgba(224, 122, 95, 0.5);
+  box-shadow: 0 0 8px rgba(34, 211, 238, 0.4);
 }
 
 .progress-bar.animate {
@@ -1678,11 +1681,11 @@ strong {
 }
 
 .stat-card {
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(15, 23, 42, 0.8);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  border: 2px solid rgba(0, 217, 255, 0.3);
-  border-radius: 20px;
+  border: 1px solid rgba(34, 211, 238, 0.2);
+  border-radius: 16px;
   padding: 40px 20px;
   text-align: center;
   transition: all 0.3s ease;
@@ -1697,7 +1700,7 @@ strong {
   left: -50%;
   width: 200%;
   height: 200%;
-  background: radial-gradient(circle, rgba(0, 217, 255, 0.1), transparent);
+  background: radial-gradient(circle, rgba(34, 211, 238, 0.05), transparent);
   opacity: 0;
   transition: opacity 0.5s ease;
 }
@@ -1707,9 +1710,9 @@ strong {
 }
 
 .stat-card:hover {
-  transform: translateY(-10px) scale(1.05);
-  border-color: rgba(0, 217, 255, 0.6);
-  /* box-shadow: 0 20px 50px rgba(0, 217, 255, 0.4), 0 0 40px rgba(0, 217, 255, 0.2); */
+  transform: translateY(-5px);
+  border-color: rgba(34, 211, 238, 0.4);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
 }
 
 .stat-icon {
@@ -2318,4 +2321,144 @@ strong {
   height: 100%;
   z-index: -1;
   background: linear-gradient(135deg, #0D1117, #1C1E26);
+}
+
+/*---------------------------------------
+  CTA BUTTONS
+-----------------------------------------*/
+.cta-container {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 30px;
+  flex-wrap: wrap;
+}
+
+.cta-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 32px;
+  background: rgba(34, 211, 238, 0.1);
+  border: 2px solid var(--primary-color);
+  border-radius: 50px;
+  color: var(--white-color);
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background: var(--primary-color);
+  transition: width 0.4s ease;
+  z-index: -1;
+}
+
+.cta-button:hover::before {
+  width: 100%;
+}
+
+.cta-button:hover {
+  color: var(--dark-color);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(34, 211, 238, 0.3);
+}
+
+.cta-button.secondary {
+  background: transparent;
+  border-color: rgba(139, 92, 246, 0.5);
+}
+
+.cta-button.secondary::before {
+  background: var(--secondary-color);
+}
+
+.cta-button i {
+  font-size: 18px;
+}
+
+/*---------------------------------------
+  TECHNOLOGY BADGES & TAGS
+-----------------------------------------*/
+.tech-tag {
+  display: inline-block;
+  padding: 6px 14px;
+  background: rgba(34, 211, 238, 0.1);
+  border: 1px solid rgba(34, 211, 238, 0.3);
+  border-radius: 20px;
+  color: var(--primary-color);
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin: 4px;
+  transition: all 0.3s ease;
+}
+
+.tech-tag:hover {
+  background: rgba(34, 211, 238, 0.2);
+  border-color: rgba(34, 211, 238, 0.5);
+  transform: translateY(-2px);
+}
+
+.tech-tag.solid {
+  background: rgba(139, 92, 246, 0.1);
+  border-color: rgba(139, 92, 246, 0.3);
+  color: var(--secondary-color);
+}
+
+.tech-tag.solid:hover {
+  background: rgba(139, 92, 246, 0.2);
+  border-color: rgba(139, 92, 246, 0.5);
+}
+
+.tech-tag.optimization {
+  background: rgba(34, 197, 94, 0.1);
+  border-color: rgba(34, 197, 94, 0.3);
+  color: #22C55E;
+}
+
+.tech-tag.optimization:hover {
+  background: rgba(34, 197, 94, 0.2);
+  border-color: rgba(34, 197, 94, 0.5);
+}
+
+.tech-tags-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 15px;
+}
+
+/*---------------------------------------
+  MOBILE RESPONSIVE ADJUSTMENTS
+-----------------------------------------*/
+@media screen and (max-width: 768px) {
+  p {
+    font-size: 16px;
+    line-height: 1.7;
+  }
+
+  .text-white-50 {
+    font-size: 15px;
+  }
+
+  .cta-button {
+    padding: 12px 24px;
+    font-size: 15px;
+  }
+
+  .skill-name {
+    font-size: 16px;
+  }
 }
