@@ -2728,28 +2728,36 @@ strong {
   background-color: inherit;
   width: 50%;
   margin-bottom: 30px;
-  opacity: 0;
+  /* Removed opacity: 0 - the fade-in class handles initial state */
+  /* This ensures Timeline is visible when JS doesn't execute properly on some hosts */
   transition: all 0.6s ease;
 }
 
-.timeline-item.visible {
-  opacity: 1;
-  transform: translateX(0);
-}
+/* .timeline-item.visible - No longer needed as items are visible by default */
 
 /* Item placements */
 .timeline-item.left {
   left: 0;
-  transform: translateX(-50px);
+  /* Removed initial translateX - now visible without JS */
 }
 
 .timeline-item.right {
   left: 50%;
-  transform: translateX(50px);
+  /* Removed initial translateX - now visible without JS */
 }
 
-.timeline-item.left.visible,
-.timeline-item.right.visible {
+/* Animation for fade-in class - triggered by IntersectionObserver */
+.timeline-item.fade-in {
+  opacity: 0;
+  transform: translateX(-30px);
+}
+
+.timeline-item.right.fade-in {
+  transform: translateX(30px);
+}
+
+.timeline-item.fade-in.visible {
+  opacity: 1;
   transform: translateX(0);
 }
 
