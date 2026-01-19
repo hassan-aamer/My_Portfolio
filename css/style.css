@@ -213,14 +213,14 @@ strong {
   0%,
   100% {
     box-shadow:
-      0 0 10px rgba(224, 122, 95, 0.6),
-      0 0 20px rgba(224, 122, 95, 0.4);
+      0 0 10px rgba(34, 211, 238, 0.6),
+      0 0 20px rgba(34, 211, 238, 0.4);
   }
 
   50% {
     box-shadow:
-      0 0 15px rgba(224, 122, 95, 0.8),
-      0 0 30px rgba(224, 122, 95, 0.6);
+      0 0 15px rgba(34, 211, 238, 0.8),
+      0 0 30px rgba(34, 211, 238, 0.6);
   }
 }
 
@@ -562,7 +562,7 @@ strong {
   background: rgba(0, 0, 0, 0.95) !important;
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  border-left: 2px solid rgba(224, 122, 95, 0.3) !important;
+  border-left: 2px solid rgba(34, 211, 238, 0.3) !important;
 }
 
 .offcanvas-body {
@@ -754,11 +754,16 @@ strong {
 }
 
 .gradient-text {
-  background: linear-gradient(135deg, #e07a5f 0%, #00ffff 50%, #a972ff 100%);
+  background: linear-gradient(
+    135deg,
+    var(--primary-color) 0%,
+    var(--white-color) 50%,
+    var(--secondary-color) 100%
+  );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  text-shadow: 0 0 10px rgba(169, 114, 255, 0.5);
+  text-shadow: 0 0 20px rgba(34, 211, 238, 0.3);
   animation: fadeInUp 1s ease;
   font-size: 3.5rem;
   font-weight: var(--font-weight-bold);
