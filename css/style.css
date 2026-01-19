@@ -2989,3 +2989,173 @@ strong {
     gap: 0;
   }
 }
+
+/* ===========================================
+   30. CROSS-PLATFORM ANIMATION FALLBACKS
+   Ensures elements display even when JS fails
+=========================================== */
+
+/* Fallback keyframes for auto-animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Apply CSS-only animations as fallback */
+/* These will run automatically, then JS can enhance with IntersectionObserver */
+.fade-in {
+  animation: fadeInUp 0.6s ease-out forwards;
+  animation-delay: 0.1s;
+  opacity: 0;
+}
+
+.fade-in-left {
+  animation: fadeInLeft 0.6s ease-out forwards;
+  animation-delay: 0.1s;
+  opacity: 0;
+}
+
+.fade-in-right {
+  animation: fadeInRight 0.6s ease-out forwards;
+  animation-delay: 0.1s;
+  opacity: 0;
+}
+
+.scale-in {
+  animation: scaleIn 0.6s ease-out forwards;
+  animation-delay: 0.1s;
+  opacity: 0;
+}
+
+/* Stagger animations for multiple items */
+.fade-in:nth-child(1),
+.scale-in:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.fade-in:nth-child(2),
+.scale-in:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.fade-in:nth-child(3),
+.scale-in:nth-child(3) {
+  animation-delay: 0.3s;
+}
+.fade-in:nth-child(4),
+.scale-in:nth-child(4) {
+  animation-delay: 0.4s;
+}
+.fade-in:nth-child(5),
+.scale-in:nth-child(5) {
+  animation-delay: 0.5s;
+}
+.fade-in:nth-child(6),
+.scale-in:nth-child(6) {
+  animation-delay: 0.6s;
+}
+
+/* Override for elements that already have .visible class (JS worked) */
+.fade-in.visible,
+.fade-in-left.visible,
+.fade-in-right.visible,
+.scale-in.visible {
+  animation: none;
+  opacity: 1;
+  transform: none;
+}
+
+/* ===========================================
+   31. TYPEWRITER FALLBACK
+   Shows default text if JS fails
+=========================================== */
+#typewriter:empty::after {
+  content: "Full Stack Developer";
+  background: linear-gradient(
+    135deg,
+    var(--primary-color),
+    var(--secondary-color)
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ===========================================
+   32. PROJECT CARDS - ENSURE VISIBILITY
+=========================================== */
+.project-card {
+  /* Ensure cards are visible even if parent animation fails */
+  opacity: 1 !important;
+  transform: none !important;
+}
+
+/* Hover effects should still work */
+.project-card:hover {
+  transform: translateY(-10px) !important;
+}
+
+/* Glass panel visibility fix */
+.glass-panel {
+  opacity: 1 !important;
+}
+
+/* ===========================================
+   33. REDUCED MOTION ACCESSIBILITY
+   Respects user preference for reduced motion
+=========================================== */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .fade-in,
+  .fade-in-left,
+  .fade-in-right,
+  .scale-in {
+    opacity: 1;
+    transform: none;
+    animation: none;
+  }
+}
