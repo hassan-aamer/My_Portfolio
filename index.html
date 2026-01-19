@@ -1,0 +1,423 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- SEO Meta Tags -->
+    <meta
+      name="description"
+      content="Hassan Mohamed - Professional Full Stack Software Engineer specializing in PHP/Laravel, Java/Spring, Vue.js, and modern web technologies. Building scalable applications and AI-powered solutions."
+    />
+    <meta
+      name="keywords"
+      content="Hassan Mohamed, Software Engineer, Full Stack Developer, Laravel Developer, Vue.js, Spring Boot, PHP Developer, Web Development, AI Integration, n8n Automation"
+    />
+    <meta name="author" content="Hassan Mohamed" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://hassan-aamer.github.io/My_Portfolio/" />
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Hassan Mohamed - Software Engineer" />
+    <meta
+      property="og:description"
+      content="Full Stack Software Engineer | Laravel | Vue.js | Spring Boot"
+    />
+    <meta property="og:site_name" content="Hassan Mohamed Portfolio" />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:url"
+      content="https://hassan-aamer.github.io/My_Portfolio/"
+    />
+    <meta
+      property="og:image"
+      content="https://hassan-aamer.github.io/My_Portfolio/images/h.jpg"
+    />
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Hassan Mohamed - Software Engineer" />
+    <meta
+      name="twitter:description"
+      content="Full Stack Software Engineer | Laravel | Vue.js | Spring Boot"
+    />
+    <meta
+      name="twitter:image"
+      content="https://hassan-aamer.github.io/My_Portfolio/images/h.jpg"
+    />
+
+    <!-- Schema Markup -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Hassan Mohamed",
+        "jobTitle": "Software Engineer",
+        "description": "Full Stack Software Engineer specializing in PHP/Laravel, Java/Spring, and modern web technologies",
+        "url": "https://hassan-aamer.github.io/My_Portfolio/",
+        "sameAs": [
+          "https://github.com/hassan-aamer",
+          "https://linkedin.com/in/hassan-mohamed-dev",
+          "https://wa.me/201129730475"
+        ],
+        "email": "hassanaamer048@gmail.com"
+      }
+    </script>
+
+    <title>Hassan Mohamed - Software Engineer Portfolio</title>
+
+    <!-- PWA Support -->
+    <link rel="manifest" href="manifest.json" />
+    <meta name="theme-color" content="#22d3ee" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta
+      name="apple-mobile-web-app-status-bar-style"
+      content="black-translucent"
+    />
+    <link rel="apple-touch-icon" href="images/logo.png" />
+
+    <!-- CSS FILES -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,400;0,700;1,200&family=Unbounded:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <link href="css/bootstrap-icons.css" rel="stylesheet" />
+    <link href="css/style.css" rel="stylesheet" />
+
+    <link rel="Icon" href="images/logo.png" />
+  </head>
+
+  <body>
+    <!-- Progressive Loading Progress Bar -->
+    <div id="progress-bar" class="progress-bar-top"></div>
+
+    <!-- Interactive Particle Network Background -->
+    <canvas id="bg-canvas"></canvas>
+
+    <!-- Header Component Placeholder -->
+    <div id="header-placeholder"></div>
+
+    <!-- Hero Section -->
+    <section class="hero-section" id="hero">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12 col-12 mx-auto">
+            <div class="glass-panel text-center fade-in">
+              <img
+                src="images/h.jpg"
+                class="profile-image-enhanced mb-4"
+                alt="Hassan Mohamed - Software Engineer"
+                loading="lazy"
+              />
+              <h1 class="gradient-text mb-3">Hassan Mohamed</h1>
+              <p class="professional-title mb-2">Software Engineer</p>
+
+              <!-- Typing Animation -->
+              <div class="typewriter-container mb-4">
+                <span class="static-text">I specialize in </span>
+                <span id="typewriter" class="dynamic-text"></span
+                ><span class="cursor">|</span>
+              </div>
+
+              <!-- Social Icons -->
+              <div class="social-icon">
+                <ul
+                  class="d-flex justify-content-center list-unstyled flex-wrap"
+                >
+                  <li class="social-icon-item">
+                    <a
+                      href="https://wa.me/201129730475"
+                      class="social-icon-link bi-whatsapp"
+                      aria-label="WhatsApp"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    ></a>
+                  </li>
+                  <li class="social-icon-item">
+                    <a
+                      href="mailto:hassanaamer048@gmail.com"
+                      class="social-icon-link bi-envelope"
+                      aria-label="Email"
+                    ></a>
+                  </li>
+                  <li class="social-icon-item">
+                    <a
+                      href="https://www.linkedin.com/in/hassan-mohamed-dev/"
+                      class="social-icon-link bi-linkedin"
+                      aria-label="LinkedIn"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    ></a>
+                  </li>
+                  <li class="social-icon-item">
+                    <a
+                      href="https://github.com/hassan-aamer"
+                      class="social-icon-link bi-github"
+                      aria-label="GitHub"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    ></a>
+                  </li>
+                </ul>
+              </div>
+
+              <!-- CTA Buttons -->
+              <div class="cta-container">
+                <a href="projects.html" class="cta-button">
+                  <i class="bi-folder-fill"></i>
+                  Review My Projects
+                </a>
+                <a href="contact.html" class="cta-button secondary">
+                  <i class="bi-chat-dots-fill"></i>
+                  Discuss Your Project
+                </a>
+              </div>
+
+              <!-- Download CV Button -->
+              <!-- <a href="#" class="download-cv-btn" download>
+                            <i class="bi-download"></i>
+                            Download CV
+                        </a> -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Statistics Section -->
+    <section class="stats-section">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <h2 class="text-center mb-4 gradient-text fade-in">
+              Achievements & Quality Metrics
+            </h2>
+            <div class="stats-grid">
+              <div class="stat-card scale-in">
+                <i class="bi-calendar-check stat-icon"></i>
+                <div class="stat-number" data-count="4">0+</div>
+                <div class="stat-label">Years Experience</div>
+              </div>
+              <div class="stat-card scale-in">
+                <i class="bi-shield-check stat-icon"></i>
+                <div class="stat-number" data-count="12">0+</div>
+                <div class="stat-label">Projects with SOLID Principles</div>
+              </div>
+              <div class="stat-card scale-in">
+                <i class="bi-diagram-3 stat-icon"></i>
+                <div class="stat-number" data-count="10">0+</div>
+                <div class="stat-label">Design Patterns Implemented</div>
+              </div>
+              <div class="stat-card scale-in">
+                <i class="bi-speedometer2 stat-icon"></i>
+                <div class="stat-number" data-count="40">0%</div>
+                <div class="stat-label">Average Performance Improvement</div>
+              </div>
+              <div class="stat-card scale-in">
+                <i class="bi-database-check stat-icon"></i>
+                <div class="stat-number" data-count="8">0+</div>
+                <div class="stat-label">Query Optimizations Delivered</div>
+              </div>
+              <div class="stat-card scale-in">
+                <i class="bi-check2-circle stat-icon"></i>
+                <div class="stat-number" data-count="95">0%</div>
+                <div class="stat-label">Code Quality Score (Clean Code)</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills  Section -->
+    <section class="hero-section">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <h2 class="text-center mb-4 gradient-text fade-in">
+              Technical Skills
+            </h2>
+            <div class="skills-grid">
+              <!-- Skill Card 1 -->
+              <div class="skill-card fade-in-left">
+                <i class="bi-filetype-php skill-icon"></i>
+                <div class="skill-name">Laravel</div>
+                <div class="tech-tags-container">
+                  <span class="tech-tag">PHP</span>
+                  <span class="tech-tag">API Development</span>
+                  <span class="tech-tag">Eloquent ORM</span>
+                  <span class="tech-tag solid">SOLID</span>
+                </div>
+              </div>
+
+              <!-- Skill Card 2 -->
+              <div class="skill-card fade-in">
+                <i class="bi-cup-hot skill-icon"></i>
+                <div class="skill-name">Spring Boot</div>
+                <div class="tech-tags-container">
+                  <span class="tech-tag">Java</span>
+                  <span class="tech-tag">Microservices</span>
+                  <span class="tech-tag">Security</span>
+                  <span class="tech-tag">Clean Architecture</span>
+                </div>
+              </div>
+
+              <!-- Skill Card 3 -->
+              <div class="skill-card fade-in-right">
+                <i class="bi-filetype-js skill-icon"></i>
+                <div class="skill-name">Vue.js</div>
+                <div class="tech-tags-container">
+                  <span class="tech-tag">JavaScript</span>
+                  <span class="tech-tag">Composition API</span>
+                  <span class="tech-tag">Vuex</span>
+                  <span class="tech-tag">Router</span>
+                </div>
+              </div>
+
+              <!-- Skill Card 4 -->
+              <div class="skill-card fade-in-left">
+                <i class="bi-database skill-icon"></i>
+                <div class="skill-name">Database Design & Optimization</div>
+                <div class="tech-tags-container">
+                  <span class="tech-tag">MySQL</span>
+                  <span class="tech-tag">PostgreSQL</span>
+                  <span class="tech-tag optimization">Query Optimization</span>
+                  <span class="tech-tag">Indexing</span>
+                </div>
+              </div>
+
+              <!-- Skill Card 5 -->
+              <div class="skill-card fade-in">
+                <i class="bi-filetype-html skill-icon"></i>
+                <div class="skill-name">Frontend Development</div>
+                <div class="tech-tags-container">
+                  <span class="tech-tag">HTML5</span>
+                  <span class="tech-tag">CSS3</span>
+                  <span class="tech-tag">JavaScript</span>
+                  <span class="tech-tag">Responsive Design</span>
+                </div>
+              </div>
+
+              <!-- Skill Card 6 -->
+              <div class="skill-card fade-in-right">
+                <i class="bi-git skill-icon"></i>
+                <div class="skill-name">Git & GitHub</div>
+                <div class="tech-tags-container">
+                  <span class="tech-tag">Git</span>
+                  <span class="tech-tag">GitHub</span>
+                  <span class="tech-tag">Workflows</span>
+                  <span class="tech-tag">Code Review</span>
+                </div>
+              </div>
+
+              <!-- Skill Card 7 -->
+              <div class="skill-card fade-in-left">
+                <i class="bi-robot skill-icon"></i>
+                <div class="skill-name">AI Integration</div>
+                <div class="tech-tags-container">
+                  <span class="tech-tag">TensorFlow</span>
+                  <span class="tech-tag">PyTorch</span>
+                  <span class="tech-tag">OpenAI API</span>
+                  <span class="tech-tag">Automation</span>
+                </div>
+              </div>
+
+              <!-- Skill Card 8 -->
+              <div class="skill-card fade-in">
+                <i class="bi-diagram-3 skill-icon"></i>
+                <div class="skill-name">Workflow Automation</div>
+                <div class="tech-tags-container">
+                  <span class="tech-tag">n8n</span>
+                  <span class="tech-tag">Webhooks</span>
+                  <span class="tech-tag">API Integration</span>
+                  <span class="tech-tag">Automation</span>
+                </div>
+              </div>
+
+              <!-- Skill Card 9 -->
+              <div class="skill-card fade-in-right">
+                <i class="bi-bootstrap skill-icon"></i>
+                <div class="skill-name">CSS Frameworks</div>
+                <div class="tech-tags-container">
+                  <span class="tech-tag">Bootstrap</span>
+                  <span class="tech-tag">Tailwind CSS</span>
+                  <span class="tech-tag">Responsive Design</span>
+                </div>
+              </div>
+
+              <!-- Skill Card 10: SOLID Principles -->
+              <div class="skill-card fade-in-left">
+                <i class="bi-shield-check skill-icon"></i>
+                <div class="skill-name">SOLID Principles & Design Patterns</div>
+                <div class="tech-tags-container">
+                  <span class="tech-tag solid">SOLID</span>
+                  <span class="tech-tag solid">Repository Pattern</span>
+                  <span class="tech-tag solid">Factory Pattern</span>
+                  <span class="tech-tag solid">Strategy Pattern</span>
+                  <span class="tech-tag solid">DDD</span>
+                </div>
+              </div>
+
+              <!-- Skill Card 11: Unit Testing -->
+              <div class="skill-card fade-in">
+                <i class="bi-check2-circle skill-icon"></i>
+                <div class="skill-name">Testing & Quality Assurance</div>
+                <div class="tech-tags-container">
+                  <span class="tech-tag">PHPUnit</span>
+                  <span class="tech-tag">JUnit</span>
+                  <span class="tech-tag solid">TDD</span>
+                  <span class="tech-tag">Code Quality</span>
+                </div>
+              </div>
+
+              <!-- Skill Card 12: CI/CD -->
+              <div class="skill-card fade-in-right">
+                <i class="bi-gear-wide-connected skill-icon"></i>
+                <div class="skill-name">CI/CD & DevOps</div>
+                <div class="tech-tags-container">
+                  <span class="tech-tag">GitHub Actions</span>
+                  <span class="tech-tag">Docker</span>
+                  <span class="tech-tag">Kubernetes</span>
+                  <span class="tech-tag">Deployment</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Custom Cursor -->
+    <div class="cursor-dot"></div>
+    <div class="cursor-outline"></div>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">
+      <i class="bi-arrow-up"></i>
+    </button>
+
+    <!-- Footer Component Placeholder -->
+    <div id="footer-placeholder"></div>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/component-loader.js"></script>
+    <script src="js/particles.js"></script>
+    <script src="js/main.js"></script>
+
+    <!-- Service Worker Registration -->
+    <script>
+      if ("serviceWorker" in navigator) {
+        window.addEventListener("load", () => {
+          navigator.serviceWorker
+            .register("service-worker.js")
+            .then((reg) => console.log("SW registered"))
+            .catch((err) => console.log("SW registration failed"));
+        });
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,572 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- SEO Meta Tags -->
+    <meta
+      name="description"
+      content="Projects by Hassan Mohamed - E-commerce platforms, business websites, and web applications built with Laravel, Vue.js, and modern technologies"
+    />
+    <meta
+      name="keywords"
+      content="Hassan Mohamed Projects, Laravel Projects, Vue.js Portfolio, E-commerce Development, Web Applications"
+    />
+    <meta name="author" content="Hassan Mohamed" />
+    <meta name="robots" content="index, follow" />
+    <link
+      rel="canonical"
+      href="https://hassan-aamer.github.io/My_Portfolio/projects.html"
+    />
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Projects - Hassan Mohamed" />
+    <meta
+      property="og:description"
+      content="E-commerce platforms, business websites, and web applications built with modern technologies"
+    />
+    <meta property="og:site_name" content="Hassan Mohamed Portfolio" />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:url"
+      content="https://hassan-aamer.github.io/My_Portfolio/projects.html"
+    />
+    <meta
+      property="og:image"
+      content="https://hassan-aamer.github.io/My_Portfolio/images/h.jpg"
+    />
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Projects - Hassan Mohamed" />
+    <meta
+      name="twitter:description"
+      content="E-commerce platforms, business websites, and web applications"
+    />
+    <meta
+      name="twitter:image"
+      content="https://hassan-aamer.github.io/My_Portfolio/images/h.jpg"
+    />
+
+    <title>Projects - Hassan Mohamed</title>
+
+    <!-- PWA Support -->
+    <link rel="manifest" href="manifest.json" />
+    <meta name="theme-color" content="#22d3ee" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <link rel="apple-touch-icon" href="images/logo.png" />
+
+    <!-- CSS FILES -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,400;0,700;1,200&family=Unbounded:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <link href="css/bootstrap-icons.css" rel="stylesheet" />
+    <link href="css/style.css" rel="stylesheet" />
+
+    <link rel="Icon" href="images/logo.png" />
+  </head>
+
+  <body>
+    <!-- Progressive Loading Progress Bar -->
+    <div id="progress-bar" class="progress-bar-top"></div>
+
+    <!-- Interactive Particle Network Background -->
+    <canvas id="bg-canvas"></canvas>
+
+    <!-- Header Component Placeholder -->
+    <div id="header-placeholder"></div>
+
+    <!-- Projects Section -->
+    <section id="projects" class="hero-section">
+      <div class="container">
+        <div class="row align-items-center justify-content-center">
+          <div class="col-lg-12 col-12">
+            <h2 class="text-center mb-4 gradient-text fade-in">My Projects</h2>
+            <p class="text-center text-white-50 mb-5 fade-in">
+              A showcase of my recent work in web development and e-commerce
+              solutions
+            </p>
+
+            <!-- Filter Buttons -->
+            <div class="filter-buttons fade-in">
+              <button class="filter-btn active" data-filter="all">
+                All Projects
+              </button>
+              <button class="filter-btn" data-filter="ecommerce">
+                E-commerce
+              </button>
+              <button class="filter-btn" data-filter="business">
+                Business
+              </button>
+              <button class="filter-btn" data-filter="marketing">
+                Marketing
+              </button>
+              <button class="filter-btn" data-filter="ai">
+                AI & Automation
+              </button>
+            </div>
+
+            <!-- Projects Grid -->
+            <div class="row g-4">
+              <!-- Project AI: AI Image Classifier -->
+              <div class="col-lg-4 col-md-6 project-item" data-category="ai">
+                <div class="project-card scale-in">
+                  <div
+                    class="project-image-container"
+                    style="
+                      background: linear-gradient(
+                        135deg,
+                        #2b5876 0%,
+                        #4e4376 100%
+                      );
+                    "
+                  >
+                    <div class="project-image-placeholder">
+                      <i class="bi-cpu-fill"></i>
+                    </div>
+                    <div class="project-overlay">
+                      <a href="#" class="project-btn">
+                        <i class="bi-github"></i> Code
+                      </a>
+                    </div>
+                  </div>
+                  <div class="project-content">
+                    <div class="project-meta">
+                      <span class="project-category">AI & ML</span>
+                    </div>
+                    <h4 class="project-title">CNN Image Classifier</h4>
+                    <p class="project-description">
+                      Deep learning image classification system with 95%
+                      accuracy using transfer learning and containerized
+                      deployment.
+                    </p>
+                    <div class="project-features">
+                      <div class="project-features-title">
+                        <i class="bi-gear-fill"></i> Key Features
+                      </div>
+                      <div class="project-features-list">
+                        <div class="feature-item">
+                          <i class="bi-check2"></i> Transfer Learning (ResNet50)
+                        </div>
+                        <div class="feature-item">
+                          <i class="bi-check2"></i> RESTful API with Flask
+                        </div>
+                        <div class="feature-item">
+                          <i class="bi-check2"></i> Docker Containerization
+                        </div>
+                      </div>
+                    </div>
+                    <div class="project-metrics">
+                      <span class="metric-item"
+                        ><i class="bi-bullseye"></i> 95% Accuracy</span
+                      >
+                      <span class="metric-item performance"
+                        ><i class="bi-lightning-charge"></i> < 200ms</span
+                      >
+                    </div>
+                    <div class="tech-tags-container">
+                      <span class="tech-tag">Python</span>
+                      <span class="tech-tag">TensorFlow</span>
+                      <span class="tech-tag">Docker</span>
+                      <span class="tech-tag">Flask</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Project 1: Kids Corner -->
+              <div
+                class="col-lg-4 col-md-6 project-item"
+                data-category="ecommerce"
+              >
+                <div class="project-card scale-in">
+                  <div
+                    class="project-image-container"
+                    style="
+                      background: linear-gradient(
+                        135deg,
+                        #667eea 0%,
+                        #764ba2 100%
+                      );
+                    "
+                  >
+                    <div class="project-image-placeholder">
+                      <i class="bi-cart-fill"></i>
+                    </div>
+                    <div class="project-overlay">
+                      <a
+                        href="https://kidzcorner.shop"
+                        class="project-btn"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <i class="bi-globe"></i> Visit
+                      </a>
+                    </div>
+                  </div>
+                  <div class="project-content">
+                    <div class="project-meta">
+                      <span class="project-category">E-commerce</span>
+                    </div>
+                    <h4 class="project-title">Kids Corner E-commerce</h4>
+                    <p class="project-description">
+                      Full-featured children's toy store with advanced caching
+                      and Clean Architecture principles.
+                    </p>
+                    <div class="project-features">
+                      <div class="project-features-title">
+                        <i class="bi-gear-fill"></i> Key Features
+                      </div>
+                      <div class="project-features-list">
+                        <div class="feature-item">
+                          <i class="bi-check2"></i> Redis Caching Layer
+                        </div>
+                        <div class="feature-item">
+                          <i class="bi-check2"></i> Repository Pattern
+                        </div>
+                        <div class="feature-item">
+                          <i class="bi-check2"></i> Payment Integration
+                        </div>
+                      </div>
+                    </div>
+                    <div class="project-metrics">
+                      <span class="metric-item performance"
+                        ><i class="bi-speedometer2"></i> 40% Faster</span
+                      >
+                      <span class="metric-item"
+                        ><i class="bi-shield-check"></i> SOLID</span
+                      >
+                    </div>
+                    <div class="tech-tags-container">
+                      <span class="tech-tag">Laravel</span>
+                      <span class="tech-tag">Vue.js</span>
+                      <span class="tech-tag">Redis</span>
+                      <span class="tech-tag">MySQL</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Project 2: Moda Vista -->
+              <div
+                class="col-lg-4 col-md-6 project-item"
+                data-category="ecommerce"
+              >
+                <div class="project-card scale-in">
+                  <div
+                    class="project-image-container"
+                    style="
+                      background: linear-gradient(
+                        135deg,
+                        #f093fb 0%,
+                        #f5576c 100%
+                      );
+                    "
+                  >
+                    <div class="project-image-placeholder">
+                      <i class="bi-bag-fill"></i>
+                    </div>
+                    <div class="project-overlay">
+                      <a
+                        href="https://modavista.net"
+                        class="project-btn"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <i class="bi-globe"></i> Visit
+                      </a>
+                    </div>
+                  </div>
+                  <div class="project-content">
+                    <div class="project-meta">
+                      <span class="project-category">E-commerce</span>
+                    </div>
+                    <h4 class="project-title">Moda Vista Fashion Store</h4>
+                    <p class="project-description">
+                      Modern fashion e-commerce with optimized API performance
+                      and mobile-first responsive design.
+                    </p>
+                    <div class="project-features">
+                      <div class="project-features-title">
+                        <i class="bi-gear-fill"></i> Key Features
+                      </div>
+                      <div class="project-features-list">
+                        <div class="feature-item">
+                          <i class="bi-check2"></i> Factory & Repository
+                          Patterns
+                        </div>
+                        <div class="feature-item">
+                          <i class="bi-check2"></i> Eager Loading Optimization
+                        </div>
+                        <div class="feature-item">
+                          <i class="bi-check2"></i> Query Caching System
+                        </div>
+                      </div>
+                    </div>
+                    <div class="project-metrics">
+                      <span class="metric-item performance"
+                        ><i class="bi-lightning-charge"></i> 50% Faster
+                        API</span
+                      >
+                      <span class="metric-item users"
+                        ><i class="bi-phone"></i> Mobile First</span
+                      >
+                    </div>
+                    <div class="tech-tags-container">
+                      <span class="tech-tag">Laravel</span>
+                      <span class="tech-tag">Vue.js</span>
+                      <span class="tech-tag">MySQL</span>
+                      <span class="tech-tag">REST API</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Project 3: Viral Monkeys -->
+              <div
+                class="col-lg-4 col-md-6 project-item"
+                data-category="marketing"
+              >
+                <div class="project-card scale-in">
+                  <div
+                    class="project-image-container"
+                    style="
+                      background: linear-gradient(
+                        135deg,
+                        #4facfe 0%,
+                        #00f2fe 100%
+                      );
+                    "
+                  >
+                    <div class="project-image-placeholder">
+                      <i class="bi-megaphone-fill"></i>
+                    </div>
+                    <div class="project-overlay">
+                      <a
+                        href="https://viralmonkeys.net"
+                        class="project-btn"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <i class="bi-globe"></i> Visit
+                      </a>
+                    </div>
+                  </div>
+                  <div class="project-content">
+                    <div class="project-meta">
+                      <span class="project-category">Marketing</span>
+                    </div>
+                    <h4 class="project-title">Viral Monkeys</h4>
+                    <p class="project-description">
+                      Digital marketing agency platform with analytics dashboard
+                      and campaign management.
+                    </p>
+                    <div class="project-features">
+                      <div class="project-features-title">
+                        <i class="bi-gear-fill"></i> Key Features
+                      </div>
+                      <div class="project-features-list">
+                        <div class="feature-item">
+                          <i class="bi-check2"></i> Analytics Dashboard
+                        </div>
+                        <div class="feature-item">
+                          <i class="bi-check2"></i> Campaign Tracking
+                        </div>
+                        <div class="feature-item">
+                          <i class="bi-check2"></i> SEO Optimized
+                        </div>
+                      </div>
+                    </div>
+                    <div class="project-metrics">
+                      <span class="metric-item"
+                        ><i class="bi-graph-up-arrow"></i> SEO Ready</span
+                      >
+                      <span class="metric-item users"
+                        ><i class="bi-people"></i> Multi-user</span
+                      >
+                    </div>
+                    <div class="tech-tags-container">
+                      <span class="tech-tag">Vue.js</span>
+                      <span class="tech-tag">Laravel</span>
+                      <span class="tech-tag">MySQL</span>
+                      <span class="tech-tag">Analytics</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Project 4: Dethar -->
+              <div
+                class="col-lg-4 col-md-6 project-item"
+                data-category="business"
+              >
+                <div class="project-card scale-in">
+                  <div
+                    class="project-image-container"
+                    style="
+                      background: linear-gradient(
+                        135deg,
+                        #43e97b 0%,
+                        #38f9d7 100%
+                      );
+                    "
+                  >
+                    <div class="project-image-placeholder">
+                      <i class="bi-truck"></i>
+                    </div>
+                    <div class="project-overlay">
+                      <a
+                        href="https://www.dethar.net"
+                        class="project-btn"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <i class="bi-globe"></i> Visit
+                      </a>
+                    </div>
+                  </div>
+                  <div class="project-content">
+                    <div class="project-meta">
+                      <span class="project-category">Business</span>
+                    </div>
+                    <h4 class="project-title">Dethar Logistics</h4>
+                    <p class="project-description">
+                      Import/export company platform with shipment tracking and
+                      customs coordination system.
+                    </p>
+                    <div class="project-features">
+                      <div class="project-features-title">
+                        <i class="bi-gear-fill"></i> Key Features
+                      </div>
+                      <div class="project-features-list">
+                        <div class="feature-item">
+                          <i class="bi-check2"></i> Shipment Tracking
+                        </div>
+                        <div class="feature-item">
+                          <i class="bi-check2"></i> Multi-language Support
+                        </div>
+                        <div class="feature-item">
+                          <i class="bi-check2"></i> Quote Calculator
+                        </div>
+                      </div>
+                    </div>
+                    <div class="project-metrics">
+                      <span class="metric-item"
+                        ><i class="bi-globe"></i> Bilingual</span
+                      >
+                      <span class="metric-item performance"
+                        ><i class="bi-speedometer2"></i> Fast Loading</span
+                      >
+                    </div>
+                    <div class="tech-tags-container">
+                      <span class="tech-tag">Vue.js</span>
+                      <span class="tech-tag">Laravel</span>
+                      <span class="tech-tag">MySQL</span>
+                      <span class="tech-tag">i18n</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Project 5: United Creative Engineers -->
+              <div
+                class="col-lg-4 col-md-6 project-item"
+                data-category="business"
+              >
+                <div class="project-card scale-in">
+                  <div
+                    class="project-image-container"
+                    style="
+                      background: linear-gradient(
+                        135deg,
+                        #fa709a 0%,
+                        #fee140 100%
+                      );
+                    "
+                  >
+                    <div class="project-image-placeholder">
+                      <i class="bi-building"></i>
+                    </div>
+                    <div class="project-overlay">
+                      <a
+                        href="https://unitedcreativeengineers.com"
+                        class="project-btn"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <i class="bi-globe"></i> Visit
+                      </a>
+                    </div>
+                  </div>
+                  <div class="project-content">
+                    <div class="project-meta">
+                      <span class="project-category">Business</span>
+                    </div>
+                    <h4 class="project-title">United Creative Engineers</h4>
+                    <p class="project-description">
+                      Finishing & decoration company website with portfolio
+                      showcase and quotation system.
+                    </p>
+                    <div class="project-features">
+                      <div class="project-features-title">
+                        <i class="bi-gear-fill"></i> Key Features
+                      </div>
+                      <div class="project-features-list">
+                        <div class="feature-item">
+                          <i class="bi-check2"></i> Project Gallery
+                        </div>
+                        <div class="feature-item">
+                          <i class="bi-check2"></i> Quote Request Form
+                        </div>
+                        <div class="feature-item">
+                          <i class="bi-check2"></i> Admin Dashboard
+                        </div>
+                      </div>
+                    </div>
+                    <div class="project-metrics">
+                      <span class="metric-item"
+                        ><i class="bi-images"></i> 50+ Projects</span
+                      >
+                      <span class="metric-item performance"
+                        ><i class="bi-star"></i> Premium</span
+                      >
+                    </div>
+                    <div class="tech-tags-container">
+                      <span class="tech-tag">Vue.js</span>
+                      <span class="tech-tag">Laravel</span>
+                      <span class="tech-tag">MySQL</span>
+                      <span class="tech-tag">AWS S3</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Custom Cursor -->
+    <div class="cursor-dot"></div>
+    <div class="cursor-outline"></div>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">
+      <i class="bi-arrow-up"></i>
+    </button>
+
+    <!-- Footer Component Placeholder -->
+    <div id="footer-placeholder"></div>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/component-loader.js"></script>
+    <script src="js/particles.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>

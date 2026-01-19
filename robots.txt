@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://hassan-aamer.github.io/My_Portfolio/sitemap.xml
+
+# Disallow specific directories if needed
+# Disallow: /admin/
+# Disallow: /private/

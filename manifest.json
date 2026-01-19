@@ -1,0 +1,27 @@
+{
+    "name": "Hassan Mohamed - Software Engineer",
+    "short_name": "Hassan Dev",
+    "description": "Full Stack Software Engineer Portfolio - Laravel, Vue.js, Spring Boot",
+    "start_url": "/My_Portfolio/",
+    "display": "standalone",
+    "background_color": "#0a0a1a",
+    "theme_color": "#22d3ee",
+    "orientation": "portrait-primary",
+    "icons": [
+        {
+            "src": "images/logo.png",
+            "sizes": "192x192",
+            "type": "image/png",
+            "purpose": "any maskable"
+        },
+        {
+            "src": "images/logo.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "any maskable"
+        }
+    ],
+    "categories": ["portfolio", "developer", "software"],
+    "lang": "en",
+    "dir": "ltr"
+}
