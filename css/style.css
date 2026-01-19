@@ -3159,3 +3159,610 @@ strong {
     animation: none;
   }
 }
+
+/* ===========================================
+   34. PROFESSIONAL RESPONSIVE SYSTEM
+   Senior-Level Mobile-First Approach
+=========================================== */
+
+/* ----------------------------------------
+   34.1 FLUID TYPOGRAPHY
+   Auto-scales between min and max sizes
+---------------------------------------- */
+:root {
+  /* Fluid font sizes using clamp() */
+  --fluid-h1: clamp(2rem, 5vw + 1rem, 4rem);
+  --fluid-h2: clamp(1.5rem, 4vw + 0.5rem, 2.5rem);
+  --fluid-h3: clamp(1.25rem, 3vw + 0.5rem, 1.75rem);
+  --fluid-body: clamp(0.875rem, 1.5vw + 0.5rem, 1.125rem);
+
+  /* Responsive spacing */
+  --space-xs: clamp(0.5rem, 1vw, 0.75rem);
+  --space-sm: clamp(0.75rem, 2vw, 1rem);
+  --space-md: clamp(1rem, 3vw, 1.5rem);
+  --space-lg: clamp(1.5rem, 4vw, 2.5rem);
+  --space-xl: clamp(2rem, 6vw, 4rem);
+
+  /* Safe container padding */
+  --container-padding: max(1rem, 5vw);
+}
+
+/* Apply fluid typography */
+h1,
+.gradient-text {
+  font-size: var(--fluid-h1) !important;
+}
+
+h2 {
+  font-size: var(--fluid-h2) !important;
+}
+
+h3 {
+  font-size: var(--fluid-h3) !important;
+}
+
+/* ----------------------------------------
+   34.2 TYPEWRITER FIX
+   Prevents text cutoff on mobile
+---------------------------------------- */
+.typewriter-container {
+  min-height: 3rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 0 var(--space-sm);
+}
+
+.static-text,
+.dynamic-text {
+  white-space: nowrap;
+}
+
+/* Mobile: Stack typewriter text */
+@media screen and (max-width: 480px) {
+  .typewriter-container {
+    flex-direction: column;
+    gap: 0.25rem;
+    min-height: 4rem;
+    font-size: 1rem !important;
+  }
+
+  .static-text {
+    font-size: 0.9rem;
+  }
+
+  .dynamic-text {
+    font-size: 1.1rem;
+    font-weight: 700;
+  }
+}
+
+/* ----------------------------------------
+   34.3 FILTER BUTTONS - HORIZONTAL SCROLL
+   Professional mobile filter UI
+---------------------------------------- */
+.filter-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-sm);
+  padding: var(--space-md) 0;
+  margin-bottom: var(--space-md);
+}
+
+@media screen and (max-width: 576px) {
+  .filter-buttons {
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory;
+    padding: var(--space-sm) var(--space-md);
+    margin: 0 calc(-1 * var(--container-padding));
+    width: calc(100% + 2 * var(--container-padding));
+    gap: 0.5rem;
+
+    /* Hide scrollbar but keep functionality */
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .filter-buttons::-webkit-scrollbar {
+    display: none;
+  }
+
+  .filter-btn {
+    flex-shrink: 0;
+    scroll-snap-align: start;
+    padding: 0.6rem 1rem !important;
+    font-size: 0.85rem !important;
+    white-space: nowrap;
+  }
+}
+
+/* ----------------------------------------
+   34.4 HERO SECTION - MOBILE OPTIMIZATION
+---------------------------------------- */
+@media screen and (max-width: 576px) {
+  .hero-section {
+    padding-top: 100px !important;
+    padding-bottom: 40px !important;
+  }
+
+  .glass-panel {
+    padding: var(--space-lg) var(--space-md) !important;
+    margin: 0 var(--space-sm);
+    border-radius: 16px !important;
+  }
+
+  .profile-image-enhanced {
+    width: 120px !important;
+    height: 120px !important;
+  }
+
+  .professional-title {
+    font-size: 0.85rem !important;
+    letter-spacing: 2px !important;
+  }
+
+  /* Social icons - better touch targets */
+  .social-icon-link {
+    width: 44px !important;
+    height: 44px !important;
+    font-size: 1.1rem !important;
+  }
+
+  /* CTA Buttons - full width on mobile */
+  .cta-container {
+    flex-direction: column;
+    gap: var(--space-sm);
+    width: 100%;
+  }
+
+  .cta-button {
+    width: 100%;
+    padding: 14px 24px !important;
+    font-size: 0.95rem !important;
+    justify-content: center;
+  }
+}
+
+/* ----------------------------------------
+   34.5 SKILLS GRID - RESPONSIVE
+---------------------------------------- */
+.skills-grid {
+  display: grid;
+  gap: var(--space-md);
+}
+
+@media screen and (max-width: 576px) {
+  .skills-grid {
+    grid-template-columns: 1fr !important;
+    gap: var(--space-sm);
+  }
+
+  .skill-card {
+    padding: var(--space-md) !important;
+  }
+
+  .skill-icon {
+    font-size: 2rem !important;
+  }
+
+  .skill-name {
+    font-size: 1rem !important;
+  }
+
+  .tech-tags-container {
+    gap: 0.35rem;
+  }
+
+  .tech-tag {
+    font-size: 0.7rem !important;
+    padding: 0.25rem 0.5rem !important;
+  }
+}
+
+@media screen and (min-width: 577px) and (max-width: 991px) {
+  .skills-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+
+/* ----------------------------------------
+   34.6 PROJECT CARDS - RESPONSIVE
+---------------------------------------- */
+@media screen and (max-width: 576px) {
+  .project-card {
+    margin-bottom: var(--space-md);
+  }
+
+  .project-content {
+    padding: var(--space-md) !important;
+  }
+
+  .project-title {
+    font-size: 1.1rem !important;
+  }
+
+  .project-description {
+    font-size: 0.9rem !important;
+    line-height: 1.5;
+  }
+
+  .project-features {
+    padding: var(--space-sm) !important;
+  }
+
+  .project-features-title {
+    font-size: 0.85rem !important;
+  }
+
+  .feature-item {
+    font-size: 0.8rem !important;
+  }
+
+  .project-metrics {
+    gap: var(--space-xs);
+  }
+
+  .metric-item {
+    font-size: 0.75rem !important;
+    padding: 0.25rem 0.5rem !important;
+  }
+}
+
+/* ----------------------------------------
+   34.7 STATS SECTION - RESPONSIVE
+---------------------------------------- */
+.stats-grid {
+  display: grid;
+  gap: var(--space-md);
+}
+
+@media screen and (max-width: 576px) {
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: var(--space-sm);
+  }
+
+  .stat-card {
+    padding: var(--space-md) !important;
+  }
+
+  .stat-icon {
+    font-size: 1.5rem !important;
+  }
+
+  .stat-number {
+    font-size: 1.5rem !important;
+  }
+
+  .stat-label {
+    font-size: 0.7rem !important;
+    line-height: 1.3;
+  }
+}
+
+/* ----------------------------------------
+   34.8 ABOUT PAGE - RESPONSIVE
+---------------------------------------- */
+@media screen and (max-width: 576px) {
+  .profile-about-image {
+    width: 150px !important;
+    height: 150px !important;
+    margin-bottom: var(--space-md);
+  }
+
+  .clean-code-box {
+    padding: var(--space-md) !important;
+  }
+
+  .clean-code-title {
+    font-size: 1rem !important;
+  }
+
+  .key-strength-title {
+    font-size: 0.95rem !important;
+  }
+
+  .key-strength-text {
+    font-size: 0.85rem !important;
+  }
+
+  .key-strength-icon {
+    font-size: 1rem !important;
+  }
+
+  /* AI Section */
+  .ai-icon-container {
+    margin-top: var(--space-md);
+  }
+
+  .ai-icon-large {
+    font-size: 4rem !important;
+  }
+}
+
+/* ----------------------------------------
+   34.9 TIMELINE - MOBILE RESPONSIVE
+---------------------------------------- */
+@media screen and (max-width: 768px) {
+  .timeline-section {
+    padding: var(--space-lg) 0;
+  }
+
+  .timeline::after {
+    left: 20px !important;
+  }
+
+  .timeline-item {
+    width: 100% !important;
+    padding-left: 50px !important;
+    padding-right: var(--space-sm) !important;
+  }
+
+  .timeline-item.left,
+  .timeline-item.right {
+    left: 0 !important;
+  }
+
+  .timeline-dot {
+    left: 10px !important;
+    right: auto !important;
+    width: 16px !important;
+    height: 16px !important;
+  }
+
+  .timeline-content {
+    padding: var(--space-md) !important;
+  }
+
+  .timeline-content::after {
+    left: -8px !important;
+    right: auto !important;
+    border-width: 8px 8px 8px 0 !important;
+    border-color: transparent rgba(34, 211, 238, 0.15) transparent transparent !important;
+  }
+
+  .timeline-title {
+    font-size: 1rem !important;
+  }
+
+  .timeline-subtitle {
+    font-size: 0.75rem !important;
+  }
+
+  .timeline-desc {
+    font-size: 0.85rem !important;
+  }
+
+  .timeline-date {
+    font-size: 0.7rem !important;
+    padding: 3px 8px !important;
+  }
+}
+
+/* ----------------------------------------
+   34.10 CONTACT PAGE - RESPONSIVE
+---------------------------------------- */
+@media screen and (max-width: 576px) {
+  .contact-form {
+    padding: var(--space-md) !important;
+  }
+
+  .form-control {
+    font-size: 16px !important; /* Prevents zoom on iOS */
+    padding: 12px 16px !important;
+  }
+
+  textarea.form-control {
+    min-height: 120px;
+  }
+
+  .submit-btn {
+    width: 100%;
+    padding: 14px !important;
+    font-size: 1rem !important;
+  }
+}
+
+/* ----------------------------------------
+   34.11 NAVIGATION - ENHANCED MOBILE
+---------------------------------------- */
+@media screen and (max-width: 991px) {
+  .navbar {
+    padding: 10px 0 !important;
+  }
+
+  .navbar-brand {
+    font-size: 1.3rem !important;
+  }
+
+  .navbar-toggler {
+    width: 44px;
+    height: 44px;
+    padding: 0 !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .offcanvas {
+    max-width: 280px !important;
+  }
+
+  .offcanvas-body {
+    padding: var(--space-lg) !important;
+  }
+
+  .nav-link {
+    padding: 14px 20px !important;
+    font-size: 1rem !important;
+    border-radius: 10px;
+    margin-bottom: 8px !important;
+  }
+
+  .nav-link:hover {
+    background: rgba(34, 211, 238, 0.1);
+  }
+
+  .nav-link.active {
+    background: rgba(34, 211, 238, 0.2) !important;
+  }
+}
+
+/* ----------------------------------------
+   34.12 FOOTER - RESPONSIVE
+---------------------------------------- */
+@media screen and (max-width: 576px) {
+  .site-footer {
+    padding: var(--space-lg) var(--space-md) !important;
+  }
+
+  .copyright-text {
+    font-size: 0.8rem !important;
+  }
+}
+
+/* ----------------------------------------
+   34.13 TOUCH OPTIMIZATIONS
+---------------------------------------- */
+@media (hover: none) and (pointer: coarse) {
+  /* Minimum touch target size (44x44 as per Apple/Google guidelines) */
+  .nav-link,
+  .btn,
+  .cta-button,
+  .filter-btn,
+  .social-icon-link,
+  .project-btn,
+  .back-to-top {
+    min-height: 44px;
+    min-width: 44px;
+  }
+
+  /* Remove hover effects that don't work on touch */
+  .project-card:hover {
+    transform: none !important;
+  }
+
+  /* Add active states for touch feedback */
+  .cta-button:active,
+  .filter-btn:active,
+  .social-icon-link:active {
+    transform: scale(0.95);
+    opacity: 0.8;
+  }
+}
+
+/* ----------------------------------------
+   34.14 LARGE SCREENS (1440px+)
+---------------------------------------- */
+@media screen and (min-width: 1440px) {
+  .container {
+    max-width: 1320px;
+  }
+
+  .hero-section {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+  }
+
+  .glass-panel {
+    padding: 60px 80px !important;
+  }
+
+  .profile-image-enhanced {
+    width: 200px !important;
+    height: 200px !important;
+  }
+}
+
+/* ----------------------------------------
+   34.15 VERY SMALL SCREENS (320px)
+---------------------------------------- */
+@media screen and (max-width: 360px) {
+  :root {
+    --container-padding: 0.75rem;
+  }
+
+  h1,
+  .gradient-text {
+    font-size: 1.75rem !important;
+  }
+
+  h2 {
+    font-size: 1.35rem !important;
+  }
+
+  .glass-panel {
+    padding: var(--space-md) var(--space-sm) !important;
+    margin: 0 0.5rem;
+  }
+
+  .profile-image-enhanced {
+    width: 100px !important;
+    height: 100px !important;
+  }
+
+  .cta-button {
+    font-size: 0.85rem !important;
+    padding: 12px 16px !important;
+  }
+
+  .social-icon-link {
+    width: 38px !important;
+    height: 38px !important;
+    font-size: 0.95rem !important;
+  }
+
+  .stats-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* ----------------------------------------
+   34.16 LANDSCAPE MOBILE ADJUSTMENTS
+---------------------------------------- */
+@media screen and (max-height: 500px) and (orientation: landscape) {
+  .hero-section {
+    padding-top: 80px !important;
+    padding-bottom: 30px !important;
+  }
+
+  .profile-image-enhanced {
+    width: 80px !important;
+    height: 80px !important;
+  }
+
+  .glass-panel {
+    padding: var(--space-sm) var(--space-md) !important;
+  }
+}
+
+/* ----------------------------------------
+   34.17 PRINT STYLES
+---------------------------------------- */
+@media print {
+  #bg-canvas,
+  .back-to-top,
+  .cursor-dot,
+  .cursor-outline,
+  .navbar-toggler {
+    display: none !important;
+  }
+
+  body {
+    background: white !important;
+    color: black !important;
+  }
+
+  .glass-panel {
+    background: white !important;
+    border: 1px solid #ccc !important;
+    box-shadow: none !important;
+  }
+}
