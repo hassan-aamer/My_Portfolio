@@ -3,7 +3,7 @@
  * Enables offline functionality and caching
  */
 
-const CACHE_NAME = 'hassan-portfolio-v2';
+const CACHE_NAME = 'hassan-portfolio-v3';
 const ASSETS_TO_CACHE = [
     '/',
     '/index.html',

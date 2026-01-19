@@ -407,6 +407,86 @@
         initSmoothScroll();
         initSecurityFeatures();
         initBackToTop();
+        // New UI/UX features
+        initScrollProgress();
+        initPageTransitions();
+        initSectionReveal();
+    }
+
+    /**
+     * Scroll Progress Indicator
+     */
+    function initScrollProgress() {
+        // Create the progress bar element
+        const progressBar = document.createElement('div');
+        progressBar.className = 'scroll-progress';
+        document.body.prepend(progressBar);
+
+        // Update on scroll
+        window.addEventListener('scroll', () => {
+            const scrollTop = window.scrollY;
+            const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+            const scrollPercent = (scrollTop / docHeight) * 100;
+            progressBar.style.width = scrollPercent + '%';
+        });
+    }
+
+    /**
+     * Page Transitions
+     */
+    function initPageTransitions() {
+        // Add page transition class to body on load
+        document.body.classList.add('page-transition');
+
+        // Handle link clicks for smooth page exit
+        const internalLinks = document.querySelectorAll('a[href$=".html"]');
+
+        internalLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                const href = link.getAttribute('href');
+
+                // Only animate for internal links
+                if (href && !href.startsWith('http') && !href.startsWith('#')) {
+                    e.preventDefault();
+                    document.body.classList.add('page-exit');
+
+                    setTimeout(() => {
+                        window.location.href = href;
+                    }, 300);
+                }
+            });
+        });
+    }
+
+    /**
+     * Section Reveal on Scroll
+     */
+    function initSectionReveal() {
+        const sections = document.querySelectorAll('section');
+
+        // Immediately reveal sections that are in viewport on load
+        sections.forEach(section => {
+            const rect = section.getBoundingClientRect();
+            if (rect.top < window.innerHeight) {
+                section.classList.add('revealed');
+            }
+        });
+
+        // Create intersection observer for remaining sections
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('revealed');
+                }
+            });
+        }, {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        });
+
+        sections.forEach(section => {
+            observer.observe(section);
+        });
     }
 
     /**
