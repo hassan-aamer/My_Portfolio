@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="no-js">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -780,8 +780,11 @@
 
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.bundle.min.js"></script>
-    <script src="js/component-loader.js"></script>
-    <script src="js/particles.js"></script>
-    <script src="js/main.js"></script>
+    <script src="js/component-loader.js" defer></script>
+    <script src="js/particles.js" defer></script>
+    <script src="js/main.js" defer></script>
+    <script>
+      document.documentElement.classList.remove("no-js");
+    </script>
   </body>
 </html>

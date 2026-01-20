@@ -49,7 +49,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 col-12 text-center">
-                    <p class="copyright-text mb-3">Copyright © 2026 <a href="#">Hassan Mohamed</a>. All rights reserved.</p>
+                    <p class="copyright-text mb-3">Copyright © <span id="current-year">${new Date().getFullYear()}</span> <a href="index.html">Hassan Mohamed</a>. All rights reserved.</p>
                 </div>
             </div>
         </div>
