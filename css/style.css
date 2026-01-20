@@ -7,8 +7,10 @@
 
 /* ===========================================
    1. CUSTOM PROPERTIES (VARIABLES)
+   Production-Ready Design System
 =========================================== */
 :root {
+  /* ========== Colors ========== */
   /* Background Colors */
   --body-bg-color: #0a0e27;
   --section-bg-overlay: rgba(10, 14, 39, 0.95);
@@ -23,14 +25,48 @@
   --tertiary-color: #1e3a8a;
   --accent-warm: #f472b6;
 
-  /* Legacy Mappings */
+  /* Legacy Mappings (for backwards compatibility) */
   --section-bg-color: #f0f8ff;
   --custom-btn-bg-color: #22d3ee;
   --custom-btn-bg-hover-color: #8b5cf6;
   --dark-color: #000000;
   --link-hover-color: #22d3ee;
 
-  /* Typography */
+  /* ========== Reusable Patterns ========== */
+  /* Glassmorphism - Use these for consistent glass effects */
+  --glass-bg: rgba(255, 255, 255, 0.05);
+  --glass-bg-hover: rgba(255, 255, 255, 0.08);
+  --glass-border: rgba(0, 217, 255, 0.3);
+  --glass-blur: 20px;
+
+  /* Card Backgrounds */
+  --card-bg: linear-gradient(
+    145deg,
+    rgba(15, 23, 42, 0.8) 0%,
+    rgba(30, 41, 59, 0.6) 100%
+  );
+  --card-border: rgba(34, 211, 238, 0.1);
+
+  /* Gradient Patterns */
+  --gradient-primary: linear-gradient(
+    135deg,
+    var(--primary-color),
+    var(--secondary-color)
+  );
+  --gradient-glow: linear-gradient(
+    135deg,
+    rgba(34, 211, 238, 0.3),
+    rgba(139, 92, 246, 0.3),
+    rgba(244, 114, 182, 0.2)
+  );
+
+  /* Shadows */
+  --shadow-glow:
+    0 25px 50px rgba(34, 211, 238, 0.15), 0 10px 20px rgba(139, 92, 246, 0.1);
+  --shadow-hover:
+    0 25px 50px rgba(34, 211, 238, 0.2), 0 0 0 1px rgba(34, 211, 238, 0.1);
+
+  /* ========== Typography ========== */
   --body-font-family: "Poppins", sans-serif;
   --heading-font-family: "Unbounded", sans-serif;
 
@@ -45,7 +81,7 @@
   --menu-font-size: 16px;
   --btn-font-size: 14px;
 
-  /* Border Radius */
+  /* ========== Spacing & Radius ========== */
   --border-radius-large: 100px;
   --border-radius-medium: 20px;
   --border-radius-small: 10px;
@@ -467,6 +503,8 @@ strong {
 
 /* ===========================================
    8. NAVIGATION
+   NOTE: !important declarations are required to override
+   Bootstrap's default navbar styles. Do not remove.
 =========================================== */
 .navbar {
   background: rgba(0, 0, 0, 0.5) !important;
@@ -754,12 +792,8 @@ strong {
 }
 
 .gradient-text {
-  background: linear-gradient(
-    135deg,
-    var(--primary-color) 0%,
-    var(--white-color) 50%,
-    var(--secondary-color) 100%
-  );
+  background: var(--gradient-primary);
+  background-size: 200% 200%;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -1684,23 +1718,7 @@ strong {
   color: #a78bfa;
 }
 
-/* Live Counter Animation */
-.stat-number {
-  font-size: 40px;
-  font-weight: 700;
-  background: linear-gradient(
-    135deg,
-    var(--primary-color),
-    var(--secondary-color)
-  );
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  margin-bottom: 8px;
-  font-family: var(--heading-font-family);
-  transition: transform 0.3s ease;
-}
-
+/* Live Counter Animation - Enhanced .stat-number hover effects */
 .stat-card:hover .stat-number {
   transform: scale(1.1);
 }

@@ -7,6 +7,22 @@
     'use strict';
 
     /**
+     * Configuration Options
+     * Set these to customize behavior
+     */
+    const CONFIG = {
+        // Security features (right-click prevention, DevTools blocking)
+        // Disabled by default - can frustrate users
+        enableSecurityFeatures: false,
+
+        // Enable custom cursor on desktop
+        enableCustomCursor: true,
+
+        // Enable scroll animations
+        enableScrollAnimations: true
+    };
+
+    /**
      * Progressive Loading - Top Progress Bar
      */
     function initProgressBar() {
@@ -350,9 +366,13 @@
     }
 
     /**
-     * Security Features
+     * Security Features (Disabled by default)
+     * Can prevent context menu and DevTools shortcuts
+     * Enable via CONFIG.enableSecurityFeatures = true
      */
     function initSecurityFeatures() {
+        if (!CONFIG.enableSecurityFeatures) return;
+
         // Prevent right-click context menu
         document.addEventListener('contextmenu', (e) => {
             e.preventDefault();
@@ -393,24 +413,34 @@
 
     /**
      * Initialize all features when DOM is ready
+     * Wrapped in try-catch for production stability
      */
     function init() {
-        initTypewriter();
-        initProgressBar();
-        initNavigationProgress();
-        initCustomCursor();
-        initScrollAnimations();
-        initStatsCounter();
-        initSkillsAnimation();
-        initProjectFilters();
-        initFormValidation();
-        initSmoothScroll();
-        initSecurityFeatures();
-        initBackToTop();
-        // New UI/UX features
-        initScrollProgress();
-        initPageTransitions();
-        initSectionReveal();
+        const features = [
+            { name: 'Typewriter', fn: initTypewriter },
+            { name: 'ProgressBar', fn: initProgressBar },
+            { name: 'NavigationProgress', fn: initNavigationProgress },
+            { name: 'CustomCursor', fn: () => CONFIG.enableCustomCursor && initCustomCursor() },
+            { name: 'ScrollAnimations', fn: () => CONFIG.enableScrollAnimations && initScrollAnimations() },
+            { name: 'StatsCounter', fn: initStatsCounter },
+            { name: 'SkillsAnimation', fn: initSkillsAnimation },
+            { name: 'ProjectFilters', fn: initProjectFilters },
+            { name: 'FormValidation', fn: initFormValidation },
+            { name: 'SmoothScroll', fn: initSmoothScroll },
+            { name: 'SecurityFeatures', fn: initSecurityFeatures },
+            { name: 'BackToTop', fn: initBackToTop },
+            { name: 'ScrollProgress', fn: initScrollProgress },
+            { name: 'PageTransitions', fn: initPageTransitions },
+            { name: 'SectionReveal', fn: initSectionReveal }
+        ];
+
+        features.forEach(({ name, fn }) => {
+            try {
+                fn();
+            } catch (error) {
+                console.warn(`[Portfolio] ${name} initialization failed:`, error.message);
+            }
+        });
     }
 
     /**
