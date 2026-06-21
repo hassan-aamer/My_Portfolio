@@ -412,38 +412,6 @@
     }
 
     /**
-     * Initialize all features when DOM is ready
-     * Wrapped in try-catch for production stability
-     */
-    function init() {
-        const features = [
-            { name: 'Typewriter', fn: initTypewriter },
-            { name: 'ProgressBar', fn: initProgressBar },
-            { name: 'NavigationProgress', fn: initNavigationProgress },
-            { name: 'CustomCursor', fn: () => CONFIG.enableCustomCursor && initCustomCursor() },
-            { name: 'ScrollAnimations', fn: () => CONFIG.enableScrollAnimations && initScrollAnimations() },
-            { name: 'StatsCounter', fn: initStatsCounter },
-            { name: 'SkillsAnimation', fn: initSkillsAnimation },
-            { name: 'ProjectFilters', fn: initProjectFilters },
-            { name: 'FormValidation', fn: initFormValidation },
-            { name: 'SmoothScroll', fn: initSmoothScroll },
-            { name: 'SecurityFeatures', fn: initSecurityFeatures },
-            { name: 'BackToTop', fn: initBackToTop },
-            { name: 'ScrollProgress', fn: initScrollProgress },
-            { name: 'PageTransitions', fn: initPageTransitions },
-            { name: 'SectionReveal', fn: initSectionReveal }
-        ];
-
-        features.forEach(({ name, fn }) => {
-            try {
-                fn();
-            } catch (error) {
-                console.warn(`[Portfolio] ${name} initialization failed:`, error.message);
-            }
-        });
-    }
-
-    /**
      * Scroll Progress Indicator
      */
     function initScrollProgress() {
@@ -558,6 +526,38 @@
         }
 
         type();
+    }
+
+    /**
+     * Initialize all features when DOM is ready
+     * Wrapped in try-catch for production stability
+     */
+    function init() {
+        const features = [
+            { name: 'Typewriter', fn: initTypewriter },
+            { name: 'ProgressBar', fn: initProgressBar },
+            { name: 'NavigationProgress', fn: initNavigationProgress },
+            { name: 'CustomCursor', fn: () => CONFIG.enableCustomCursor && initCustomCursor() },
+            { name: 'ScrollAnimations', fn: () => CONFIG.enableScrollAnimations && initScrollAnimations() },
+            { name: 'StatsCounter', fn: initStatsCounter },
+            { name: 'SkillsAnimation', fn: initSkillsAnimation },
+            { name: 'ProjectFilters', fn: initProjectFilters },
+            { name: 'FormValidation', fn: initFormValidation },
+            { name: 'SmoothScroll', fn: initSmoothScroll },
+            { name: 'SecurityFeatures', fn: initSecurityFeatures },
+            { name: 'BackToTop', fn: initBackToTop },
+            { name: 'ScrollProgress', fn: initScrollProgress },
+            { name: 'PageTransitions', fn: initPageTransitions },
+            { name: 'SectionReveal', fn: initSectionReveal }
+        ];
+
+        features.forEach(({ name, fn }) => {
+            try {
+                fn();
+            } catch (error) {
+                console.warn(`[Portfolio] ${name} initialization failed:`, error.message);
+            }
+        });
     }
 
     // Run initialization when DOM is fully loaded

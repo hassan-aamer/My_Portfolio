@@ -103,6 +103,16 @@
     }
 
     /**
+     * Set current year in footer
+     */
+    function setCurrentYear() {
+        const yearElement = document.getElementById('current-year');
+        if (yearElement) {
+            yearElement.textContent = new Date().getFullYear();
+        }
+    }
+
+    /**
      * Initialize Bootstrap offcanvas after loading
      */
     function initBootstrapComponents() {
@@ -123,7 +133,9 @@
         });
 
         // Load Footer
-        await loadComponent('components/footer.html', '#footer-placeholder', FOOTER_HTML);
+        await loadComponent('components/footer.html', '#footer-placeholder', FOOTER_HTML, () => {
+            setCurrentYear();
+        });
     }
 
     // Initialize when DOM is ready
