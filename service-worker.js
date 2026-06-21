@@ -3,7 +3,7 @@
  * Enables offline functionality and caching
  */
 
-const CACHE_NAME = 'hassan-portfolio-v16';
+const CACHE_NAME = 'hassan-portfolio-v17';
 const ASSETS_TO_CACHE = [
     '/',
     '/index.html',
@@ -16,7 +16,6 @@ const ASSETS_TO_CACHE = [
     '/js/main.js',
     '/js/particles.js',
     '/js/component-loader.js',
-    '/js/jquery.min.js',
     '/js/bootstrap.bundle.min.js',
     '/images/h.jpg',
     '/images/logo.png',
