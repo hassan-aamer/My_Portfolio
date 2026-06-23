@@ -529,6 +529,16 @@
     }
 
     /**
+     * Set Current Year in Footer
+     */
+    function initCurrentYear() {
+        const yearElement = document.getElementById('current-year');
+        if (yearElement) {
+            yearElement.textContent = new Date().getFullYear();
+        }
+    }
+
+    /**
      * Initialize all features when DOM is ready
      * Wrapped in try-catch for production stability
      */
@@ -548,7 +558,8 @@
             { name: 'BackToTop', fn: initBackToTop },
             { name: 'ScrollProgress', fn: initScrollProgress },
             { name: 'PageTransitions', fn: initPageTransitions },
-            { name: 'SectionReveal', fn: initSectionReveal }
+            { name: 'SectionReveal', fn: initSectionReveal },
+            { name: 'CurrentYear', fn: initCurrentYear }
         ];
 
         features.forEach(({ name, fn }) => {

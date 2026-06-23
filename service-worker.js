@@ -3,7 +3,7 @@
  * Enables offline functionality and caching
  */
 
-const CACHE_NAME = 'hassan-portfolio-v20';
+const CACHE_NAME = 'hassan-portfolio-v21';
 const ASSETS_TO_CACHE = [
     '/',
     '/index.html',
@@ -15,12 +15,9 @@ const ASSETS_TO_CACHE = [
     '/css/bootstrap-icons.css',
     '/js/main.js',
     '/js/particles.js',
-    '/js/component-loader.js',
     '/js/bootstrap.bundle.min.js',
-    '/images/h.jpg',
-    '/images/logo.png',
-    '/components/header.html',
-    '/components/footer.html'
+    '/images/h.webp',
+    '/images/logo.png'
 ];
 
 // Install event - cache assets
