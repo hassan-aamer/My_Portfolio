@@ -50,9 +50,29 @@ class ParticleNetwork {
     }
 
     createParticles() {
-        this.particles = [];
-        for (let i = 0; i < this.config.particleAmount; i++) {
-            this.particles.push(new Particle(this.width, this.height, this.config));
+        if (!this.particles) {
+            this.particles = [];
+        }
+
+        // Adjust particle count
+        if (this.particles.length > this.config.particleAmount) {
+            // Remove excess particles
+            this.particles.length = this.config.particleAmount;
+        } else {
+            // Add new particles
+            for (let i = this.particles.length; i < this.config.particleAmount; i++) {
+                this.particles.push(new Particle(this.width, this.height, this.config));
+            }
+        }
+
+        // Update bounds for all existing particles so they don't bounce out of frame
+        for (let i = 0; i < this.particles.length; i++) {
+            let p = this.particles[i];
+            p.w = this.width;
+            p.h = this.height;
+            // Prevent getting trapped outside bounds if screen size decreased
+            if (p.x > this.width) p.x = this.width;
+            if (p.y > this.height) p.y = this.height;
         }
     }
 
