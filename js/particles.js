@@ -16,7 +16,7 @@ class ParticleNetwork {
         // Configuration
         this.config = {
             particleColor: 'rgba(0, 255, 255, 0.5)', // Default Cyan
-            lineColor: 'rgba(0, 255, 255, 0.15)',
+            lineColor: '0, 255, 255', // Base RGB to combine with dynamic opacity
             particleAmount: window.innerWidth < 768 ? 40 : 80, // Optimized count
             defaultSpeed: 0.5,
             currentSpeed: 0.5,
@@ -57,10 +57,22 @@ class ParticleNetwork {
     }
 
     addEventListeners() {
-        window.addEventListener('resize', () => {
-            this.resize();
-            this.createParticles();
+        // Use ResizeObserver to reliably catch canvas resizing,
+        // especially when restoring from a background tab where window.innerWidth can be incorrect.
+        const resizeObserver = new ResizeObserver(entries => {
+            for (let entry of entries) {
+                const { width, height } = entry.contentRect;
+                if (width > 0 && height > 0 && (this.width !== width || this.height !== height)) {
+                    this.width = width;
+                    this.height = height;
+                    this.canvas.width = width;
+                    this.canvas.height = height;
+                    this.config.particleAmount = width < 768 ? 40 : 80;
+                    this.createParticles();
+                }
+            }
         });
+        resizeObserver.observe(this.canvas);
 
         window.addEventListener('mousemove', (e) => {
             this.mouse.x = e.clientX;
@@ -75,6 +87,14 @@ class ParticleNetwork {
                 this.scrollSpeedMultiplier = 1;
             }, 200);
         });
+
+        // Ensure particles are redrawn safely when tab becomes visible again
+        document.addEventListener('visibilitychange', () => {
+            if (document.visibilityState === 'visible') {
+                this.resize();
+                this.createParticles();
+            }
+        });
     }
 
     setupSectionObserver() {
@@ -85,7 +105,7 @@ class ParticleNetwork {
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    this.updateConfig('rgba(0, 255, 255, 0.5)', 'rgba(0, 255, 255, 0.15)', 0.5);
+                    this.updateConfig('rgba(0, 255, 255, 0.5)', '0, 255, 255', 0.5);
                 }
             });
         }, options);
@@ -114,19 +134,21 @@ class ParticleNetwork {
         for (let i = 0; i < this.particles.length; i++) {
             this.particles[i].update(this.scrollSpeedMultiplier, this.config.currentSpeed);
             this.particles[i].draw(this.ctx);
-            this.linkParticles(this.particles[i], this.particles);
+            this.linkParticles(this.particles[i], this.particles, i);
         }
 
         requestAnimationFrame(this.animate.bind(this));
     }
 
-    linkParticles(particle, particles) {
-        for (let i = 0; i < particles.length; i++) {
+    linkParticles(particle, particles, currentIndex) {
+        // Start from currentIndex + 1 to avoid redundant lines and self-linking
+        for (let i = currentIndex + 1; i < particles.length; i++) {
             const distance = particle.getDistance(particles[i]);
 
             if (distance < this.config.linkRadius) {
-                const opacity = 1 - (distance / this.config.linkRadius);
-                this.ctx.strokeStyle = this.config.lineColor.replace(')', `, ${opacity})`).replace('rgb', 'rgba').replace('rgbaa', 'rgba');
+                // Opacity peaks at 0.15 for particle-particle links
+                const opacity = (1 - (distance / this.config.linkRadius)) * 0.15;
+                this.ctx.strokeStyle = `rgba(${this.config.lineColor}, ${opacity})`;
                 this.ctx.lineWidth = 1;
                 this.ctx.beginPath();
                 this.ctx.moveTo(particle.x, particle.y);
