@@ -1422,7 +1422,7 @@ strong {
     var(--secondary-color)
   );
   border-color: var(--primary-color);
-  box-shadow: 0 5px 20px rgba(224, 122, 95, 0.4);
+  box-shadow: 0 5px 20px rgba(34, 211, 238, 0.4);
 }
 
 .project-item {
@@ -1781,7 +1781,7 @@ strong {
 .form-textarea:focus {
   background: rgba(255, 255, 255, 0.08);
   border-color: var(--primary-color);
-  box-shadow: 0 0 20px rgba(224, 122, 95, 0.3);
+  box-shadow: 0 0 20px rgba(34, 211, 238, 0.3);
 }
 
 .form-textarea {
@@ -1847,7 +1847,7 @@ strong {
 
 .submit-btn:hover {
   transform: translateY(-3px);
-  box-shadow: 0 10px 30px rgba(224, 122, 95, 0.5);
+  box-shadow: 0 10px 30px rgba(34, 211, 238, 0.5);
 }
 
 .submit-btn:disabled {
@@ -1869,6 +1869,43 @@ strong {
 .form-success.show {
   display: block;
   animation: slideInUp 0.5s ease;
+}
+
+/* Form Notification (Dynamic) */
+.form-notification {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 18px 24px;
+  border-radius: 15px;
+  margin-top: 20px;
+  font-size: 15px;
+  font-weight: 500;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.form-notification.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.form-notification.success {
+  background: rgba(34, 197, 94, 0.15);
+  border: 1px solid rgba(34, 197, 94, 0.4);
+  color: #4ade80;
+}
+
+.form-notification.error {
+  background: rgba(239, 68, 68, 0.15);
+  border: 1px solid rgba(239, 68, 68, 0.4);
+  color: #f87171;
+}
+
+.form-notification i {
+  font-size: 20px;
+  flex-shrink: 0;
 }
 
 .custom-form .form-control {
@@ -2138,8 +2175,11 @@ strong {
 /* ===========================================
    20. CUSTOM CURSOR
 =========================================== */
-* {
-  cursor: none !important;
+/* Custom cursor only on devices with hover capability */
+@media (hover: hover) and (pointer: fine) {
+  * {
+    cursor: none !important;
+  }
 }
 
 .cursor-dot {
@@ -4000,7 +4040,7 @@ h3 {
 /* ----------------------------------------
    35.6 HERO CARD PADDING FIX
 ---------------------------------------- */
-.glass-panel {
+.hero-section > .container > .row > .col-lg-12 > .glass-panel {
   padding-bottom: 50px !important;
 }
 

@@ -151,6 +151,7 @@
                       name="name"
                       class="form-input"
                       placeholder="Your Name"
+                      required
                     />
                     <span class="form-error">Please enter your name</span>
                   </div>
@@ -163,6 +164,7 @@
                       name="email"
                       class="form-input"
                       placeholder="your.email@example.com"
+                      required
                     />
                     <span class="form-error">Please enter a valid email</span>
                   </div>
@@ -175,6 +177,7 @@
                       name="subject"
                       class="form-input"
                       placeholder="Project Inquiry"
+                      required
                     />
                     <span class="form-error">Please enter a subject</span>
                   </div>
@@ -186,6 +189,7 @@
                       name="message"
                       class="form-textarea"
                       placeholder="Tell me about your project..."
+                      required
                     ></textarea>
                     <span class="form-error">Please enter your message</span>
                   </div>
@@ -302,7 +306,7 @@
             <div class="row">
                 <div class="col-lg-12 col-12 text-center">
                     <p class="copyright-text mb-3">
-                        Copyright © <span id="current-year">2025</span>
+                        Copyright © <span id="current-year">2026</span>
                         <a href="index.html">Hassan Mohamed</a>. All rights reserved.
                     </p>
                 </div>
@@ -316,6 +320,18 @@
     <script src="js/main.js" defer></script>
     <script>
       document.documentElement.classList.remove("no-js");
+    </script>
+
+    <!-- Service Worker Registration -->
+    <script>
+      if ("serviceWorker" in navigator) {
+        window.addEventListener("load", () => {
+          navigator.serviceWorker
+            .register("service-worker.js")
+            .then((reg) => console.log("SW registered"))
+            .catch((err) => console.log("SW registration failed"));
+        });
+      }
     </script>
   </body>
 </html>

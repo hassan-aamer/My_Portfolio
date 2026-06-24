@@ -3,21 +3,22 @@
  * Enables offline functionality and caching
  */
 
-const CACHE_NAME = 'hassan-portfolio-v22';
+const CACHE_NAME = 'hassan-portfolio-v23';
 const ASSETS_TO_CACHE = [
-    '/',
-    '/index.html',
-    '/about.html',
-    '/projects.html',
-    '/contact.html',
-    '/css/style.css',
-    '/css/bootstrap.min.css',
-    '/css/bootstrap-icons.css',
-    '/js/main.js',
-    '/js/particles.js',
-    '/js/bootstrap.bundle.min.js',
-    '/images/h.webp',
-    '/images/logo.png'
+    '/My_Portfolio/',
+    '/My_Portfolio/index.html',
+    '/My_Portfolio/about.html',
+    '/My_Portfolio/projects.html',
+    '/My_Portfolio/contact.html',
+    '/My_Portfolio/css/style.css',
+    '/My_Portfolio/css/fonts.css',
+    '/My_Portfolio/css/bootstrap.min.css',
+    '/My_Portfolio/css/bootstrap-icons.css',
+    '/My_Portfolio/js/main.js',
+    '/My_Portfolio/js/particles.js',
+    '/My_Portfolio/js/bootstrap.bundle.min.js',
+    '/My_Portfolio/images/h.webp',
+    '/My_Portfolio/images/logo.png'
 ];
 
 // Install event - cache assets
@@ -80,7 +81,7 @@ self.addEventListener('fetch', (event) => {
                     .catch(() => {
                         // Return offline page for navigation requests
                         if (event.request.mode === 'navigate') {
-                            return caches.match('/index.html');
+                            return caches.match('/My_Portfolio/index.html');
                         }
                     });
             })

@@ -178,6 +178,8 @@
     }
 
     function animateCounter(element, target) {
+        const originalText = element.textContent.trim();
+        const suffix = originalText.includes('%') ? '%' : '+';
         let current = 0;
         const increment = target / 50;
         const duration = 2000;
@@ -186,10 +188,10 @@
         const timer = setInterval(() => {
             current += increment;
             if (current >= target) {
-                element.textContent = target + '+';
+                element.textContent = target + suffix;
                 clearInterval(timer);
             } else {
-                element.textContent = Math.floor(current) + '+';
+                element.textContent = Math.floor(current) + suffix;
             }
         }, stepTime);
     }
@@ -305,14 +307,32 @@
             if (isValid) {
                 submitBtn.disabled = true;
                 submitBtn.textContent = 'Sending...';
+                submitBtn.classList.add('loading');
 
-                // Simulate form submission (replace with actual EmailJS or backend call)
-                setTimeout(() => {
-                    form.reset();
+                // Submit form data to FormSubmit.co
+                const formData = new FormData(form);
+
+                fetch(form.action, {
+                    method: 'POST',
+                    body: formData,
+                    headers: { 'Accept': 'application/json' }
+                })
+                .then(response => {
+                    if (response.ok) {
+                        form.reset();
+                        showSuccess('Message sent successfully! I\'ll get back to you soon.');
+                    } else {
+                        showSuccess('Something went wrong. Please try again or email me directly.', true);
+                    }
+                })
+                .catch(() => {
+                    showSuccess('Network error. Please try again or email me directly.', true);
+                })
+                .finally(() => {
                     submitBtn.disabled = false;
                     submitBtn.textContent = 'Send Message';
-                    showSuccess();
-                }, 1500);
+                    submitBtn.classList.remove('loading');
+                });
             }
         });
     }
@@ -334,13 +354,30 @@
         }
     }
 
-    function showSuccess() {
-        const successMessage = document.querySelector('.form-success');
-        if (successMessage) {
-            successMessage.classList.add('show');
+    function showSuccess(message = 'Message sent successfully!', isError = false) {
+        // Remove existing notification if present
+        const existing = document.querySelector('.form-notification');
+        if (existing) existing.remove();
+
+        const notification = document.createElement('div');
+        notification.className = `form-notification ${isError ? 'error' : 'success'}`;
+        notification.innerHTML = `
+            <i class="bi-${isError ? 'exclamation-triangle' : 'check-circle'}-fill"></i>
+            <span>${message}</span>
+        `;
+
+        const form = document.getElementById('contactForm');
+        if (form) {
+            form.parentNode.insertBefore(notification, form.nextSibling);
+
+            // Trigger animation
+            requestAnimationFrame(() => notification.classList.add('show'));
+
+            // Auto-remove after 6 seconds
             setTimeout(() => {
-                successMessage.classList.remove('show');
-            }, 5000);
+                notification.classList.remove('show');
+                setTimeout(() => notification.remove(), 500);
+            }, 6000);
         }
     }
 

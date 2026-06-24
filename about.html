@@ -686,7 +686,7 @@
             <div class="row">
                 <div class="col-lg-12 col-12 text-center">
                     <p class="copyright-text mb-3">
-                        Copyright © <span id="current-year">2025</span>
+                        Copyright © <span id="current-year">2026</span>
                         <a href="index.html">Hassan Mohamed</a>. All rights reserved.
                     </p>
                 </div>
@@ -700,6 +700,18 @@
     <script src="js/main.js" defer></script>
     <script>
       document.documentElement.classList.remove("no-js");
+    </script>
+
+    <!-- Service Worker Registration -->
+    <script>
+      if ("serviceWorker" in navigator) {
+        window.addEventListener("load", () => {
+          navigator.serviceWorker
+            .register("service-worker.js")
+            .then((reg) => console.log("SW registered"))
+            .catch((err) => console.log("SW registration failed"));
+        });
+      }
     </script>
   </body>
 </html>
