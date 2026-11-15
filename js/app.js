@@ -96,14 +96,9 @@
             el.dataset.tiltBound = '1';
 
             const maxDeg = Number(el.dataset.tiltMax || 8);
-            let cachedRect = null;
             let tiltRafId = 0;
             let lastX = 0;
             let lastY = 0;
-
-            el.addEventListener('pointerenter', () => {
-                cachedRect = el.getBoundingClientRect();
-            });
 
             el.addEventListener('pointermove', (e) => {
                 if (AppState.ecoMode || AppState.reducedMotion) return;
@@ -113,9 +108,7 @@
 
                 tiltRafId = requestAnimationFrame(() => {
                     tiltRafId = 0;
-                    const rect = cachedRect && cachedRect.width && cachedRect.height
-                        ? cachedRect
-                        : el.getBoundingClientRect();
+                    const rect = el.getBoundingClientRect();
                     if (!rect.width || !rect.height) return;
 
                     const px = (lastX - rect.left) / rect.width;
@@ -131,7 +124,6 @@
             });
 
             el.addEventListener('pointerleave', () => {
-                cachedRect = null;
                 if (tiltRafId) {
                     cancelAnimationFrame(tiltRafId);
                     tiltRafId = 0;
@@ -972,28 +964,32 @@
             sections.forEach((sec) => observer.observe(sec));
         }
 
+        function syncScrollProgress() {
+            const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+            const progress = docHeight > 0
+                ? Math.min(1, Math.max(0, window.scrollY / docHeight))
+                : 0;
+            if (progressBar) {
+                progressBar.style.transform = `scaleX(${progress.toFixed(4)})`;
+            }
+            if (AppState.universeScene) {
+                AppState.universeScene.setScrollProgress(progress);
+            }
+        }
+
         let scrollTicking = false;
-        window.addEventListener(
-            'scroll',
-            () => {
-                if (scrollTicking) return;
-                scrollTicking = true;
-                requestAnimationFrame(() => {
-                    scrollTicking = false;
-                    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-                    const progress = docHeight > 0
-                        ? Math.min(1, Math.max(0, window.scrollY / docHeight))
-                        : 0;
-                    if (progressBar) {
-                        progressBar.style.transform = `scaleX(${progress.toFixed(4)})`;
-                    }
-                    if (AppState.universeScene) {
-                        AppState.universeScene.setScrollProgress(progress);
-                    }
-                });
-            },
-            { passive: true }
-        );
+        function scheduleScrollSync() {
+            if (scrollTicking) return;
+            scrollTicking = true;
+            requestAnimationFrame(() => {
+                scrollTicking = false;
+                syncScrollProgress();
+            });
+        }
+
+        syncScrollProgress();
+        window.addEventListener('scroll', scheduleScrollSync, { passive: true });
+        window.addEventListener('resize', scheduleScrollSync, { passive: true });
     }
 
     /* ----------------------------------------------------------------------

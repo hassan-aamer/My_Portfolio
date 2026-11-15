@@ -191,15 +191,6 @@ img {
     transition: transform 0.08s linear;
 }
 
-#experience,
-#projects,
-#credentials,
-#contact,
-.site-footer {
-    content-visibility: auto;
-    contain-intrinsic-size: auto 760px;
-}
-
 /* ==========================================================================
    Full-Viewport 3D Universe Backdrop
    ========================================================================== */
