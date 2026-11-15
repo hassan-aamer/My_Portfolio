@@ -1,478 +1,695 @@
 <!doctype html>
-<html lang="en" class="no-js">
-  <head>
+<html lang="en">
+<head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <!-- SEO Meta Tags -->
+    <title>Hassan Mohamed — Backend Software Engineer | Java Spring Boot &amp; PHP Laravel</title>
     <meta
-      name="description"
-      content="Hassan Mohamed - Professional Full Stack Software Engineer specializing in PHP/Laravel, Java/Spring, Vue.js, and modern web technologies. Building scalable applications and AI-powered solutions."
+        name="description"
+        content="Hassan Mohamed — Backend Software Engineer with 5 years of production experience architecting scalable microservices, multi-tenant SaaS, IoT telemetry, and transactional APIs using Java/Spring Boot and PHP/Laravel."
     />
     <meta
-      name="keywords"
-      content="Hassan Mohamed, Software Engineer, Full Stack Developer, Laravel Developer, Vue.js, Spring Boot, PHP Developer, Web Development, AI Integration, n8n Automation"
+        name="keywords"
+        content="Hassan Mohamed, Backend Software Engineer, Java 21, Spring Boot, PHP 8, Laravel, Microservices, Distributed Systems, Multi-Tenant SaaS, Clean Architecture, RabbitMQ, Redis, Kafka, Cairo Egypt"
     />
     <meta name="author" content="Hassan Mohamed" />
     <meta name="robots" content="index, follow" />
     <link rel="canonical" href="https://hassan-aamer.github.io/My_Portfolio/" />
 
-    <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="Hassan Mohamed - Software Engineer" />
+    <!-- Open Graph -->
+    <meta property="og:title" content="Hassan Mohamed — Backend Software Engineer (Java Spring Boot &amp; PHP Laravel)" />
     <meta
-      property="og:description"
-      content="Full Stack Software Engineer | Laravel | Vue.js | Spring Boot"
+        property="og:description"
+        content="Interactive 3D Portfolio showcasing distributed systems, 7-service microservices, multi-tenant SaaS, IoT telemetry, and enterprise APIs."
     />
-    <meta property="og:site_name" content="Hassan Mohamed Portfolio" />
+    <meta property="og:site_name" content="Hassan Mohamed — Backend Portfolio" />
     <meta property="og:type" content="website" />
-    <meta
-      property="og:url"
-      content="https://hassan-aamer.github.io/My_Portfolio/"
-    />
-    <meta
-      property="og:image"
-      content="https://hassan-aamer.github.io/My_Portfolio/images/h.webp"
-    />
+    <meta property="og:url" content="https://hassan-aamer.github.io/My_Portfolio/" />
+    <meta property="og:image" content="https://hassan-aamer.github.io/My_Portfolio/images/h.webp" />
 
-    <!-- Twitter Card Meta Tags -->
+    <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Hassan Mohamed - Software Engineer" />
+    <meta name="twitter:title" content="Hassan Mohamed — Backend Software Engineer" />
     <meta
-      name="twitter:description"
-      content="Full Stack Software Engineer | Laravel | Vue.js | Spring Boot"
+        name="twitter:description"
+        content="5+ years building production Java/Spring Boot &amp; PHP/Laravel distributed systems and multi-tenant SaaS."
     />
-    <meta
-      name="twitter:image"
-      content="https://hassan-aamer.github.io/My_Portfolio/images/h.webp"
-    />
+    <meta name="twitter:image" content="https://hassan-aamer.github.io/My_Portfolio/images/h.webp" />
 
-    <!-- Schema Markup -->
+    <!-- Schema.org Structured Data -->
     <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "Person",
-        "name": "Hassan Mohamed",
-        "jobTitle": "Software Engineer",
-        "description": "Full Stack Software Engineer specializing in PHP/Laravel, Java/Spring, and modern web technologies",
-        "url": "https://hassan-aamer.github.io/My_Portfolio/",
-        "sameAs": [
-          "https://github.com/hassan-aamer",
-          "https://linkedin.com/in/hassan-mohamed-dev",
-          "https://wa.me/201129730475"
-        ],
-        "email": "hassanaamer048@gmail.com"
-      }
+        {
+            "@context": "https://schema.org",
+            "@type": "Person",
+            "name": "Hassan Mohamed",
+            "jobTitle": "Backend Software Engineer",
+            "description": "Backend Software Engineer with 5 years of production experience building scalable systems using Java/Spring Boot and PHP/Laravel.",
+            "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "Cairo",
+                "addressCountry": "EG"
+            },
+            "url": "https://hassan-aamer.github.io/My_Portfolio/",
+            "sameAs": [
+                "https://github.com/hassan-aamer",
+                "https://linkedin.com/in/hassan-mohamed-dev",
+                "https://wa.me/201129730475"
+            ],
+            "email": "hassanaamer048@gmail.com",
+            "telephone": "+201129730475"
+        }
     </script>
 
-    <title>Hassan Mohamed - Software Engineer Portfolio</title>
-
-    <!-- PWA Support -->
-    <link rel="manifest" href="manifest.json" />
-    <meta name="theme-color" content="#22d3ee" />
+    <!-- PWA & Icons -->
+    <link rel="manifest" href="./manifest.json" />
+    <meta name="theme-color" content="#05070c" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta
-      name="apple-mobile-web-app-status-bar-style"
-      content="black-translucent"
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <link rel="icon" type="image/svg+xml" href="./images/favicon.svg?v=2" />
+    <link rel="icon" href="./favicon.ico?v=2" sizes="48x48" />
+    <link rel="icon" type="image/png" sizes="192x192" href="./images/favicon.png?v=2" />
+    <link rel="apple-touch-icon" href="./images/favicon.png?v=2" />
+
+    <!-- Local Typography & Critical Asset Preloads (Zero External CDNs) -->
+    <link rel="preload" as="image" href="./images/h.webp?v=2" fetchpriority="high" />
+    <link rel="preload" as="font" type="font/woff2" href="./fonts/pxiEyp8kv8JHgFVrJJfecg.woff2" crossorigin />
+    <link rel="preload" as="font" type="font/woff2" href="./fonts/Yq6W-LOTXCb04q32xlpwu8Zf.woff2" crossorigin />
+    <link
+        rel="preload"
+        as="font"
+        type="font/woff2"
+        href="./fonts/tDbv2o-flEEny0FZhsfKu5WU4zr3E_BX0PnT8RD8yKwBNntkaToggR7BYRbKPxDcwg.woff2"
+        crossorigin
     />
-    <link rel="apple-touch-icon" href="images/favicon.png" />
+    <link rel="stylesheet" href="./css/fonts.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+</head>
+<body>
+    <!-- Subtle Fast Boot Sequence -->
+    <div id="boot-loader" class="boot-loader" aria-hidden="true">
+        <div class="boot-panel">
+            <span class="boot-spinner"></span>
+            <span class="boot-text">HM.ARCH // MOUNTING 3D TOPOLOGY...</span>
+        </div>
+    </div>
 
-    <!-- CSS FILES -->
-    <link href="css/fonts.css" rel="stylesheet" />
-    <link href="css/bootstrap.min.css" rel="stylesheet" />
-    <link href="css/bootstrap-icons.css" rel="stylesheet" />
-    <link href="css/style.css" rel="stylesheet" />
+    <!-- Scroll Progress Line -->
+    <div id="scroll-progress" class="scroll-progress" aria-hidden="true"></div>
 
-    <link rel="icon" href="/My_Portfolio/favicon.ico" sizes="48x48">
-    <link rel="icon" type="image/png" sizes="192x192" href="/My_Portfolio/images/favicon.png">
-  </head>
+    <!-- Full-Viewport Pure-JS 3D Spatial Backdrop -->
+    <canvas id="universe-canvas" class="universe-canvas" aria-hidden="true"></canvas>
+    <div class="ambient-vignette" aria-hidden="true"></div>
 
-  <body>
-    <!-- Progressive Loading Progress Bar -->
-    <div id="progress-bar" class="progress-bar-top"></div>
-
-    <!-- Interactive Particle Network Background -->
-    <canvas id="bg-canvas"></canvas>
-
-    <!-- Header Component Placeholder -->
-    <nav class="navbar navbar-expand-lg fixed-top">
-        <div class="container">
-            <a class="navbar-brand" href="index.html">
-                <i class="bi-terminal me-2"></i>Hassan
+    <!-- Floating 3D Glass HUD Header -->
+    <header class="hud-header" id="hudHeader">
+        <div class="container hud-inner">
+            <a href="#overview" class="brand-lockup" data-nav="overview">
+                <span class="brand-cube" aria-hidden="true">HM</span>
+                <span class="brand-meta">
+                    <strong>Hassan Mohamed</strong>
+                    <small>Backend Architect</small>
+                </span>
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
-                aria-controls="offcanvasNavbar">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
-                <div class="offcanvas-header">
-                    <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Menu</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-                </div>
-                <div class="offcanvas-body">
-                    <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-                        <li class="nav-item">
-                            <a class="nav-link active" href="index.html" data-page="index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="about.html" data-page="about">About</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="projects.html" data-page="projects">Projects</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="contact.html" data-page="contact">Contact</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </nav>
 
-    <!-- Hero Section -->
-    <section class="hero-section" id="hero">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-12 col-12 mx-auto">
-            <div class="glass-panel text-center fade-in">
-              <img
-                src="images/h.webp"
-                class="profile-image-enhanced mb-4"
-                alt="Hassan Mohamed - Software Engineer"
-                loading="eager"
-              />
-              <h1 class="gradient-text mb-3">Hassan Mohamed</h1>
-              <p class="professional-title mb-2">Software Engineer</p>
+            <nav class="hud-nav" aria-label="Primary Single-Page Navigation">
+                <a href="#overview" class="hud-link is-active" data-nav="overview">Overview</a>
+                <a href="#architecture" class="hud-link" data-nav="architecture">3D Lab</a>
+                <a href="#experience" class="hud-link" data-nav="experience">Experience</a>
+                <a href="#projects" class="hud-link" data-nav="projects">Systems</a>
+                <a href="#skills" class="hud-link" data-nav="skills">Stack</a>
+                <a href="#credentials" class="hud-link" data-nav="credentials">Credentials</a>
+                <a href="#contact" class="hud-link" data-nav="contact">Uplink</a>
+            </nav>
 
-              <!-- Typing Animation -->
-              <!-- <div class="typewriter-container mb-4">
-                <span class="static-text">I specialize in </span>
-                <span id="typewriter" class="dynamic-text"></span
-                ><span class="cursor">|</span>
-              </div> -->
-
-              <!-- Social Icons -->
-              <div class="social-icon">
-                <ul
-                  class="d-flex justify-content-center list-unstyled flex-wrap"
+            <div class="hud-actions">
+                <button
+                    type="button"
+                    id="cmdTrigger"
+                    class="hud-btn hud-btn-ghost"
+                    title="Open Command Palette (Ctrl+K)"
+                    aria-label="Open Command Palette"
                 >
-                  <li class="social-icon-item">
-                    <a
-                      href="https://wa.me/201129730475"
-                      class="social-icon-link bi-whatsapp"
-                      aria-label="WhatsApp"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    ></a>
-                  </li>
-                  <li class="social-icon-item">
-                    <a
-                      href="mailto:hassanaamer048@gmail.com"
-                      class="social-icon-link bi-envelope"
-                      aria-label="Email"
-                    ></a>
-                  </li>
-                  <li class="social-icon-item">
-                    <a
-                      href="https://www.linkedin.com/in/hassan-mohamed-dev/"
-                      class="social-icon-link bi-linkedin"
-                      aria-label="LinkedIn"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    ></a>
-                  </li>
-                  <li class="social-icon-item">
-                    <a
-                      href="https://github.com/hassan-aamer"
-                      class="social-icon-link bi-github"
-                      aria-label="GitHub"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    ></a>
-                  </li>
-                </ul>
-              </div>
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                        <circle cx="11" cy="11" r="7"></circle>
+                        <path d="M21 21l-4.35-4.35"></path>
+                    </svg>
+                    <span class="cmd-kbd">Ctrl K</span>
+                </button>
 
-              <!-- CTA Buttons -->
-              <div class="cta-container">
-                <a href="projects.html" class="cta-button">
-                  <i class="bi-folder-fill"></i>
-                  Review My Projects
+                <button
+                    type="button"
+                    id="fxToggle"
+                    class="hud-btn hud-btn-ghost"
+                    aria-pressed="false"
+                    title="Toggle 3D Effects Density"
+                >
+                    <span class="fx-dot"></span>
+                    <span id="fxLabel">3D: HIGH</span>
+                </button>
+
+                <a
+                    href="./Hassan Mohamed - Software Engineer CV.pdf"
+                    download="Hassan Mohamed - Software Engineer CV.pdf"
+                    class="hud-btn hud-btn-primary"
+                >
+                    <span>Download CV</span>
                 </a>
-                <a href="contact.html" class="cta-button secondary">
-                  <i class="bi-chat-dots-fill"></i>
-                  Discuss Your Project
+
+                <button
+                    type="button"
+                    id="mobileMenuBtn"
+                    class="mobile-toggle"
+                    aria-expanded="false"
+                    aria-controls="mobileDrawer"
+                    aria-label="Toggle Navigation Menu"
+                >
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile SPA Drawer -->
+    <div id="mobileDrawer" class="mobile-drawer" aria-hidden="true">
+        <div class="mobile-drawer-card">
+            <div class="mobile-drawer-head">
+                <span class="mono-label">NAVIGATION // SPA</span>
+                <button type="button" id="mobileDrawerClose" class="icon-close" aria-label="Close Menu">&times;</button>
+            </div>
+            <nav class="mobile-drawer-links" aria-label="Mobile Navigation">
+                <a href="#overview" data-nav="overview">01 // Overview</a>
+                <a href="#architecture" data-nav="architecture">02 // 3D Architecture Lab</a>
+                <a href="#experience" data-nav="experience">03 // Experience</a>
+                <a href="#projects" data-nav="projects">04 // Production Systems</a>
+                <a href="#skills" data-nav="skills">05 // Technical Stack</a>
+                <a href="#credentials" data-nav="credentials">06 // Education &amp; Certs</a>
+                <a href="#contact" data-nav="contact">07 // Direct Uplink</a>
+            </nav>
+            <div class="mobile-drawer-footer">
+                <button type="button" id="mobileCmdBtn" class="btn btn-glass btn-full" style="margin-bottom:0.65rem;">
+                    Quick Command Search
+                </button>
+                <a
+                    href="./Hassan Mohamed - Software Engineer CV.pdf"
+                    download="Hassan Mohamed - Software Engineer CV.pdf"
+                    class="btn btn-primary btn-full"
+                >
+                    Download CV (PDF)
                 </a>
-              </div>
-
-              <!-- Download CV Button -->
-              <!-- <a href="#" class="download-cv-btn" download>
-                            <i class="bi-download"></i>
-                            Download CV
-                        </a> -->
             </div>
-          </div>
         </div>
-      </div>
-    </section>
+    </div>
 
-    <!-- Statistics Section -->
-    <section class="stats-section">
-      <div class="container">
-        <div class="row">
-          <div class="col-12">
-            <h2 class="text-center mb-4 gradient-text fade-in">
-              Achievements & Quality Metrics
-            </h2>
-            <div class="stats-grid">
-              <div class="stat-card scale-in">
-                <i class="bi-calendar-check stat-icon"></i>
-                <div class="stat-number" data-count="4">0+</div>
-                <div class="stat-label">Years Experience</div>
-              </div>
-              <div class="stat-card scale-in">
-                <i class="bi-shield-check stat-icon"></i>
-                <div class="stat-number" data-count="12">0+</div>
-                <div class="stat-label">Projects with SOLID Principles</div>
-              </div>
-              <div class="stat-card scale-in">
-                <i class="bi-diagram-3 stat-icon"></i>
-                <div class="stat-number" data-count="10">0+</div>
-                <div class="stat-label">Design Patterns Implemented</div>
-              </div>
-              <div class="stat-card scale-in">
-                <i class="bi-speedometer2 stat-icon"></i>
-                <div class="stat-number" data-count="40">0%</div>
-                <div class="stat-label">Average Performance Improvement</div>
-              </div>
-              <div class="stat-card scale-in">
-                <i class="bi-server stat-icon"></i>
-                <div class="stat-number" data-count="8">0+</div>
-                <div class="stat-label">Query Optimizations Delivered</div>
-              </div>
-              <div class="stat-card scale-in">
-                <i class="bi-check2-circle stat-icon"></i>
-                <div class="stat-number" data-count="95">0%</div>
-                <div class="stat-label">Code Quality Score (Clean Code)</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+    <!-- Right-Edge 3D Depth Coordinate Rail -->
+    <aside class="depth-rail" aria-label="Section depth indicator">
+        <div class="depth-readout mono-label" id="depthReadout">Z: 01</div>
+        <ul class="depth-dots">
+            <li><a href="#overview" class="depth-dot is-active" data-nav="overview" data-depth="01" aria-label="Overview"><span>Overview</span></a></li>
+            <li><a href="#architecture" class="depth-dot" data-nav="architecture" data-depth="02" aria-label="3D Lab"><span>3D Lab</span></a></li>
+            <li><a href="#experience" class="depth-dot" data-nav="experience" data-depth="03" aria-label="Experience"><span>Experience</span></a></li>
+            <li><a href="#projects" class="depth-dot" data-nav="projects" data-depth="04" aria-label="Systems"><span>Systems</span></a></li>
+            <li><a href="#skills" class="depth-dot" data-nav="skills" data-depth="05" aria-label="Stack"><span>Stack</span></a></li>
+            <li><a href="#credentials" class="depth-dot" data-nav="credentials" data-depth="06" aria-label="Credentials"><span>Credentials</span></a></li>
+            <li><a href="#contact" class="depth-dot" data-nav="contact" data-depth="07" aria-label="Uplink"><span>Uplink</span></a></li>
+        </ul>
+    </aside>
 
-    <!-- Skills  Section -->
-    <section class="hero-section">
-      <div class="container">
-        <div class="row">
-          <div class="col-12">
-            <h2 class="text-center mb-4 gradient-text fade-in">
-              Technical Skills
-            </h2>
-            <div class="skills-grid">
-              <!-- Skill Card 1 -->
-              <div class="skill-card fade-in-left">
-                <i class="bi-filetype-php skill-icon"></i>
-                <div class="skill-name">Laravel</div>
-                <div class="tech-tags-container">
-                  <span class="tech-tag">PHP</span>
-                  <span class="tech-tag">API Development</span>
-                  <span class="tech-tag">Eloquent ORM</span>
-                  <span class="tech-tag solid">SOLID</span>
-                </div>
-              </div>
+    <!-- Single-Page Application Content -->
+    <main id="spa-main">
+        <!-- SECTION 1: OVERVIEW / HERO -->
+        <section id="overview" class="section hero-section" data-section="overview" data-depth="01">
+            <div class="container hero-grid">
+                <div class="hero-copy">
+                    <div class="status-pill reveal-in">
+                        <span class="pulse-beacon"></span>
+                        <span>BACKEND ARCHITECTURAL ENGINE // CAIRO, EGYPT</span>
+                    </div>
 
-              <!-- Skill Card 2 -->
-              <div class="skill-card fade-in">
-                <i class="bi-cup-hot skill-icon"></i>
-                <div class="skill-name">Spring Boot</div>
-                <div class="tech-tags-container">
-                  <span class="tech-tag">Java</span>
-                  <span class="tech-tag">Microservices</span>
-                  <span class="tech-tag">gRPC</span>
-                  <span class="tech-tag">SOAP</span>
-                  <span class="tech-tag">Security</span>
-                </div>
-              </div>
+                    <h1 class="hero-title reveal-in">
+                        <span class="hero-eyebrow">Hassan Mohamed</span>
+                        <span class="hero-headline gradient-text">Backend Software Engineer</span>
+                    </h1>
 
-              <!-- Skill Card 3 -->
-              <div class="skill-card fade-in-right">
-                <i class="bi-filetype-js skill-icon"></i>
-                <div class="skill-name">Vue.js</div>
-                <div class="tech-tags-container">
-                  <span class="tech-tag">JavaScript</span>
-                  <span class="tech-tag">Composition API</span>
-                  <span class="tech-tag">Vuex</span>
-                  <span class="tech-tag">Router</span>
-                </div>
-              </div>
-
-              <!-- Skill Card 4 -->
-              <div class="skill-card fade-in-left">
-                <i class="bi-server stat-icon"></i>
-                <div class="skill-name">Database Design & Optimization</div>
-                <div class="tech-tags-container">
-                  <span class="tech-tag">MySQL</span>
-                  <span class="tech-tag">PostgreSQL</span>
-                  <span class="tech-tag">MongoDB</span>
-                  <span class="tech-tag optimization">Query Optimization</span>
-                  <span class="tech-tag">Indexing</span>
-                </div>
-              </div>
-
-              <!-- Skill Card 5 -->
-              <div class="skill-card fade-in">
-                <i class="bi-filetype-html skill-icon"></i>
-                <div class="skill-name">Frontend Development</div>
-                <div class="tech-tags-container">
-                  <span class="tech-tag">HTML5</span>
-                  <span class="tech-tag">CSS3</span>
-                  <span class="tech-tag">JavaScript</span>
-                  <span class="tech-tag">Responsive Design</span>
-                </div>
-              </div>
-
-              <!-- Skill Card 6 -->
-              <div class="skill-card fade-in-right">
-                <i class="bi-git skill-icon"></i>
-                <div class="skill-name">Git & GitHub</div>
-                <div class="tech-tags-container">
-                  <span class="tech-tag">Git</span>
-                  <span class="tech-tag">GitHub</span>
-                  <span class="tech-tag">Workflows</span>
-                  <span class="tech-tag">Code Review</span>
-                </div>
-              </div>
-
-              <!-- Skill Card 7 -->
-              <div class="skill-card fade-in-left">
-                <i class="bi-robot skill-icon"></i>
-                <div class="skill-name">AI Integration</div>
-                <div class="tech-tags-container">
-                  <span class="tech-tag">TensorFlow</span>
-                  <span class="tech-tag">PyTorch</span>
-                  <span class="tech-tag">OpenAI API</span>
-                  <span class="tech-tag">Automation</span>
-                </div>
-              </div>
-
-              <!-- Skill Card 8 -->
-              <div class="skill-card fade-in">
-                <i class="bi-diagram-3 skill-icon"></i>
-                <div class="skill-name">Workflow Automation</div>
-                <div class="tech-tags-container">
-                  <span class="tech-tag">n8n</span>
-                  <span class="tech-tag">Webhooks</span>
-                  <span class="tech-tag">API Integration</span>
-                  <span class="tech-tag">Automation</span>
-                </div>
-              </div>
-
-              <!-- Skill Card 9 -->
-              <div class="skill-card fade-in-right">
-                <i class="bi-bootstrap skill-icon"></i>
-                <div class="skill-name">CSS Frameworks</div>
-                <div class="tech-tags-container">
-                  <span class="tech-tag">Bootstrap</span>
-                  <span class="tech-tag">Tailwind CSS</span>
-                  <span class="tech-tag">Responsive Design</span>
-                </div>
-              </div>
-
-              <!-- Skill Card 10: SOLID Principles -->
-              <div class="skill-card fade-in-left">
-                <i class="bi-shield-check skill-icon"></i>
-                <div class="skill-name">SOLID Principles & Design Patterns</div>
-                <div class="tech-tags-container">
-                  <span class="tech-tag solid">SOLID</span>
-                  <span class="tech-tag solid">Repository Pattern</span>
-                  <span class="tech-tag solid">Factory Pattern</span>
-                  <span class="tech-tag solid">Strategy Pattern</span>
-                  <span class="tech-tag solid">DDD</span>
-                </div>
-              </div>
-
-              <!-- Skill Card 11: Unit Testing -->
-              <div class="skill-card fade-in">
-                <i class="bi-check2-circle skill-icon"></i>
-                <div class="skill-name">Testing & Quality Assurance</div>
-                <div class="tech-tags-container">
-                  <span class="tech-tag">PHPUnit</span>
-                  <span class="tech-tag">JUnit</span>
-                  <span class="tech-tag solid">TDD</span>
-                  <span class="tech-tag">JMeter / k6</span>
-                </div>
-              </div>
-
-              <!-- Skill Card 12: CI/CD -->
-              <div class="skill-card fade-in-right">
-                <i class="bi-gear-wide-connected skill-icon"></i>
-                <div class="skill-name">DevOps & Cloud Infrastructure</div>
-                <div class="tech-tags-container">
-                  <span class="tech-tag">AWS & DigitalOcean</span>
-                  <span class="tech-tag">GitHub Actions</span>
-                  <span class="tech-tag">Docker</span>
-                  <span class="tech-tag">Linux</span>
-                </div>
-              </div>
-
-              <!-- Skill Card 13: CMS & Admin Panels -->
-              <div class="skill-card fade-in-left">
-                <i class="bi-layout-wtf skill-icon"></i>
-                <div class="skill-name">CMS & Admin Panels</div>
-                <div class="tech-tags-container">
-                  <span class="tech-tag">Filament</span>
-                  <span class="tech-tag">Laravel Nova</span>
-                  <span class="tech-tag">Admin Dashboards</span>
-                  <span class="tech-tag">CRUD Generators</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Custom Cursor -->
-    <div class="cursor-dot"></div>
-    <div class="cursor-outline"></div>
-
-    <!-- Back to Top Button -->
-    <button class="back-to-top" id="backToTop" aria-label="Back to top">
-      <i class="bi-arrow-up"></i>
-    </button>
-
-    <!-- Footer Component Placeholder -->
-    <footer class="site-footer">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 col-12 text-center">
-                    <p class="copyright-text mb-3">
-                        Copyright © <span id="current-year">2026</span>
-                        <a href="index.html">Hassan Mohamed</a>. All rights reserved.
+                    <p class="hero-stack-line mono-label reveal-in">
+                        Java 21 / Spring Boot 3.5 &nbsp;&bull;&nbsp; PHP 8+ / Laravel &nbsp;&bull;&nbsp; Microservices &amp; Multi-Tenant SaaS
                     </p>
+
+                    <p class="hero-summary reveal-in">
+                        5 years of production engineering building scalable distributed systems, modular monoliths, and event-driven APIs across
+                        <strong>fintech wallets</strong>, <strong>IoT telemetry</strong>, <strong>multi-vendor e-commerce</strong>, <strong>healthcare/EMR</strong>, and <strong>enterprise HR</strong>.
+                    </p>
+
+                    <div class="hero-metrics" id="heroMetrics"></div>
+
+                    <div class="hero-cta-row reveal-in">
+                        <a href="#architecture" class="btn btn-primary" data-nav="architecture">
+                            <span>Launch 3D Topology Lab</span>
+                            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                                <path d="M5 12h14"></path>
+                                <path d="m12 5 7 7-7 7"></path>
+                            </svg>
+                        </a>
+
+                        <a
+                            href="./Hassan Mohamed - Software Engineer CV.pdf"
+                            download="Hassan Mohamed - Software Engineer CV.pdf"
+                            class="btn btn-glass"
+                        >
+                            <span>Download CV (PDF)</span>
+                        </a>
+
+                        <a href="#contact" class="btn btn-ghost" data-nav="contact">
+                            <span>Initiate Uplink</span>
+                        </a>
+                    </div>
+
+                    <div class="hero-socials reveal-in">
+                        <a href="https://github.com/hassan-aamer" target="_blank" rel="noopener noreferrer" class="social-chip">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                                <path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.56v-2.16c-3.2.69-3.87-1.36-3.87-1.36-.52-1.33-1.28-1.68-1.28-1.68-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.71 1.26 3.37.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.68 0-1.25.45-2.28 1.19-3.08-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11.04 11.04 0 0 1 5.78 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.8 1.19 1.83 1.19 3.08 0 4.41-2.7 5.39-5.26 5.67.41.36.78 1.07.78 2.15v3.19c0 .31.21.68.8.56A11.51 11.51 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5z"/>
+                            </svg>
+                            <span>github.com/hassan-aamer</span>
+                        </a>
+                        <a href="https://linkedin.com/in/hassan-mohamed-dev" target="_blank" rel="noopener noreferrer" class="social-chip">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                                <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/>
+                            </svg>
+                            <span>LinkedIn</span>
+                        </a>
+                        <a href="https://wa.me/201129730475" target="_blank" rel="noopener noreferrer" class="social-chip">
+                            <span>+20 1129730475</span>
+                        </a>
+                    </div>
                 </div>
+
+                <!-- Right Column: 3D Holographic Rig + Interactive API Terminal -->
+                <div class="hero-visual">
+                    <div class="holo-rig card-3d" id="heroRig" data-tilt-3d data-tilt-max="12">
+                        <div class="holo-grid-back" aria-hidden="true"></div>
+                        <div class="holo-ring holo-ring-outer" aria-hidden="true"></div>
+                        <div class="holo-ring holo-ring-inner" aria-hidden="true"></div>
+
+                        <div class="holo-portrait-frame">
+                            <img
+                                src="./images/h.webp?v=2"
+                                alt="Hassan Mohamed — Backend Software Engineer"
+                                class="holo-portrait"
+                                width="420"
+                                height="420"
+                                decoding="async"
+                                fetchpriority="high"
+                            />
+                            <div class="holo-scanline" aria-hidden="true"></div>
+                        </div>
+
+                        <div class="holo-badge holo-badge-top">
+                            <span class="dot-emerald"></span>
+                            <span>JAVA 21 // SPRING BOOT 3.5</span>
+                        </div>
+                        <div class="holo-badge holo-badge-left">
+                            <span class="dot-cyan"></span>
+                            <span>PHP 8+ // LARAVEL</span>
+                        </div>
+                        <div class="holo-badge holo-badge-bottom">
+                            <span class="dot-amber"></span>
+                            <span>REDIS • KAFKA • RABBITMQ</span>
+                        </div>
+                    </div>
+
+                    <!-- Interactive Backend Telemetry Console -->
+                    <div class="api-terminal card-3d" data-tilt-3d data-tilt-max="6">
+                        <div class="terminal-bar">
+                            <div class="terminal-dots" aria-hidden="true">
+                                <span></span><span></span><span></span>
+                            </div>
+                            <div class="terminal-tabs" role="tablist" aria-label="API Terminal Commands">
+                                <button type="button" class="term-tab is-active" data-term="whoami" role="tab" aria-selected="true">whoami</button>
+                                <button type="button" class="term-tab" data-term="patterns" role="tab" aria-selected="false">patterns</button>
+                                <button type="button" class="term-tab" data-term="systems" role="tab" aria-selected="false">domains</button>
+                                <button type="button" class="term-tab" data-term="availability" role="tab" aria-selected="false">uplink</button>
+                            </div>
+                        </div>
+                        <div class="terminal-endpoint-row">
+                            <span class="endpoint-url" id="termEndpoint">GET /api/v1/engineer/hassan</span>
+                            <span class="endpoint-status" id="termStatus">200 OK • 4ms</span>
+                        </div>
+                        <pre class="terminal-body" id="termOutput" aria-live="polite"></pre>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 2: INTERACTIVE 3D SYSTEM ARCHITECTURE LAB -->
+        <section id="architecture" class="section" data-section="architecture" data-depth="02">
+            <div class="container">
+                <header class="section-header">
+                    <span class="section-kicker mono-label">02 // INTERACTIVE 3D SYSTEM TOPOLOGY LAB</span>
+                    <h2 class="section-title">Inspect Distributed Architectures in <span class="gradient-text">Real 3D Space</span></h2>
+                    <p class="section-subtitle">
+                        Drag anywhere on the 3D mesh to orbit 360&deg;, click any service node to inspect concurrency &amp; isolation mechanics, or fire a live distributed request trace.
+                    </p>
+                </header>
+
+                <div class="topology-switcher" role="tablist" aria-label="Architecture Blueprints">
+                    <button type="button" class="topo-btn is-active" data-topology="ewallet" role="tab" aria-selected="true">
+                        <span class="topo-code">01</span>
+                        <span>E-Wallet 7-Service Saga</span>
+                    </button>
+                    <button type="button" class="topo-btn" data-topology="gasly" role="tab" aria-selected="false">
+                        <span class="topo-code">02</span>
+                        <span>Gasly IoT &amp; Spatial Routing</span>
+                    </button>
+                    <button type="button" class="topo-btn" data-topology="pawclaw" role="tab" aria-selected="false">
+                        <span class="topo-code">03</span>
+                        <span>Paw &amp; Claw UUID v7 SaaS</span>
+                    </button>
+                </div>
+
+                <div class="topology-workspace">
+                    <div class="topology-stage glass-panel">
+                        <div class="stage-overlay-top">
+                            <span class="stage-badge mono-label" id="topoBadge">7-Service Spring Cloud Saga</span>
+                            <div class="stage-controls">
+                                <button type="button" id="topoTraceBtn" class="ctrl-btn ctrl-btn-accent">
+                                    Simulate Request Flow
+                                </button>
+                                <button type="button" id="topoOrbitBtn" class="ctrl-btn is-active" aria-pressed="true">
+                                    Auto-Orbit
+                                </button>
+                                <button type="button" id="topoZoomIn" class="ctrl-btn" title="Zoom In" aria-label="Zoom In">+</button>
+                                <button type="button" id="topoZoomOut" class="ctrl-btn" title="Zoom Out" aria-label="Zoom Out">&minus;</button>
+                                <button type="button" id="topoReset" class="ctrl-btn" title="Reset 3D View">Reset</button>
+                            </div>
+                        </div>
+
+                        <canvas id="topology-canvas" class="topology-canvas" aria-label="Interactive 3D microservice topology canvas"></canvas>
+
+                        <div class="stage-overlay-bottom">
+                            <span class="mono-label">DRAG TO ORBIT 360&deg; &bull; CLICK ANY 3D NODE TO INSPECT</span>
+                        </div>
+                    </div>
+
+                    <aside class="topology-inspector glass-panel card-3d" data-tilt-3d data-tilt-max="5">
+                        <div class="inspector-head">
+                            <span class="mono-label">TOPOLOGY BLUEPRINT</span>
+                            <h3 id="topoTitle" class="inspector-title">E-Wallet Microservices</h3>
+                            <p id="topoTagline" class="inspector-tagline"></p>
+                        </div>
+
+                        <div class="inspector-stack" id="topoStack"></div>
+
+                        <div class="inspector-nodes">
+                            <span class="mono-label">SERVICE NODES (CLICK TO FOCUS)</span>
+                            <div class="node-chip-list" id="topoNodeList"></div>
+                        </div>
+
+                        <div class="selected-node-card" id="selectedNodeCard">
+                            <div class="node-card-header">
+                                <span class="node-code-badge" id="nodeShortCode">GW</span>
+                                <div>
+                                    <h4 id="nodeTitle">API Gateway</h4>
+                                    <span class="node-role" id="nodeRole">Edge Routing &amp; JWT Filter</span>
+                                </div>
+                            </div>
+                            <p id="nodeDetails" class="node-details"></p>
+                        </div>
+
+                        <div class="inspector-footer" id="topoFooter"></div>
+                    </aside>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 3: PROFESSIONAL EXPERIENCE -->
+        <section id="experience" class="section" data-section="experience" data-depth="03">
+            <div class="container">
+                <header class="section-header">
+                    <span class="section-kicker mono-label">03 // PRODUCTION EXPERIENCE</span>
+                    <h2 class="section-title">5 Years Architecting <span class="gradient-text">Enterprise Backends</span></h2>
+                    <p class="section-subtitle">
+                        Select a role below or view the full timeline across Jordan, Saudi Arabia, and regional consulting engagements.
+                    </p>
+                </header>
+
+                <div class="exp-layout">
+                    <div class="exp-selector" role="tablist" aria-label="Companies and Roles" id="expSelector"></div>
+                    <div class="exp-stage" id="expStage" role="tabpanel"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 4: SYSTEMS & OPEN SOURCE PROJECTS -->
+        <section id="projects" class="section" data-section="projects" data-depth="04">
+            <div class="container">
+                <header class="section-header">
+                    <span class="section-kicker mono-label">04 // PRODUCTION SYSTEMS &amp; OPEN SOURCE</span>
+                    <h2 class="section-title">Systems Built for <span class="gradient-text">Scale &amp; Concurrency</span></h2>
+                    <p class="section-subtitle">
+                        Filter by stack or domain and click any card to inspect its architectural pattern, services, and database concurrency solutions.
+                    </p>
+                </header>
+
+                <div class="filter-bar" id="projectFilters" role="group" aria-label="Filter projects by domain">
+                    <button type="button" class="filter-pill is-active" data-filter="all" aria-pressed="true">All Systems (12)</button>
+                    <button type="button" class="filter-pill" data-filter="java" aria-pressed="false">Java &amp; Spring Boot</button>
+                    <button type="button" class="filter-pill" data-filter="microservices" aria-pressed="false">Microservices</button>
+                    <button type="button" class="filter-pill" data-filter="php" aria-pressed="false">PHP &amp; Laravel</button>
+                    <button type="button" class="filter-pill" data-filter="iot" aria-pressed="false">IoT, Geo &amp; Real-Time</button>
+                    <button type="button" class="filter-pill" data-filter="ai" aria-pressed="false">AI &amp; Knowledge</button>
+                </div>
+
+                <div class="projects-grid" id="projectsGrid"></div>
+            </div>
+        </section>
+
+        <!-- SECTION 5: 3D TECH SPHERE & 12-DOMAIN SKILLS MATRIX -->
+        <section id="skills" class="section" data-section="skills" data-depth="05">
+            <div class="container">
+                <header class="section-header">
+                    <span class="section-kicker mono-label">05 // TECHNICAL CAPABILITIES</span>
+                    <h2 class="section-title">3D Engineering <span class="gradient-text">Stack Observatory</span></h2>
+                    <p class="section-subtitle">
+                        Drag the 3D Fibonacci sphere to spin through core backend technologies, click any node to highlight its engineering domain, or search the full 12-domain matrix.
+                    </p>
+                </header>
+
+                <div class="skills-split">
+                    <div class="sphere-panel glass-panel">
+                        <div class="sphere-hud">
+                            <span class="mono-label">3D FIBONACCI TECH LATTICE</span>
+                            <span class="sphere-hint mono-label">DRAG TO SPIN &bull; CLICK NODE</span>
+                        </div>
+                        <div class="sphere-stage" id="sphereStage" aria-label="Interactive 3D skill sphere"></div>
+                        <div class="sphere-footer">
+                            <span class="mono-label">ACTIVE FOCUS:</span>
+                            <strong id="activeDomainLabel">All 12 Engineering Domains</strong>
+                            <button type="button" id="resetDomainBtn" class="ctrl-btn" hidden>Clear Filter</button>
+                        </div>
+                    </div>
+
+                    <div class="skills-matrix-wrap">
+                        <div class="skills-toolbar">
+                            <label class="search-box" for="skillsSearch">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                                    <circle cx="11" cy="11" r="7"></circle>
+                                    <path d="M21 21l-4.35-4.35"></path>
+                                </svg>
+                                <input
+                                    type="search"
+                                    id="skillsSearch"
+                                    placeholder="Filter stack (e.g., Java 21, Kafka, UUID, Laravel, k6, Docker...)"
+                                    autocomplete="off"
+                                />
+                            </label>
+                        </div>
+                        <div class="skills-grid" id="skillsGrid"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 6: CREDENTIALS (EDUCATION, CERTIFICATIONS, LANGUAGES) -->
+        <section id="credentials" class="section" data-section="credentials" data-depth="06">
+            <div class="container">
+                <header class="section-header">
+                    <span class="section-kicker mono-label">06 // FOUNDATION &amp; CREDENTIALS</span>
+                    <h2 class="section-title">Education, Certifications &amp; <span class="gradient-text">Standards</span></h2>
+                </header>
+
+                <div class="credentials-grid" id="credentialsGrid"></div>
+            </div>
+        </section>
+
+        <!-- SECTION 7: UPLINK / CONTACT -->
+        <section id="contact" class="section" data-section="contact" data-depth="07">
+            <div class="container">
+                <header class="section-header">
+                    <span class="section-kicker mono-label">07 // INITIATE UPLINK</span>
+                    <h2 class="section-title">Let's Architect Your <span class="gradient-text">Next Backend</span></h2>
+                    <p class="section-subtitle">
+                        Available for senior backend engineering roles, microservices architecture consulting, and high-throughput API systems.
+                    </p>
+                </header>
+
+                <div class="contact-grid">
+                    <div class="contact-channels glass-panel card-3d" data-tilt-3d data-tilt-max="6">
+                        <h3 class="panel-heading">Direct Endpoints</h3>
+                        <p class="panel-copy">
+                            Prefer direct communication? Reach out via email, WhatsApp, or LinkedIn—or download the full PDF resume directly.
+                        </p>
+
+                        <div class="channel-list">
+                            <div class="channel-item">
+                                <div>
+                                    <span class="mono-label">EMAIL</span>
+                                    <a href="mailto:hassanaamer048@gmail.com" class="channel-value">hassanaamer048@gmail.com</a>
+                                </div>
+                                <button type="button" class="ctrl-btn copy-btn" data-copy="hassanaamer048@gmail.com">Copy</button>
+                            </div>
+
+                            <div class="channel-item">
+                                <div>
+                                    <span class="mono-label">PHONE / WHATSAPP</span>
+                                    <a href="https://wa.me/201129730475" target="_blank" rel="noopener noreferrer" class="channel-value">+20 1129730475</a>
+                                </div>
+                                <button type="button" class="ctrl-btn copy-btn" data-copy="+201129730475">Copy</button>
+                            </div>
+
+                            <div class="channel-item">
+                                <div>
+                                    <span class="mono-label">LOCATION</span>
+                                    <span class="channel-value">Cairo, Egypt (Remote Worldwide)</span>
+                                </div>
+                                <span class="status-tag">UTC+2</span>
+                            </div>
+                        </div>
+
+                        <div class="channel-actions">
+                            <a href="https://github.com/hassan-aamer" target="_blank" rel="noopener noreferrer" class="btn btn-glass">GitHub</a>
+                            <a href="https://linkedin.com/in/hassan-mohamed-dev" target="_blank" rel="noopener noreferrer" class="btn btn-glass">LinkedIn</a>
+                            <a
+                                href="./Hassan Mohamed - Software Engineer CV.pdf"
+                                download="Hassan Mohamed - Software Engineer CV.pdf"
+                                class="btn btn-primary"
+                            >
+                                Download CV (PDF)
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="contact-form-panel glass-panel card-3d" data-tilt-3d data-tilt-max="5">
+                        <div class="form-header">
+                            <span class="mono-label">POST /api/v1/messages</span>
+                            <h3>Send an Inquiry</h3>
+                        </div>
+
+                        <form
+                            id="contactForm"
+                            class="uplink-form"
+                            action="https://formsubmit.co/hassanaamer048@gmail.com"
+                            method="POST"
+                            novalidate
+                        >
+                            <input type="hidden" name="_captcha" value="false" />
+                            <input type="hidden" name="_template" value="table" />
+                            <input type="hidden" name="_subject" value="New Portfolio Inquiry — Hassan Mohamed" />
+
+                            <div class="form-row-2">
+                                <div class="field-group">
+                                    <label for="contactName">Name</label>
+                                    <input type="text" id="contactName" name="name" placeholder="Jane Doe / Engineering Lead" required />
+                                    <span class="field-error">Please enter your name.</span>
+                                </div>
+
+                                <div class="field-group">
+                                    <label for="contactEmail">Email</label>
+                                    <input type="email" id="contactEmail" name="email" placeholder="you@company.com" required />
+                                    <span class="field-error">Please enter a valid email address.</span>
+                                </div>
+                            </div>
+
+                            <div class="field-group">
+                                <label for="contactSubject">Subject</label>
+                                <input type="text" id="contactSubject" name="subject" placeholder="Backend Architecture / Senior Role / Consulting" required />
+                                <span class="field-error">Please enter a subject.</span>
+                            </div>
+
+                            <div class="field-group">
+                                <label for="contactMessage">Message</label>
+                                <textarea id="contactMessage" name="message" rows="4" placeholder="Share your architecture goals, timeline, or role details..." required></textarea>
+                                <span class="field-error">Please enter a message (at least 10 characters).</span>
+                            </div>
+
+                            <div class="form-footer">
+                                <button type="submit" id="submitBtn" class="btn btn-primary">
+                                    <span>Transmit Message</span>
+                                </button>
+                                <span id="formStatusText" class="form-status" role="status" aria-live="polite"></span>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container footer-inner">
+            <div class="footer-brand">
+                <span class="brand-cube brand-cube-sm" aria-hidden="true">HM</span>
+                <span>Hassan Mohamed &mdash; Backend Software Engineer (Java Spring Boot &amp; PHP Laravel)</span>
+            </div>
+            <div class="footer-meta">
+                <span class="mono-label">PURE HTML5 &bull; CSS3 &bull; VANILLA JS 3D</span>
+                <a href="#overview" class="ctrl-btn" data-nav="overview">Back to Z:01 &uarr;</a>
             </div>
         </div>
     </footer>
 
-    <script src="js/bootstrap.bundle.min.js"></script>
+    <!-- Architecture Case Study Modal (SPA Overlay) -->
+    <div id="projectModal" class="modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="modalTitle" hidden>
+        <div class="modal-card glass-panel">
+            <div class="modal-head">
+                <div>
+                    <span class="mono-label" id="modalSubtitle">SYSTEM ARCHITECTURE</span>
+                    <h3 id="modalTitle">Project Title</h3>
+                </div>
+                <button type="button" id="modalCloseBtn" class="icon-close" aria-label="Close Architecture Modal">&times;</button>
+            </div>
+            <div class="modal-body" id="modalBody"></div>
+        </div>
+    </div>
 
-    <script src="js/particles.js" defer></script>
-    <script src="js/main.js" defer></script>
-    <script>
-      document.documentElement.classList.remove("no-js");
-    </script>
+    <!-- Command Palette (Ctrl+K / Cmd+K) -->
+    <div id="commandPalette" class="modal-backdrop" role="dialog" aria-modal="true" aria-label="Quick Command Palette" hidden>
+        <div class="cmd-card glass-panel">
+            <div class="cmd-input-row">
+                <span class="mono-label">&gt;_</span>
+                <input
+                    type="text"
+                    id="cmdInput"
+                    placeholder="Jump to section, load 3D blueprint, copy email, download CV..."
+                    autocomplete="off"
+                />
+                <button type="button" id="cmdCloseBtn" class="ctrl-btn">ESC</button>
+            </div>
+            <ul class="cmd-list" id="cmdList" role="listbox"></ul>
+        </div>
+    </div>
 
-    <!-- Service Worker Registration -->
-    <script>
-      if ("serviceWorker" in navigator) {
-        window.addEventListener("load", () => {
-          navigator.serviceWorker
-            .register("service-worker.js")
-            .then((reg) => console.log("SW registered"))
-            .catch((err) => console.log("SW registration failed"));
-        });
-      }
-    </script>
-  </body>
+    <!-- Live Notification Toasts -->
+    <div id="toastContainer" class="toast-container" aria-live="polite" aria-atomic="true"></div>
+
+    <!-- Pure Vanilla JS Architecture -->
+    <script defer src="./js/math3d.js"></script>
+    <script defer src="./js/data.js"></script>
+    <script defer src="./js/scene3d.js"></script>
+    <script defer src="./js/topology3d.js"></script>
+    <script defer src="./js/sphere3d.js"></script>
+    <script defer src="./js/app.js"></script>
+</body>
 </html>

@@ -1,15 +1,21 @@
 {
-    "name": "Hassan Mohamed - Software Engineer",
-    "short_name": "Hassan Dev",
-    "description": "Full Stack Software Engineer Portfolio - Laravel, Vue.js, Spring Boot",
-    "start_url": "/My_Portfolio/",
+    "name": "Hassan Mohamed — Backend Software Engineer",
+    "short_name": "Hassan Backend",
+    "description": "Interactive 3D Single-Page Portfolio — Java/Spring Boot & PHP/Laravel Backend Software Engineer",
+    "start_url": "./",
     "display": "standalone",
-    "background_color": "#0a0a1a",
+    "background_color": "#05070c",
     "theme_color": "#22d3ee",
     "orientation": "portrait-primary",
     "icons": [
         {
-            "src": "images/logo.png",
+            "src": "images/favicon.svg",
+            "sizes": "any",
+            "type": "image/svg+xml",
+            "purpose": "any"
+        },
+        {
+            "src": "images/favicon.png",
             "sizes": "192x192",
             "type": "image/png",
             "purpose": "any maskable"
@@ -21,7 +27,7 @@
             "purpose": "any maskable"
         }
     ],
-    "categories": ["portfolio", "developer", "software"],
+    "categories": ["portfolio", "developer", "software", "backend"],
     "lang": "en",
     "dir": "ltr"
 }

@@ -1,80 +1,29 @@
-<div align="center">
-  <img src="./images/h.jpg" alt="Hassan Mohamed" width="120" style="border-radius: 50%; border: 3px solid #0dcaf0; box-shadow: 0 0 15px rgba(13, 202, 240, 0.5);"/>
-  <h1>🌟 My Portfolio 🌟</h1>
-  <p><strong>An interactive gateway reflecting my passion for programming, highlighting my skills as a Full Stack Software Engineer.</strong></p>
+# Hassan Mohamed — Backend Software Engineer (3D Single-Page Portfolio)
 
-  <p>
-    <a href="https://hassan-aamer.github.io/My_Portfolio/"><strong>View Live Website 🌐</strong></a>
-  </p>
+An interactive **3D Single-Page Application (SPA)** built from scratch using **pure HTML5, CSS3, and Vanilla JavaScript** (zero external frameworks or build tools), tailored for **Hassan Mohamed — Backend Software Engineer (Java Spring Boot & PHP Laravel)**.
 
-  <!-- Badges -->
-  <p>
-    <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" alt="HTML5" />
-    <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white" alt="CSS3" />
-    <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" alt="JavaScript" />
-    <img src="https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white" alt="Bootstrap" />
-    <img src="https://img.shields.io/badge/PWA-5A0FC8?style=for-the-badge&logo=pwa&logoColor=white" alt="PWA" />
-  </p>
-</div>
+## Key Features
 
----
+- **100% Pure HTML5, CSS3 & Vanilla JS 3D Engines**:
+  - **Full-Viewport 3D Spatial Backdrop (`js/scene3d.js`)**: Custom perspective infrastructure grid, scroll-synced 3D polyhedral microservices core, orbiting nodes, and depth-sorted telemetry field.
+  - **Interactive 3D System Architecture Lab (`js/topology3d.js`)**: 360° draggable 3D topologies for *E-Wallet Microservices (7-Service Saga)*, *Gasly IoT Telemetry & Spatial Routing*, and *Paw & Claw Multi-Tenant SaaS (UUID v7)* with animated request-flow traces and node inspection.
+  - **Interactive 3D Fibonacci Tech Sphere (`js/sphere3d.js`)**: Spin through 32 core technologies in 3D space and highlight any of the 12 backend engineering domains.
+  - **Hardware-Accelerated CSS 3D Cards & Holographic Rig**: Mouse-tracked `rotateX`/`rotateY` spatial cards, dynamic specular sheen, and 3D Z-layered portrait HUD.
+- **Single-Page Architecture**:
+  - Smooth anchor & scroll-spy routing across 7 depth layers (`Overview`, `3D Lab`, `Experience`, `Systems`, `Stack`, `Credentials`, `Uplink`).
+  - Live interactive JSON API terminal (`whoami`, `patterns`, `domains`, `uplink`).
+  - Filterable production systems grid with deep-dive **Architecture Case Study Modal**.
+  - Quick-launch **Command Palette (`Ctrl+K` / `⌘K`)** and **3D: HIGH / ECO** performance toggle.
+- **Grounded in Verified CV Data**:
+  - Includes 5 years of production experience across **Visual Innovate**, **Future Sword**, and **Freelance Consulting**, open-source microservices repos, 12 technical skill domains, **Al-Alsun Higher Institute** degree, and all 5 certifications.
+  - Direct **Download CV (PDF)** link to `Hassan Mohamed - Software Engineer CV.pdf`.
 
-## 🎨 Art & Creativity in the Project
+## Local Preview
 
-This project is not just a traditional resume; it is an **Interactive Visual Experience** carefully designed and coded with love to highlight my artistic and creative side alongside my engineering skills as a Software Engineer.
-The site relies on a blend of technical and visual creativity through:
-- **Elegant Glassmorphism:** A modern interface that gives depth and vitality to elements.
-- **Interactive Particle Network Background:** A network of particles that interacts with cursor movement to give the visitor a sense of life inside the site.
-- **Micro-animations:** Smooth movements that add a professional touch, increasing user interaction (UX) and the site's appeal.
+Serve the directory over HTTP (recommended so ES/Service Worker features operate cleanly):
 
-## ✨ Technical Features
+```bash
+python3 -m http.server 8080
+```
 
-- **📱 Fully Responsive:** An optimal and studied experience on all screen resolutions.
-- **🚀 Progressive Web App (PWA):**
-  - The site works offline (Offline Mode).
-  - Installable on phones and devices like any native app (Native-like experience).
-- **⚡ High Performance:** Clean code and smart loading techniques to speed up content display.
-- **🔍 SEO Optimized:** Use of Schema.org and advanced Meta Tags to ensure the best visibility on search engines and sharing on social platforms.
-- **📊 Interactive Statistics:** A dedicated section to display experiences and impact in numbers, accompanied by a counter animation.
-
-## 🧰 Showcased Skills
-
-This portfolio showcases my extensive experience in various software development fields:
-
-| Field | Technologies |
-| ------ | -------- |
-| **Backend** | `PHP`, `Laravel`, `Java`, `Spring Boot`, `Microservices` |
-| **Frontend** | `Vue.js`, `JavaScript`, `HTML5`, `CSS3`, `Bootstrap` |
-| **Databases** | `MySQL`, `PostgreSQL`, `MongoDB`, `Query Optimization` |
-| **Design & Smart Engineering** | `SOLID Principles`, `Design Patterns`, `TDD`, `Clean Code` |
-| **AI & Automation** | `n8n`, `OpenAI API`, `Workflow Automation` |
-| **DevOps** | `Docker`, `Kubernetes`, `GitHub Actions`, `CI/CD` |
-
-## 🚀 Local Setup
-
-The project does not require a complex runtime environment; all you need is passion and a web browser!
-
-1. **Clone the repository:**
-   ```bash
-   git clone https://github.com/hassan-aamer/My_Portfolio.git
-   ```
-2. **Open the project folder:**
-   ```bash
-   cd My_Portfolio
-   ```
-3. **Run the Portfolio:**
-   Open the `index.html` file in your browser, or preferably use the `Live Server` extension in VSCode for a better interactive experience and to activate all Service Workers and PWA features.
-
-## 🤝 Let's Connect
-
-I am always open to exchanging ideas, discussing the latest technologies, or exploring professional collaboration opportunities:
-
-- 📧 **Email:** [hassanaamer048@gmail.com](mailto:hassanaamer048@gmail.com)
-- 💼 **LinkedIn:** [Hassan Mohamed](https://linkedin.com/in/hassan-mohamed-dev)
-- 💬 **WhatsApp:** [+201129730475](https://wa.me/201129730475)
-- 🐙 **GitHub:** [hassan-aamer](https://github.com/hassan-aamer)
-
----
-<div align="center">
-  <p><sub>Crafted with artistic and programming passion by <a href="https://github.com/hassan-aamer">Hassan Mohamed</a> 💻✨</sub></p>
-</div>
+Then open `http://localhost:8080`.

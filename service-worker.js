@@ -1,62 +1,68 @@
 /**
- * Service Worker for Hassan Mohamed Portfolio
- * Enables offline functionality and caching
+ * Service Worker for Hassan Mohamed 3D Single-Page Backend Portfolio.
+ * Uses relative paths so offline caching works seamlessly on both root and subpath origins.
  */
 
-const CACHE_NAME = 'hassan-portfolio-v27';
+const CACHE_NAME = 'hassan-backend-3d-v5';
 const ASSETS_TO_CACHE = [
-    '/My_Portfolio/',
-    '/My_Portfolio/index.html',
-    '/My_Portfolio/about.html',
-    '/My_Portfolio/projects.html',
-    '/My_Portfolio/contact.html',
-    '/My_Portfolio/css/style.css',
-    '/My_Portfolio/css/fonts.css',
-    '/My_Portfolio/css/bootstrap.min.css',
-    '/My_Portfolio/css/bootstrap-icons.css',
-    '/My_Portfolio/js/main.js',
-    '/My_Portfolio/js/particles.js',
-    '/My_Portfolio/js/bootstrap.bundle.min.js',
-    '/My_Portfolio/images/h.webp',
-    '/My_Portfolio/images/logo.png'
+    './',
+    './index.html',
+    './css/fonts.css',
+    './css/style.css',
+    './js/math3d.js',
+    './js/data.js',
+    './js/scene3d.js',
+    './js/topology3d.js',
+    './js/sphere3d.js',
+    './js/app.js',
+    './fonts/pxiEyp8kv8JHgFVrJJfecg.woff2',
+    './fonts/pxiByp8kv8JHgFVrLCz7Z1xlFQ.woff2',
+    './fonts/Yq6W-LOTXCb04q32xlpwu8Zf.woff2',
+    './fonts/tDbv2o-flEEny0FZhsfKu5WU4zr3E_BX0PnT8RD8yKwBNntkaToggR7BYRbKPxDcwg.woff2',
+    './favicon.ico',
+    './images/h.webp',
+    './images/favicon.svg',
+    './images/favicon.png',
+    './images/logo.png',
+    './Hassan Mohamed - Software Engineer CV.pdf',
+    './manifest.json'
 ];
 
-// Install event - cache assets
 self.addEventListener('install', (event) => {
     event.waitUntil(
-        caches.open(CACHE_NAME)
-            .then((cache) => {
-                console.log('Caching app assets');
-                return cache.addAll(ASSETS_TO_CACHE);
-            })
-            .catch((error) => {
-                console.log('Cache failed:', error);
+        caches
+            .open(CACHE_NAME)
+            .then((cache) => cache.addAll(ASSETS_TO_CACHE))
+            .catch(() => {
+                // Ignore individual cache errors during installation
             })
     );
     self.skipWaiting();
 });
 
-// Activate event - clean old caches
 self.addEventListener('activate', (event) => {
     event.waitUntil(
-        caches.keys().then((cacheNames) => {
-            return Promise.all(
+        caches.keys().then((cacheNames) =>
+            Promise.all(
                 cacheNames
                     .filter((name) => name !== CACHE_NAME)
                     .map((name) => caches.delete(name))
-            );
-        })
+            )
+        )
     );
     self.clients.claim();
 });
 
-// Fetch event - serve from cache, fallback to network
 self.addEventListener('fetch', (event) => {
-    // Skip non-GET requests
     if (event.request.method !== 'GET') return;
 
+    const requestUrl = new URL(event.request.url);
+    if (requestUrl.origin !== self.location.origin) return;
+
     event.respondWith(
-        caches.match(event.request)
+        caches
+            .match(event.request)
+            .then((cachedResponse) => cachedResponse || caches.match(event.request, { ignoreSearch: true }))
             .then((cachedResponse) => {
                 if (cachedResponse) {
                     return cachedResponse;
@@ -64,25 +70,20 @@ self.addEventListener('fetch', (event) => {
 
                 return fetch(event.request)
                     .then((response) => {
-                        // Don't cache non-successful responses
                         if (!response || response.status !== 200) {
                             return response;
                         }
-
-                        // Clone and cache the response
                         const responseToCache = response.clone();
-                        caches.open(CACHE_NAME)
-                            .then((cache) => {
-                                cache.put(event.request, responseToCache);
-                            });
-
+                        caches.open(CACHE_NAME).then((cache) => {
+                            cache.put(event.request, responseToCache);
+                        });
                         return response;
                     })
                     .catch(() => {
-                        // Return offline page for navigation requests
                         if (event.request.mode === 'navigate') {
-                            return caches.match('/My_Portfolio/index.html');
+                            return caches.match('./index.html');
                         }
+                        return undefined;
                     });
             })
     );
