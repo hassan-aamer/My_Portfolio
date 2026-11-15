@@ -1198,9 +1198,11 @@
         if (!isHttp) return;
 
         window.addEventListener('load', () => {
-            navigator.serviceWorker.register('./service-worker.js').catch(() => {
-                // Service worker registration is progressive; safe to ignore when unavailable.
-            });
+            navigator.serviceWorker
+                .register('./service-worker.js', { updateViaCache: 'none' })
+                .catch(() => {
+                    // Service worker registration is progressive; safe to ignore when unavailable.
+                });
         });
     }
 

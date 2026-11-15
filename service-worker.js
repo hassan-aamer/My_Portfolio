@@ -3,7 +3,7 @@
  * Uses relative paths so offline caching works seamlessly on both root and subpath origins.
  */
 
-const CACHE_NAME = 'hassan-backend-3d-v5';
+const CACHE_NAME = 'hassan-backend-3d-v6';
 const ASSETS_TO_CACHE = [
     './',
     './index.html',
@@ -53,38 +53,59 @@ self.addEventListener('activate', (event) => {
     self.clients.claim();
 });
 
+function cacheMatchWithFallback(request) {
+    return caches
+        .match(request)
+        .then((cached) => cached || caches.match(request, { ignoreSearch: true }));
+}
+
+function storeInCache(request, response) {
+    if (!response || response.status !== 200) {
+        return response;
+    }
+    const responseToCache = response.clone();
+    caches.open(CACHE_NAME).then((cache) => {
+        cache.put(request, responseToCache);
+    });
+    return response;
+}
+
 self.addEventListener('fetch', (event) => {
     if (event.request.method !== 'GET') return;
 
     const requestUrl = new URL(event.request.url);
     if (requestUrl.origin !== self.location.origin) return;
 
-    event.respondWith(
-        caches
-            .match(event.request)
-            .then((cachedResponse) => cachedResponse || caches.match(event.request, { ignoreSearch: true }))
-            .then((cachedResponse) => {
-                if (cachedResponse) {
-                    return cachedResponse;
-                }
+    // Network-first for HTML navigation so GitHub Pages updates propagate on reload
+    if (event.request.mode === 'navigate') {
+        event.respondWith(
+            fetch(event.request, { cache: 'no-cache' })
+                .then((response) => storeInCache(event.request, response))
+                .catch(() => cacheMatchWithFallback('./index.html'))
+        );
+        return;
+    }
 
-                return fetch(event.request)
-                    .then((response) => {
-                        if (!response || response.status !== 200) {
-                            return response;
-                        }
-                        const responseToCache = response.clone();
-                        caches.open(CACHE_NAME).then((cache) => {
-                            cache.put(event.request, responseToCache);
-                        });
-                        return response;
-                    })
-                    .catch(() => {
-                        if (event.request.mode === 'navigate') {
-                            return caches.match('./index.html');
-                        }
-                        return undefined;
-                    });
+    // Cache-first for fonts, images, and PDF assets (instant repeat loads)
+    const pathname = requestUrl.pathname;
+    if (/\.(?:woff2?|png|webp|jpg|jpeg|svg|ico|pdf)$/i.test(pathname)) {
+        event.respondWith(
+            cacheMatchWithFallback(event.request).then((cachedResponse) => {
+                if (cachedResponse) return cachedResponse;
+                return fetch(event.request).then((response) => storeInCache(event.request, response));
             })
+        );
+        return;
+    }
+
+    // Stale-while-revalidate for CSS, JS, and manifest
+    event.respondWith(
+        cacheMatchWithFallback(event.request).then((cachedResponse) => {
+            const networkUpdate = fetch(event.request, { cache: 'no-cache' })
+                .then((response) => storeInCache(event.request, response))
+                .catch(() => cachedResponse);
+
+            return cachedResponse || networkUpdate;
+        })
     );
 });
