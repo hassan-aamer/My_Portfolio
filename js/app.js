@@ -51,7 +51,13 @@
     function scrollIntoHorizontalStrip(container, activeEl) {
         if (!container || !activeEl) return;
         if (container.scrollWidth > container.clientWidth && typeof container.scrollTo === 'function') {
-            const targetLeft = activeEl.offsetLeft - (container.clientWidth - activeEl.offsetWidth) * 0.5;
+            const containerRect = container.getBoundingClientRect ? container.getBoundingClientRect() : null;
+            const activeRect = activeEl.getBoundingClientRect ? activeEl.getBoundingClientRect() : null;
+            const relativeLeft =
+                containerRect && activeRect
+                    ? activeRect.left - containerRect.left + container.scrollLeft
+                    : activeEl.offsetLeft;
+            const targetLeft = relativeLeft - (container.clientWidth - activeEl.offsetWidth) * 0.5;
             container.scrollTo({
                 left: Math.max(0, targetLeft),
                 behavior: AppState.reducedMotion ? 'auto' : 'smooth'
@@ -247,7 +253,12 @@
 
             const chips = nodeListEl.querySelectorAll('.node-chip');
             chips.forEach((chip) => {
-                chip.classList.toggle('is-active', chip.dataset.nodeId === node.id);
+                const active = chip.dataset.nodeId === node.id;
+                chip.classList.toggle('is-active', active);
+                chip.setAttribute('aria-pressed', String(active));
+                if (active) {
+                    scrollIntoHorizontalStrip(nodeListEl, chip);
+                }
             });
 
             if (badgeEl) {
@@ -280,7 +291,7 @@
             nodeListEl.innerHTML = topo.nodes
                 .map(
                     (n, i) => `
-                    <button type="button" class="node-chip ${i === 0 ? 'is-active' : ''}" data-node-id="${escapeHtml(n.id)}">
+                    <button type="button" class="node-chip ${i === 0 ? 'is-active' : ''}" data-node-id="${escapeHtml(n.id)}" aria-pressed="${i === 0 ? 'true' : 'false'}">
                         ${escapeHtml(n.label)}
                     </button>
                 `
@@ -383,6 +394,9 @@
                 const active = btn.dataset.expId === selectedId;
                 btn.classList.toggle('is-active', active);
                 btn.setAttribute('aria-selected', String(active));
+                if (active) {
+                    scrollIntoHorizontalStrip(selectorEl, btn);
+                }
             });
 
             const list = selectedId === 'all'

@@ -2562,7 +2562,12 @@ img {
         overflow-x: auto;
         scroll-snap-type: x proximity;
         -webkit-overflow-scrolling: touch;
-        padding-bottom: 0.45rem;
+        scrollbar-width: none;
+        padding-bottom: 0.25rem;
+    }
+
+    .exp-selector::-webkit-scrollbar {
+        display: none;
     }
 
     .exp-tab {
@@ -2677,7 +2682,8 @@ img {
     }
 
     .topology-switcher,
-    .filter-bar {
+    .filter-bar,
+    .node-chip-list {
         display: flex;
         flex-wrap: nowrap;
         overflow-x: auto;
@@ -2687,7 +2693,8 @@ img {
     }
 
     .topology-switcher::-webkit-scrollbar,
-    .filter-bar::-webkit-scrollbar {
+    .filter-bar::-webkit-scrollbar,
+    .node-chip-list::-webkit-scrollbar {
         display: none;
     }
 
@@ -2714,8 +2721,15 @@ img {
         margin-bottom: 1.4rem;
     }
 
-    .filter-pill {
+    .node-chip-list {
+        gap: 0.42rem;
+        padding-bottom: 0.25rem;
+    }
+
+    .filter-pill,
+    .node-chip {
         flex: 0 0 auto;
+        white-space: nowrap;
         scroll-snap-align: start;
     }
 
