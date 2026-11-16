@@ -1119,46 +1119,79 @@ img {
    ========================================================================== */
 
 .topology-switcher {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.75rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(215px, 1fr));
+    gap: 0.72rem;
     margin-bottom: 1.4rem;
 }
 
 .topo-btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.65rem;
-    padding: 0.72rem 1.05rem;
-    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 0.5rem;
+    min-width: 0;
+    padding: 0.78rem 0.92rem;
+    border-radius: 14px;
     background: rgba(13, 20, 36, 0.72);
     border: 1px solid var(--border-subtle);
     color: var(--text-body);
-    font-size: 0.86rem;
-    font-weight: 600;
+    text-align: left;
     cursor: pointer;
-    transition: all 0.2s ease;
+    transition: border-color 0.2s ease, background-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
 }
 
 .topo-btn:hover {
     border-color: var(--border-bright);
     color: var(--text-primary);
+    transform: translateY(-2px);
 }
 
 .topo-btn.is-active {
-    background: rgba(34, 211, 238, 0.12);
+    background: linear-gradient(135deg, rgba(34, 211, 238, 0.14), rgba(16, 185, 129, 0.08));
     border-color: var(--cyan);
     color: var(--text-primary);
     box-shadow: 0 0 24px rgba(34, 211, 238, 0.16);
 }
 
+.topo-btn-top {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.45rem;
+}
+
 .topo-code {
     font-family: var(--font-mono);
-    font-size: 0.74rem;
-    padding: 0.18rem 0.45rem;
+    font-size: 0.72rem;
+    padding: 0.16rem 0.44rem;
     border-radius: 6px;
     background: rgba(34, 211, 238, 0.16);
     color: var(--cyan);
+    flex-shrink: 0;
+}
+
+.topo-stack-badge {
+    font-family: var(--font-mono);
+    font-size: 0.61rem;
+    letter-spacing: 0.05em;
+    color: var(--text-muted);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.topo-btn.is-active .topo-stack-badge {
+    color: #6ee7b7;
+}
+
+.topo-name {
+    font-size: 0.84rem;
+    font-weight: 600;
+    line-height: 1.3;
+    color: inherit;
 }
 
 .topology-workspace {
@@ -1561,22 +1594,49 @@ img {
    ========================================================================== */
 
 .filter-bar {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.55rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(185px, 1fr));
+    gap: 0.65rem;
     margin-bottom: 1.85rem;
 }
 
 .filter-pill {
-    padding: 0.52rem 0.95rem;
-    border-radius: 999px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
+    min-width: 0;
+    padding: 0.58rem 0.85rem;
+    border-radius: 12px;
     border: 1px solid var(--border-subtle);
-    background: rgba(13, 20, 36, 0.7);
+    background: rgba(13, 20, 36, 0.72);
     color: var(--text-muted);
-    font-size: 0.83rem;
+    font-size: 0.81rem;
     font-weight: 500;
     cursor: pointer;
-    transition: all 0.2s ease;
+    white-space: nowrap;
+    transition: border-color 0.2s ease, background-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.filter-pill > span:first-child {
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.filter-count {
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    padding: 0.14rem 0.42rem;
+    border-radius: 6px;
+    background: rgba(255, 255, 255, 0.06);
+    color: var(--text-body);
+    flex-shrink: 0;
+}
+
+.filter-pill.is-active .filter-count {
+    background: rgba(34, 211, 238, 0.18);
+    color: var(--cyan);
 }
 
 .filter-pill:hover {
@@ -2616,6 +2676,49 @@ img {
         display: none;
     }
 
+    .topology-switcher,
+    .filter-bar {
+        display: flex;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        scroll-snap-type: x proximity;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+    }
+
+    .topology-switcher::-webkit-scrollbar,
+    .filter-bar::-webkit-scrollbar {
+        display: none;
+    }
+
+    .topology-switcher {
+        gap: 0.65rem;
+        padding-bottom: 0.25rem;
+        margin-bottom: 1.1rem;
+    }
+
+    .topo-btn {
+        flex: 0 0 auto;
+        min-width: 215px;
+        max-width: 76vw;
+        scroll-snap-align: start;
+    }
+
+    .topo-btn:hover {
+        transform: none;
+    }
+
+    .filter-bar {
+        gap: 0.55rem;
+        padding-bottom: 0.25rem;
+        margin-bottom: 1.4rem;
+    }
+
+    .filter-pill {
+        flex: 0 0 auto;
+        scroll-snap-align: start;
+    }
+
     .topology-stage {
         height: 430px;
         min-height: 430px;
@@ -2653,9 +2756,11 @@ img {
     }
 
     .topo-btn {
-        width: 100%;
-        justify-content: space-between;
-        padding: 0.62rem 0.85rem;
+        min-width: 196px;
+        padding: 0.7rem 0.82rem;
+    }
+
+    .topo-name {
         font-size: 0.8rem;
     }
 

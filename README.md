@@ -6,7 +6,7 @@ An interactive **3D Single-Page Application (SPA)** built from scratch using **p
 
 - **100% Pure HTML5, CSS3 & Vanilla JS 3D Engines**:
   - **Full-Viewport 3D Spatial Backdrop (`js/scene3d.js`)**: Custom perspective infrastructure grid, scroll-synced 3D polyhedral microservices core, orbiting nodes, and depth-sorted telemetry field.
-  - **Interactive 3D System Architecture Lab (`js/topology3d.js`)**: 360° draggable 3D topologies for *E-Wallet Microservices (7-Service Saga)*, *Gasly IoT Telemetry & Spatial Routing*, and *Paw & Claw Multi-Tenant SaaS (UUID v7)* with animated request-flow traces and node inspection.
+  - **Interactive 3D System Architecture Lab (`js/topology3d.js`)**: 360° draggable 3D topologies for *E-Wallet Microservices (7-Service Saga)*, *Gasly IoT Telemetry & Spatial Routing*, *Paw & Claw Multi-Tenant SaaS (UUID v7)*, *BookFlex Microservices (Design Patterns & Redis Locks)*, and *Shopak Multi-Tenant SaaS (Laravel 12, 59 Tables, 244 APIs)* with animated request-flow traces and node inspection.
   - **Interactive 3D Fibonacci Tech Sphere (`js/sphere3d.js`)**: Spin through 32 core technologies in 3D space and highlight any of the 12 backend engineering domains.
   - **Hardware-Accelerated CSS 3D Cards & Holographic Rig**: Mouse-tracked `rotateX`/`rotateY` spatial cards, dynamic specular sheen, and 3D Z-layered portrait HUD.
 - **Single-Page Architecture**:

@@ -48,6 +48,17 @@
             : '#';
     }
 
+    function scrollIntoHorizontalStrip(container, activeEl) {
+        if (!container || !activeEl) return;
+        if (container.scrollWidth > container.clientWidth && typeof container.scrollTo === 'function') {
+            const targetLeft = activeEl.offsetLeft - (container.clientWidth - activeEl.offsetWidth) * 0.5;
+            container.scrollTo({
+                left: Math.max(0, targetLeft),
+                behavior: AppState.reducedMotion ? 'auto' : 'smooth'
+            });
+        }
+    }
+
     function showToast(message) {
         const container = document.getElementById('toastContainer');
         if (!container) return;
@@ -255,6 +266,9 @@
                 const active = btn.dataset.topology === topo.id;
                 btn.classList.toggle('is-active', active);
                 btn.setAttribute('aria-selected', String(active));
+                if (active) {
+                    scrollIntoHorizontalStrip(btn.closest('.topology-switcher'), btn);
+                }
             });
 
             titleEl.textContent = topo.name;
@@ -281,7 +295,7 @@
 
             footerEl.innerHTML = topo.repoUrl
                 ? `<a href="${escapeHtml(safeExternalUrl(topo.repoUrl))}" target="_blank" rel="noopener noreferrer" class="btn btn-glass">View Source on GitHub</a>`
-                : `<span class="mono-label">PRODUCTION CLIENT ARCHITECTURE</span>`;
+                : `<span class="mono-label">${escapeHtml(topo.footerLabel || 'PRODUCTION CLIENT ARCHITECTURE')}</span>`;
 
             visualizer.setTopology(topo);
         }
@@ -440,6 +454,9 @@
             const isActive = pill.dataset.filter === AppState.activeProjectFilter;
             pill.classList.toggle('is-active', isActive);
             pill.setAttribute('aria-pressed', String(isActive));
+            if (isActive) {
+                scrollIntoHorizontalStrip(pill.closest('#projectFilters'), pill);
+            }
         });
 
         const visible = AppState.activeProjectFilter === 'all'
@@ -495,7 +512,15 @@
         if (!bar) return;
 
         bar.querySelectorAll('.filter-pill').forEach((pill) => {
-            pill.addEventListener('click', () => renderProjects(pill.dataset.filter));
+            const filter = pill.dataset.filter;
+            const countEl = pill.querySelector('[data-filter-count]');
+            if (countEl) {
+                const count = filter === 'all'
+                    ? PROJECTS.length
+                    : PROJECTS.filter((p) => p.categories.includes(filter)).length;
+                countEl.textContent = String(count);
+            }
+            pill.addEventListener('click', () => renderProjects(filter));
         });
 
         renderProjects('all');
@@ -1019,6 +1044,8 @@
             { title: 'Load 3D Blueprint: E-Wallet 7-Service Saga', tag: '3D LAB', run: () => loadBlueprint('ewallet') },
             { title: 'Load 3D Blueprint: Gasly IoT & Spatial DB', tag: '3D LAB', run: () => loadBlueprint('gasly') },
             { title: 'Load 3D Blueprint: Paw & Claw UUID v7 SaaS', tag: '3D LAB', run: () => loadBlueprint('pawclaw') },
+            { title: 'Load 3D Blueprint: BookFlex GoF & Redis Locks', tag: '3D LAB', run: () => loadBlueprint('bookflex') },
+            { title: 'Load 3D Blueprint: Shopak B2B2C Multi-Tenant', tag: '3D LAB', run: () => loadBlueprint('shopak') },
             { title: 'Go to Production Experience', tag: 'SECTION', run: () => navigateTo('experience') },
             { title: 'Go to Production Systems & Projects', tag: 'SECTION', run: () => navigateTo('projects') },
             { title: 'Filter Java & Spring Boot Systems', tag: 'FILTER', run: () => filterAndScroll('java') },

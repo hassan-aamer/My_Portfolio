@@ -311,6 +311,156 @@
                 ['router', 'store'],
                 ['ai', 'passport']
             ]
+        },
+        bookflex: {
+            id: 'bookflex',
+            name: 'BookFlex Microservices',
+            badge: 'SOLID + GoF Patterns + Redis Locks',
+            tagline: 'Design-pattern driven Java microservices applying State, Strategy, Factory, Observer, and Saga with Spring Security JWT, PostgreSQL, and Redis concurrency control.',
+            stack: ['Java 21', 'Spring Boot 3.3', 'Spring Cloud', 'Spring Security', 'PostgreSQL', 'Redis', 'Docker'],
+            repoUrl: 'https://github.com/hassan-aamer/BookFlex-Microservices',
+            flowSequence: ['gateway', 'security', 'patterns', 'redis', 'saga', 'postgres'],
+            nodes: [
+                {
+                    id: 'gateway',
+                    label: 'Spring Cloud Gateway',
+                    short: 'GW',
+                    role: 'Edge Ingress & Routing',
+                    color: '#22d3ee',
+                    pos: { x: 0, y: -125, z: 35 },
+                    details: 'Unified API Gateway routing client booking traffic cleanly across isolated domain microservices with centralized filtering.'
+                },
+                {
+                    id: 'security',
+                    label: 'Spring Security JWT',
+                    short: 'JWT',
+                    role: 'Stateless Auth & RBAC',
+                    color: '#38bdf8',
+                    pos: { x: -155, y: -45, z: -45 },
+                    details: 'Enforces stateless JWT authentication, token validation, and role-based access control across client and inter-service boundaries.'
+                },
+                {
+                    id: 'patterns',
+                    label: 'Design Pattern Core',
+                    short: 'GOF',
+                    role: 'State, Strategy & Factory',
+                    color: '#a78bfa',
+                    pos: { x: 155, y: -45, z: 65 },
+                    details: 'Applies SOLID and classic GoF patterns: State manages complex booking lifecycles, while Strategy & Factory decouple extensible pricing and rules.'
+                },
+                {
+                    id: 'redis',
+                    label: 'Redis Lock & Cache',
+                    short: 'RDS',
+                    role: 'Distributed Concurrency Control',
+                    color: '#f59e0b',
+                    pos: { x: -85, y: 45, z: 85 },
+                    details: 'Provides fast caching alongside distributed concurrency guards so concurrent booking attempts never double-allocate shared inventory.'
+                },
+                {
+                    id: 'saga',
+                    label: 'Saga & Observer Bus',
+                    short: 'SGA',
+                    role: 'Workflow & Event Dispatch',
+                    color: '#f472b6',
+                    pos: { x: 95, y: 45, z: -45 },
+                    details: 'Coordinates multi-step Saga transactions with compensating rollbacks and uses Observer hooks to propagate domain state changes cleanly.'
+                },
+                {
+                    id: 'postgres',
+                    label: 'PostgreSQL ACID DB',
+                    short: 'PG',
+                    role: 'Transactional Persistence',
+                    color: '#10b981',
+                    pos: { x: 0, y: 135, z: 25 },
+                    details: 'Guarantees ACID relational persistence for bookings, ledger states, and inventory integrity inside containerized Docker Compose environments.'
+                }
+            ],
+            edges: [
+                ['gateway', 'security'],
+                ['gateway', 'patterns'],
+                ['security', 'patterns'],
+                ['patterns', 'redis'],
+                ['patterns', 'saga'],
+                ['redis', 'postgres'],
+                ['saga', 'postgres'],
+                ['saga', 'redis']
+            ]
+        },
+        shopak: {
+            id: 'shopak',
+            name: 'Shopak Multi-Tenant SaaS',
+            badge: '59 Tables • 244 APIs • Zero-500 Chaos QA',
+            tagline: 'Enterprise B2B2C multi-tenant SaaS e-commerce platform (PHP 8.4 / Laravel 12) with TenantScope isolation, deterministic ascending row locks, SaaS billing state machine, and 216 tests (6,447 assertions).',
+            stack: ['PHP 8.4', 'Laravel 12', 'MySQL 8 (59 Tables)', 'TenantScope', 'Sanctum', '216 Tests / Chaos QA'],
+            repoUrl: null,
+            footerLabel: 'PERSONAL ENTERPRISE SAAS ARCHITECTURE',
+            flowSequence: ['tenant', 'scope', 'inventory', 'digital', 'billing', 'ledger'],
+            nodes: [
+                {
+                    id: 'tenant',
+                    label: 'IdentifyTenant Edge',
+                    short: 'TNT',
+                    role: 'Header, Subdomain & Domain Resolver',
+                    color: '#22d3ee',
+                    pos: { x: 0, y: -125, z: 35 },
+                    details: 'Resolves active tenant context across X-Tenant-ID, X-Store-Subdomain, and Custom Domain before passing requests through SetLocale (AR/EN) and Sanctum auth.'
+                },
+                {
+                    id: 'scope',
+                    label: 'TenantScope & Sequences',
+                    short: 'SCP',
+                    role: 'Logical Isolation & ORD-#',
+                    color: '#38bdf8',
+                    pos: { x: -160, y: -45, z: -45 },
+                    details: 'Enforces strict logical query isolation across 59 MySQL tables via Global TenantScope and BelongsToTenant, with conflict-free sequential numbering via tenant_sequences.'
+                },
+                {
+                    id: 'inventory',
+                    label: 'Atomic Inventory Core',
+                    short: 'INV',
+                    role: 'Ascending lockForUpdate()',
+                    color: '#10b981',
+                    pos: { x: 160, y: -45, z: 65 },
+                    details: 'Eliminates checkout deadlocks mathematically via deterministic ascending row-lock ordering, ledgerized inventory_movements, and scheduled 10-min expiry release.'
+                },
+                {
+                    id: 'billing',
+                    label: 'SaaS Billing & Grace',
+                    short: 'BIL',
+                    role: 'Active → Grace → Suspended',
+                    color: '#f59e0b',
+                    pos: { x: -95, y: 45, z: 85 },
+                    details: 'Manages country-driven SaaS plans, 3-day past-due grace windows, and 403 storefront/ops suspension while keeping billing endpoints open for receipt-verified renewal.'
+                },
+                {
+                    id: 'digital',
+                    label: 'Digital, COD & AI Hub',
+                    short: 'DIG',
+                    role: 'Serials, Themes & AI Assistant',
+                    color: '#a78bfa',
+                    pos: { x: 95, y: 45, z: -45 },
+                    details: 'Delivers atomic serial codes and signed expiring downloads with zero-shipping checkout, XSS-sanitized store themes, manual/COD payments, and AI store diagnostics.'
+                },
+                {
+                    id: 'ledger',
+                    label: 'Partner Ledger & QA',
+                    short: 'QA',
+                    role: 'Zero-500 Chaos & Profit Split',
+                    color: '#f472b6',
+                    pos: { x: 0, y: 135, z: 25 },
+                    details: 'Runs official partner_ledger_entries distributions, afterCommit queued jobs, withoutOverlapping schedulers, and passes 216 tests (6,447 assertions) + 244-request Chaos Fuzzing.'
+                }
+            ],
+            edges: [
+                ['tenant', 'scope'],
+                ['scope', 'inventory'],
+                ['inventory', 'digital'],
+                ['scope', 'billing'],
+                ['billing', 'ledger'],
+                ['inventory', 'ledger'],
+                ['digital', 'ledger']
+            ]
         }
     };
 
@@ -504,6 +654,26 @@
             links: [
                 { label: 'GitHub Repository', url: 'https://github.com/hassan-aamer/Spring-Boot-E-Commerce-Project', type: 'github' }
             ]
+        },
+        {
+            id: 'shopak',
+            title: 'Shopak Multi-Tenant SaaS Platform',
+            subtitle: 'B2B2C Core, Zero-Deadlock Ledger & Chaos-Tested API',
+            categories: ['php', 'ai'],
+            primaryStack: 'PHP 8.4 • Laravel 12 • MySQL 8 (59 Tables) • TenantScope • Sanctum',
+            featured: true,
+            summary: 'Personal enterprise B2B2C multi-tenant SaaS e-commerce platform built on PHP 8.4 and Laravel 12 across 59 clean MySQL tables, achieving 216 passing tests (6,447 assertions) and Zero-500 Chaos Fuzzing across 244 API endpoints.',
+            architecture: {
+                pattern: 'Shared-DB Logical Multi-Tenancy (TenantScope) + Clean Service Layer + Deterministic Locking',
+                services: ['IdentifyTenant & TenantScope', 'Atomic Inventory & Serials', 'SaaS Billing State Machine', 'XSS-Safe Themes & AI Hub', 'Partner Profit Ledger', '244-API Chaos QA'],
+                engineeringDecisions: [
+                    'Enforced strict logical isolation across 59 MySQL tables via IdentifyTenant (header/subdomain/custom domain), global TenantScope, and per-store tenant_sequences.',
+                    'Prevented checkout and profit-ledger deadlocks using deterministic ascending row locks (lockForUpdate()), afterCommit queued jobs, and withoutOverlapping schedulers.',
+                    'Implemented full SaaS lifecycle (Active → 3-day Grace → 403 Suspended with open renewal billing), atomic digital serial delivery, bilingual AR/EN localization, and XSS-safe store themes.',
+                    'Verified all 244 endpoints across 5 Postman collections with 216 tests (6,447 assertions) and adversarial Chaos Fuzzing under a strict Zero-500 error guarantee.'
+                ]
+            },
+            links: []
         },
         {
             id: 'gasly',

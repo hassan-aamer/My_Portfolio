@@ -359,16 +359,39 @@
 
                 <div class="topology-switcher" role="tablist" aria-label="Architecture Blueprints">
                     <button type="button" class="topo-btn is-active" data-topology="ewallet" role="tab" aria-selected="true">
-                        <span class="topo-code">01</span>
-                        <span>E-Wallet 7-Service Saga</span>
+                        <span class="topo-btn-top">
+                            <span class="topo-code">01</span>
+                            <span class="topo-stack-badge">JAVA 21 &bull; SAGA</span>
+                        </span>
+                        <span class="topo-name">E-Wallet 7-Service Saga</span>
                     </button>
                     <button type="button" class="topo-btn" data-topology="gasly" role="tab" aria-selected="false">
-                        <span class="topo-code">02</span>
-                        <span>Gasly IoT &amp; Spatial Routing</span>
+                        <span class="topo-btn-top">
+                            <span class="topo-code">02</span>
+                            <span class="topo-stack-badge">PHP &bull; WORKERMAN TCP</span>
+                        </span>
+                        <span class="topo-name">Gasly IoT &amp; Geo Routing</span>
                     </button>
                     <button type="button" class="topo-btn" data-topology="pawclaw" role="tab" aria-selected="false">
-                        <span class="topo-code">03</span>
-                        <span>Paw &amp; Claw UUID v7 SaaS</span>
+                        <span class="topo-btn-top">
+                            <span class="topo-code">03</span>
+                            <span class="topo-stack-badge">LARAVEL &bull; UUID V7</span>
+                        </span>
+                        <span class="topo-name">Paw &amp; Claw Veterinary SaaS</span>
+                    </button>
+                    <button type="button" class="topo-btn" data-topology="bookflex" role="tab" aria-selected="false">
+                        <span class="topo-btn-top">
+                            <span class="topo-code">04</span>
+                            <span class="topo-stack-badge">JAVA 21 &bull; REDIS LOCKS</span>
+                        </span>
+                        <span class="topo-name">BookFlex Microservices</span>
+                    </button>
+                    <button type="button" class="topo-btn" data-topology="shopak" role="tab" aria-selected="false">
+                        <span class="topo-btn-top">
+                            <span class="topo-code">05</span>
+                            <span class="topo-stack-badge">LARAVEL 12 &bull; 59 TABLES</span>
+                        </span>
+                        <span class="topo-name">Shopak B2B2C Multi-Tenant</span>
                     </button>
                 </div>
 
@@ -457,12 +480,30 @@
                 </header>
 
                 <div class="filter-bar" id="projectFilters" role="group" aria-label="Filter projects by domain">
-                    <button type="button" class="filter-pill is-active" data-filter="all" aria-pressed="true">All Systems (12)</button>
-                    <button type="button" class="filter-pill" data-filter="java" aria-pressed="false">Java &amp; Spring Boot</button>
-                    <button type="button" class="filter-pill" data-filter="microservices" aria-pressed="false">Microservices</button>
-                    <button type="button" class="filter-pill" data-filter="php" aria-pressed="false">PHP &amp; Laravel</button>
-                    <button type="button" class="filter-pill" data-filter="iot" aria-pressed="false">IoT, Geo &amp; Real-Time</button>
-                    <button type="button" class="filter-pill" data-filter="ai" aria-pressed="false">AI &amp; Knowledge</button>
+                    <button type="button" class="filter-pill is-active" data-filter="all" aria-pressed="true">
+                        <span>All Systems</span>
+                        <span class="filter-count" data-filter-count="all">13</span>
+                    </button>
+                    <button type="button" class="filter-pill" data-filter="java" aria-pressed="false">
+                        <span>Java &amp; Spring Boot</span>
+                        <span class="filter-count" data-filter-count="java">3</span>
+                    </button>
+                    <button type="button" class="filter-pill" data-filter="microservices" aria-pressed="false">
+                        <span>Microservices</span>
+                        <span class="filter-count" data-filter-count="microservices">2</span>
+                    </button>
+                    <button type="button" class="filter-pill" data-filter="php" aria-pressed="false">
+                        <span>PHP &amp; Laravel</span>
+                        <span class="filter-count" data-filter-count="php">10</span>
+                    </button>
+                    <button type="button" class="filter-pill" data-filter="iot" aria-pressed="false">
+                        <span>IoT, Geo &amp; Real-Time</span>
+                        <span class="filter-count" data-filter-count="iot">4</span>
+                    </button>
+                    <button type="button" class="filter-pill" data-filter="ai" aria-pressed="false">
+                        <span>AI &amp; Knowledge</span>
+                        <span class="filter-count" data-filter-count="ai">3</span>
+                    </button>
                 </div>
 
                 <div class="projects-grid" id="projectsGrid"></div>
