@@ -901,6 +901,20 @@ img {
     pointer-events: none;
 }
 
+.holo-stage {
+    position: relative;
+    display: grid;
+    place-items: center;
+    transform-style: preserve-3d;
+}
+
+.holo-badges {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    transform-style: preserve-3d;
+}
+
 .holo-ring {
     position: absolute;
     border-radius: 50%;
@@ -968,6 +982,7 @@ img {
     color: var(--text-primary);
     box-shadow: 0 12px 26px rgba(0, 0, 0, 0.48);
     white-space: nowrap;
+    pointer-events: auto;
 }
 
 .holo-badge-top {
@@ -977,7 +992,7 @@ img {
 }
 
 .holo-badge-left {
-    left: 14px;
+    left: 18px;
     top: 50%;
     transform: translateY(-50%) translateZ(54px);
 }
@@ -2545,8 +2560,55 @@ img {
         text-align: left;
     }
 
-    .holo-badge-left {
-        display: none;
+    .holo-rig {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 1.25rem;
+        min-height: auto;
+        padding: 1.45rem 1rem 1.35rem;
+    }
+
+    .holo-stage {
+        width: 100%;
+        padding-block: 14px;
+    }
+
+    .holo-ring-outer {
+        width: 244px;
+        height: 244px;
+    }
+
+    .holo-ring-inner {
+        width: 204px;
+        height: 204px;
+    }
+
+    .holo-portrait-frame {
+        width: 180px;
+        height: 180px;
+    }
+
+    .holo-badges {
+        position: static;
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.48rem;
+        transform-style: flat;
+        pointer-events: auto;
+    }
+
+    .holo-badge {
+        position: static;
+        transform: none;
+        max-width: 100%;
+        white-space: normal;
+        text-align: center;
+        font-size: 0.63rem;
+        padding: 0.32rem 0.68rem;
     }
 
     .hud-btn-ghost#cmdTrigger,
@@ -2718,8 +2780,13 @@ img {
     }
 
     .holo-rig {
-        min-height: 245px;
-        padding: 1rem;
+        min-height: auto;
+        padding: 1.15rem 0.85rem;
+        gap: 1rem;
+    }
+
+    .holo-stage {
+        padding-block: 10px;
     }
 
     .holo-ring-outer {
@@ -2739,18 +2806,8 @@ img {
     }
 
     .holo-badge {
-        font-size: 0.56rem;
-        padding: 0.24rem 0.5rem;
-    }
-
-    .holo-badge-top {
-        top: 10px;
-        right: 10px;
-    }
-
-    .holo-badge-bottom {
-        bottom: 10px;
-        right: 10px;
+        font-size: 0.58rem;
+        padding: 0.26rem 0.56rem;
     }
 
     .sphere-stage {
