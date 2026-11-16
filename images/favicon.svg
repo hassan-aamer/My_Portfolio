@@ -1,47 +1,27 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-label="Hassan Mohamed — HM">
   <defs>
     <linearGradient id="bgGrad" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#0d1424" />
+      <stop offset="0%" stop-color="#0f172a" />
       <stop offset="100%" stop-color="#05070c" />
     </linearGradient>
-    <radialGradient id="cyanGlow" cx="24%" cy="22%" r="65%">
-      <stop offset="0%" stop-color="#22d3ee" stop-opacity="0.22" />
+    <radialGradient id="topGlow" cx="25%" cy="18%" r="70%">
+      <stop offset="0%" stop-color="#22d3ee" stop-opacity="0.16" />
       <stop offset="100%" stop-color="#22d3ee" stop-opacity="0" />
     </radialGradient>
-    <radialGradient id="emeraldGlow" cx="80%" cy="82%" r="65%">
-      <stop offset="0%" stop-color="#10b981" stop-opacity="0.20" />
-      <stop offset="100%" stop-color="#10b981" stop-opacity="0" />
-    </radialGradient>
-    <linearGradient id="accentGrad" x1="0.08" y1="0.08" x2="0.92" y2="0.92">
+    <linearGradient id="hmGrad" x1="0.12" y1="0.2" x2="0.88" y2="0.8">
       <stop offset="0%" stop-color="#22d3ee" />
-      <stop offset="50%" stop-color="#19c7b0" />
-      <stop offset="100%" stop-color="#10b981" />
-    </linearGradient>
-    <linearGradient id="monoGrad" x1="0.15" y1="0.22" x2="0.85" y2="0.78">
-      <stop offset="0%" stop-color="#22d3ee" />
-      <stop offset="48%" stop-color="#1ac9b8" />
       <stop offset="100%" stop-color="#10b981" />
     </linearGradient>
   </defs>
 
-  <!-- Spatial 3D obsidian tile -->
-  <rect x="2.5" y="2.5" width="59" height="59" rx="15" fill="url(#bgGrad)" />
-  <rect x="2.5" y="2.5" width="59" height="59" rx="15" fill="url(#cyanGlow)" />
-  <rect x="2.5" y="2.5" width="59" height="59" rx="15" fill="url(#emeraldGlow)" />
+  <!-- Simple dark obsidian squircle tile -->
+  <rect x="2" y="2" width="60" height="60" rx="16" fill="url(#bgGrad)" />
+  <rect x="2" y="2" width="60" height="60" rx="16" fill="url(#topGlow)" />
+  <rect x="2.5" y="2.5" width="59" height="59" rx="15.5" fill="none" stroke="#f8fafc" stroke-opacity="0.14" stroke-width="1" />
 
-  <!-- Top glass sheen & vibrant cyan-to-emerald rim -->
-  <rect x="3.5" y="3.5" width="57" height="57" rx="14" fill="none" stroke="#f8fafc" stroke-opacity="0.10" stroke-width="1" />
-  <rect x="2.5" y="2.5" width="59" height="59" rx="15" fill="none" stroke="url(#accentGrad)" stroke-width="2.4" />
-
-  <!-- Drop shadow for 3D lift -->
-  <g transform="translate(0, 1.5)" fill="#020408" opacity="0.8">
-    <path d="M11.5 19.5 H17.2 V29.2 H22.8 V19.5 H28.5 V44.5 H22.8 V34.2 H17.2 V44.5 H11.5 Z" />
-    <path d="M32.5 19.5 H38.2 L42.5 29.4 L46.8 19.5 H52.5 V44.5 H47 V29.6 L42.5 38.6 L38 29.6 V44.5 H32.5 Z" />
-  </g>
-
-  <!-- Geometric HM Monogram in crisp Cyan -> Emerald gradient -->
-  <g fill="url(#monoGrad)">
-    <path d="M11.5 19.5 H17.2 V29.2 H22.8 V19.5 H28.5 V44.5 H22.8 V34.2 H17.2 V44.5 H11.5 Z" />
-    <path d="M32.5 19.5 H38.2 L42.5 29.4 L46.8 19.5 H52.5 V44.5 H47 V29.6 L42.5 38.6 L38 29.6 V44.5 H32.5 Z" />
+  <!-- Simple balanced HM monogram (exact 14.25 margin on both sides) -->
+  <g fill="url(#hmGrad)">
+    <path d="M14.25 21.5 H18.85 V29.6 H24.65 V21.5 H29.25 V42.5 H24.65 V33.8 H18.85 V42.5 H14.25 Z" />
+    <path d="M32.75 21.5 H37.45 L41.25 30.2 L45.05 21.5 H49.75 V42.5 H45.25 V29.9 L41.25 38.2 L37.25 29.9 V42.5 H32.75 Z" />
   </g>
 </svg>

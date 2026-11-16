@@ -425,12 +425,14 @@ img {
     display: flex;
     justify-content: flex-end;
     opacity: 0;
+    visibility: hidden;
     pointer-events: none;
-    transition: opacity 0.25s ease;
+    transition: opacity 0.25s ease, visibility 0.25s ease;
 }
 
 .mobile-drawer.is-open {
     opacity: 1;
+    visibility: visible;
     pointer-events: auto;
 }
 
@@ -482,6 +484,12 @@ img {
     color: var(--cyan);
     border-color: var(--border-bright);
     background: rgba(34, 211, 238, 0.09);
+}
+
+.mobile-drawer-footer {
+    display: flex;
+    flex-direction: column;
+    gap: 0.65rem;
 }
 
 /* ==========================================================================
@@ -656,14 +664,6 @@ img {
 
 .card-3d:hover {
     border-color: rgba(34, 211, 238, 0.38);
-}
-
-.z-pop-sm {
-    transform: translateZ(18px);
-}
-
-.z-pop-md {
-    transform: translateZ(30px);
 }
 
 /* ==========================================================================
@@ -2270,6 +2270,20 @@ img {
     font-size: 0.92rem;
 }
 
+.modal-pattern-copy {
+    margin: 0;
+    color: var(--text-primary);
+    font-weight: 600;
+}
+
+.modal-cta-row {
+    margin-bottom: 0;
+}
+
+.cred-location-label {
+    color: var(--text-muted);
+}
+
 /* Command Palette */
 #commandPalette {
     z-index: 1250;
@@ -2338,6 +2352,11 @@ img {
     font-family: var(--font-mono);
     font-size: 0.68rem;
     color: var(--cyan);
+}
+
+.cmd-item-empty {
+    color: var(--text-muted);
+    cursor: default;
 }
 
 /* Toasts */
@@ -2766,7 +2785,10 @@ img {
     .holo-scanline,
     .pulse-beacon,
     .boot-spinner,
-    .reveal-in {
+    .reveal-in,
+    .modal-card,
+    .cmd-card,
+    .toast {
         animation: none;
     }
 

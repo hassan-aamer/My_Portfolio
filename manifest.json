@@ -1,11 +1,11 @@
 {
     "name": "Hassan Mohamed — Backend Software Engineer",
-    "short_name": "Hassan Backend",
+    "short_name": "Hassan Dev",
     "description": "Interactive 3D Single-Page Portfolio — Java/Spring Boot & PHP/Laravel Backend Software Engineer",
     "start_url": "./",
     "display": "standalone",
     "background_color": "#05070c",
-    "theme_color": "#22d3ee",
+    "theme_color": "#05070c",
     "orientation": "portrait-primary",
     "icons": [
         {
@@ -18,13 +18,19 @@
             "src": "images/favicon.png",
             "sizes": "192x192",
             "type": "image/png",
-            "purpose": "any maskable"
+            "purpose": "any"
         },
         {
             "src": "images/logo.png",
             "sizes": "512x512",
             "type": "image/png",
-            "purpose": "any maskable"
+            "purpose": "any"
+        },
+        {
+            "src": "images/app-icon-maskable.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "maskable"
         }
     ],
     "categories": ["portfolio", "developer", "software", "backend"],

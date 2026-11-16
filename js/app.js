@@ -42,6 +42,12 @@
             .replace(/'/g, '&#39;');
     }
 
+    function safeExternalUrl(url) {
+        return typeof url === 'string' && /^https?:\/\//i.test(url.trim())
+            ? url.trim()
+            : '#';
+    }
+
     function showToast(message) {
         const container = document.getElementById('toastContainer');
         if (!container) return;
@@ -274,7 +280,7 @@
             });
 
             footerEl.innerHTML = topo.repoUrl
-                ? `<a href="${escapeHtml(topo.repoUrl)}" target="_blank" rel="noopener noreferrer" class="btn btn-glass">View Source on GitHub</a>`
+                ? `<a href="${escapeHtml(safeExternalUrl(topo.repoUrl))}" target="_blank" rel="noopener noreferrer" class="btn btn-glass">View Source on GitHub</a>`
                 : `<span class="mono-label">PRODUCTION CLIENT ARCHITECTURE</span>`;
 
             visualizer.setTopology(topo);
@@ -465,7 +471,7 @@
                         ${project.links
                             .map(
                                 (link) => `
-                                <a href="${escapeHtml(link.url)}" target="_blank" rel="noopener noreferrer" class="ctrl-btn">
+                                <a href="${escapeHtml(safeExternalUrl(link.url))}" target="_blank" rel="noopener noreferrer" class="ctrl-btn">
                                     ${escapeHtml(link.label)} &nearr;
                                 </a>
                             `
@@ -528,7 +534,7 @@
 
             <div class="modal-section-box">
                 <h4>Architecture Pattern</h4>
-                <p style="margin:0;color:var(--text-primary);font-weight:600;">${escapeHtml(project.architecture.pattern)}</p>
+                <p class="modal-pattern-copy">${escapeHtml(project.architecture.pattern)}</p>
             </div>
 
             <div class="modal-section-box">
@@ -556,11 +562,11 @@
 
             ${
                 project.links.length
-                    ? `<div class="hero-cta-row" style="margin-bottom:0;">
+                    ? `<div class="hero-cta-row modal-cta-row">
                         ${project.links
                             .map(
                                 (link) => `
-                                <a href="${escapeHtml(link.url)}" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+                                <a href="${escapeHtml(safeExternalUrl(link.url))}" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
                                     <span>${escapeHtml(link.label)}</span>
                                     <span>&nearr;</span>
                                 </a>
@@ -721,7 +727,7 @@
                 <span class="mono-label">EDUCATION // ${escapeHtml(education.period)}</span>
                 <h3 class="cred-title">${escapeHtml(education.institution)}</h3>
                 <p class="cred-sub">${escapeHtml(education.degree)}</p>
-                <span class="mono-label" style="color:var(--text-muted);">${escapeHtml(education.location)}</span>
+                <span class="mono-label cred-location-label">${escapeHtml(education.location)}</span>
                 <div class="cred-coursework">
                     ${education.coursework.map((c) => `<span class="tech-pill">${escapeHtml(c)}</span>`).join('')}
                 </div>
@@ -907,7 +913,9 @@
             mobileMenuBtn.setAttribute('aria-expanded', String(targetOpen));
             document.body.style.overflow = targetOpen ? 'hidden' : '';
 
-            if (!targetOpen && options && options.restoreFocus) {
+            if (targetOpen && mobileDrawerClose) {
+                mobileDrawerClose.focus();
+            } else if (!targetOpen && options && options.restoreFocus) {
                 mobileMenuBtn.focus();
             }
         }
@@ -1052,8 +1060,14 @@
                 ? filteredCommands
                       .map(
                           (cmd, i) => `
-                          <li>
-                              <button type="button" class="cmd-item ${i === focusedIdx ? 'is-focused' : ''}" data-cmd-index="${i}">
+                          <li role="presentation">
+                              <button
+                                  type="button"
+                                  role="option"
+                                  aria-selected="${i === focusedIdx}"
+                                  class="cmd-item ${i === focusedIdx ? 'is-focused' : ''}"
+                                  data-cmd-index="${i}"
+                              >
                                   <span>${escapeHtml(cmd.title)}</span>
                                   <span class="cmd-item-tag">${escapeHtml(cmd.tag)}</span>
                               </button>
@@ -1061,7 +1075,7 @@
                       `
                       )
                       .join('')
-                : '<li class="cmd-item" style="color:var(--text-muted);cursor:default;">No matching commands</li>';
+                : '<li role="option" aria-disabled="true" class="cmd-item cmd-item-empty">No matching commands</li>';
 
             listEl.querySelectorAll('[data-cmd-index]').forEach((btn) => {
                 btn.addEventListener('click', () => {
@@ -1131,7 +1145,9 @@
 
         function updateFocused() {
             listEl.querySelectorAll('[data-cmd-index]').forEach((btn) => {
-                btn.classList.toggle('is-focused', Number(btn.dataset.cmdIndex) === focusedIdx);
+                const active = Number(btn.dataset.cmdIndex) === focusedIdx;
+                btn.classList.toggle('is-focused', active);
+                btn.setAttribute('aria-selected', String(active));
             });
         }
 

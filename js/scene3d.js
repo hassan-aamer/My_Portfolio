@@ -166,7 +166,9 @@
                 }
             } else {
                 this.isPaused = false;
-                this._render(performance.now());
+                if (!this.rafId) {
+                    this._render(performance.now());
+                }
             }
         }
 
