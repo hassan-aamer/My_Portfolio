@@ -1,0 +1,6 @@
+#!/bin/sh
+# Regenerates pre-rendered HTML + service-worker cache version, then stages the results.
+# Enable once per clone:  git config core.hooksPath .githooks
+set -e
+node scripts/build.mjs >/dev/null
+git add index.html service-worker.js sitemap.xml

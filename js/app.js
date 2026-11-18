@@ -1,7 +1,7 @@
 /**
  * Single-Page Application controller for Hassan Mohamed's 3D Backend Portfolio.
  * Orchestrates DOM rendering, 3D tilt physics, scroll-spy, interactive modals,
- * command palette, and form uplink without external frameworks.
+ * command palette, and contact form without external frameworks.
  */
 (function (global) {
     'use strict';
@@ -818,7 +818,7 @@
     }
 
     /* ----------------------------------------------------------------------
-       Contact Uplink & Clipboard Actions
+       Contact Form & Clipboard Actions
        ---------------------------------------------------------------------- */
 
     function initContact() {
@@ -888,7 +888,7 @@
 
             submitBtn.disabled = true;
             const originalLabel = submitBtn.innerHTML;
-            submitBtn.textContent = 'Transmitting...';
+            submitBtn.textContent = 'Sending...';
 
             try {
                 const payload = new FormData(form);
@@ -910,11 +910,11 @@
                 }
 
                 form.reset();
-                statusText.textContent = '200 OK — Message transmitted successfully.';
+                statusText.textContent = 'Message sent successfully. Thank you!';
                 showToast('Message sent! Hassan will respond shortly.');
             } catch (error) {
                 statusText.classList.add('is-error');
-                statusText.textContent = `Transmission failed (${error.message}). Please email hassanaamer048@gmail.com directly.`;
+                statusText.textContent = `Message could not be sent (${error.message}). Please email hassanaamer048@gmail.com directly.`;
             } finally {
                 submitBtn.disabled = false;
                 submitBtn.innerHTML = originalLabel;
@@ -1066,7 +1066,7 @@
             { title: 'Filter PHP & Laravel Systems', tag: 'FILTER', run: () => filterAndScroll('php') },
             { title: 'Go to 3D Stack Observatory', tag: 'SECTION', run: () => navigateTo('skills') },
             { title: 'Go to Education & Certifications', tag: 'SECTION', run: () => navigateTo('credentials') },
-            { title: 'Go to Direct Uplink / Contact', tag: 'SECTION', run: () => navigateTo('contact') },
+            { title: 'Go to Contact', tag: 'SECTION', run: () => navigateTo('contact') },
             { title: 'Copy Email Address (hassanaamer048@gmail.com)', tag: 'ACTION', run: () => copyToClipboard(PROFILE.email, 'Email') },
             { title: 'Copy Phone / WhatsApp (+20 1129730475)', tag: 'ACTION', run: () => copyToClipboard(PROFILE.phone, 'Phone') },
             { title: 'Download CV (PDF)', tag: 'FILE', run: () => window.open(encodeURI(PROFILE.cvPath), '_blank', 'noopener,noreferrer') }
@@ -1247,6 +1247,49 @@
                 if (e.target === modal) closeProjectModal();
             });
         }
+
+        initDialogFocusTrap();
+    }
+
+    /**
+     * Keeps Tab / Shift+Tab focus cycling inside whichever modal dialog is open
+     * (architecture case study or command palette), per WAI-ARIA dialog guidance.
+     */
+    function initDialogFocusTrap() {
+        const dialogs = ['projectModal', 'commandPalette']
+            .map((id) => document.getElementById(id))
+            .filter(Boolean);
+        const focusableSelector =
+            'a[href], button:not([disabled]), input:not([disabled]), textarea:not([disabled]), select:not([disabled]), [tabindex]:not([tabindex="-1"])';
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key !== 'Tab') return;
+            const openDialog = dialogs.find((dialog) => !dialog.hidden);
+            if (!openDialog) return;
+
+            const focusable = Array.from(openDialog.querySelectorAll(focusableSelector)).filter(
+                (el) => el.offsetParent !== null || el === document.activeElement
+            );
+            if (!focusable.length) {
+                e.preventDefault();
+                return;
+            }
+
+            const first = focusable[0];
+            const last = focusable[focusable.length - 1];
+            const active = document.activeElement;
+
+            if (!openDialog.contains(active)) {
+                e.preventDefault();
+                first.focus();
+            } else if (e.shiftKey && active === first) {
+                e.preventDefault();
+                last.focus();
+            } else if (!e.shiftKey && active === last) {
+                e.preventDefault();
+                first.focus();
+            }
+        });
     }
 
     function registerServiceWorker() {

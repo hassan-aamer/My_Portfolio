@@ -24,7 +24,7 @@
             'Delivered production systems across e-commerce, IoT/logistics, healthcare/EMR, HR, and booking, with a focus on performance, security, scalability, and maintainability.'
         ],
         metrics: [
-            { value: '5+', label: 'Years in Production', meta: 'Java & PHP Stacks' },
+            { value: '5', label: 'Years in Production', meta: 'Java & PHP Stacks' },
             { value: '15+', label: 'Systems Shipped', meta: 'Enterprise & SaaS' },
             { value: '7', label: 'Service Saga Core', meta: 'E-Wallet Topology' },
             { value: '24/7', label: 'Distributed Reliability', meta: 'Idempotent & Locked' }
@@ -66,7 +66,7 @@
                 }
             },
             availability: {
-                endpoint: 'GET /api/v1/uplink/status',
+                endpoint: 'GET /api/v1/engineer/availability',
                 status: '200 OK • READY',
                 payload: {
                     status: 'ONLINE',

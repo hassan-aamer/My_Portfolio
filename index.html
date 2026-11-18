@@ -26,16 +26,21 @@
     <meta property="og:site_name" content="Hassan Mohamed — Backend Portfolio" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://hassan-aamer.github.io/My_Portfolio/" />
-    <meta property="og:image" content="https://hassan-aamer.github.io/My_Portfolio/images/h.webp" />
+    <meta property="og:image" content="https://hassan-aamer.github.io/My_Portfolio/images/og-cover.png" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Hassan Mohamed — Backend Software Engineer (Java Spring Boot &amp; PHP Laravel)" />
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Hassan Mohamed — Backend Software Engineer" />
     <meta
         name="twitter:description"
-        content="5+ years building production Java/Spring Boot &amp; PHP/Laravel distributed systems and multi-tenant SaaS."
+        content="5 years building production Java/Spring Boot &amp; PHP/Laravel distributed systems and multi-tenant SaaS."
     />
-    <meta name="twitter:image" content="https://hassan-aamer.github.io/My_Portfolio/images/h.webp" />
+    <meta name="twitter:image" content="https://hassan-aamer.github.io/My_Portfolio/images/og-cover.png" />
+    <meta name="twitter:image:alt" content="Hassan Mohamed — Backend Software Engineer (Java Spring Boot &amp; PHP Laravel)" />
 
     <!-- Schema.org Structured Data -->
     <script type="application/ld+json">
@@ -84,6 +89,11 @@
     />
     <link rel="stylesheet" href="./css/fonts.css" />
     <link rel="stylesheet" href="./css/style.css" />
+    <noscript>
+        <style>
+            .boot-loader { display: none !important; }
+        </style>
+    </noscript>
 </head>
 <body>
     <!-- Subtle Fast Boot Sequence -->
@@ -119,7 +129,7 @@
                 <a href="#projects" class="hud-link" data-nav="projects">Systems</a>
                 <a href="#skills" class="hud-link" data-nav="skills">Stack</a>
                 <a href="#credentials" class="hud-link" data-nav="credentials">Credentials</a>
-                <a href="#contact" class="hud-link" data-nav="contact">Uplink</a>
+                <a href="#contact" class="hud-link" data-nav="contact">Contact</a>
             </nav>
 
             <div class="hud-actions">
@@ -186,7 +196,7 @@
                 <a href="#projects" data-nav="projects">04 // Production Systems</a>
                 <a href="#skills" data-nav="skills">05 // Technical Stack</a>
                 <a href="#credentials" data-nav="credentials">06 // Education &amp; Certs</a>
-                <a href="#contact" data-nav="contact">07 // Direct Uplink</a>
+                <a href="#contact" data-nav="contact">07 // Contact</a>
             </nav>
             <div class="mobile-drawer-footer">
                 <button type="button" id="mobileCmdBtn" class="btn btn-glass btn-full">
@@ -213,7 +223,7 @@
             <li><a href="#projects" class="depth-dot" data-nav="projects" data-depth="04" aria-label="Systems"><span>Systems</span></a></li>
             <li><a href="#skills" class="depth-dot" data-nav="skills" data-depth="05" aria-label="Stack"><span>Stack</span></a></li>
             <li><a href="#credentials" class="depth-dot" data-nav="credentials" data-depth="06" aria-label="Credentials"><span>Credentials</span></a></li>
-            <li><a href="#contact" class="depth-dot" data-nav="contact" data-depth="07" aria-label="Uplink"><span>Uplink</span></a></li>
+            <li><a href="#contact" class="depth-dot" data-nav="contact" data-depth="07" aria-label="Contact"><span>Contact</span></a></li>
         </ul>
     </aside>
 
@@ -242,7 +252,30 @@
                         <strong>fintech wallets</strong>, <strong>IoT telemetry</strong>, <strong>multi-vendor e-commerce</strong>, <strong>healthcare/EMR</strong>, and <strong>enterprise HR</strong>.
                     </p>
 
-                    <div class="hero-metrics" id="heroMetrics"></div>
+                    <div class="hero-metrics" id="heroMetrics">
+                        <!-- ssr:metrics -->
+                        <article class="metric-card card-3d" data-tilt-3d data-tilt-max="10">
+                            <span class="metric-value">5</span>
+                            <span class="metric-label">Years in Production</span>
+                            <span class="metric-meta">Java &amp; PHP Stacks</span>
+                        </article>
+                        <article class="metric-card card-3d" data-tilt-3d data-tilt-max="10">
+                            <span class="metric-value">15+</span>
+                            <span class="metric-label">Systems Shipped</span>
+                            <span class="metric-meta">Enterprise &amp; SaaS</span>
+                        </article>
+                        <article class="metric-card card-3d" data-tilt-3d data-tilt-max="10">
+                            <span class="metric-value">7</span>
+                            <span class="metric-label">Service Saga Core</span>
+                            <span class="metric-meta">E-Wallet Topology</span>
+                        </article>
+                        <article class="metric-card card-3d" data-tilt-3d data-tilt-max="10">
+                            <span class="metric-value">24/7</span>
+                            <span class="metric-label">Distributed Reliability</span>
+                            <span class="metric-meta">Idempotent &amp; Locked</span>
+                        </article>
+                        <!-- /ssr:metrics -->
+                    </div>
 
                     <div class="hero-cta-row reveal-in">
                         <a href="#architecture" class="btn btn-primary" data-nav="architecture">
@@ -262,7 +295,7 @@
                         </a>
 
                         <a href="#contact" class="btn btn-ghost" data-nav="contact">
-                            <span>Initiate Uplink</span>
+                            <span>Get in Touch</span>
                         </a>
                     </div>
 
@@ -333,7 +366,7 @@
                                 <button type="button" class="term-tab is-active" data-term="whoami" role="tab" aria-selected="true">whoami</button>
                                 <button type="button" class="term-tab" data-term="patterns" role="tab" aria-selected="false">patterns</button>
                                 <button type="button" class="term-tab" data-term="systems" role="tab" aria-selected="false">domains</button>
-                                <button type="button" class="term-tab" data-term="availability" role="tab" aria-selected="false">uplink</button>
+                                <button type="button" class="term-tab" data-term="availability" role="tab" aria-selected="false">availability</button>
                             </div>
                         </div>
                         <div class="terminal-endpoint-row">
@@ -463,7 +496,47 @@
 
                 <div class="exp-layout">
                     <div class="exp-selector" role="tablist" aria-label="Companies and Roles" id="expSelector"></div>
-                    <div class="exp-stage" id="expStage" role="tabpanel"></div>
+                    <div class="exp-stage" id="expStage" role="tabpanel">
+                        <!-- ssr:experience -->
+                        <article class="ssr-card">
+                            <h3>Backend Software Engineer &mdash; Visual Innovate</h3>
+                            <p class="ssr-meta">May 2024 – Present &bull; Jordan (Remote from Egypt)</p>
+                            <p>Architect, build, and maintain enterprise backend systems using Spring Boot and Laravel, driving RESTful API design, database performance tuning, and scalable third-party integrations.</p>
+                            <ul>
+                                <li><strong>Spring Boot E-Commerce Engine:</strong> Architected a production-ready modular REST API; implemented stateless JWT, transactional inventory locking/restocking, cart management, and full order pipeline. Integrated Swagger, ModelMapper, and packaged via Docker.</li>
+                                <li><strong>Gasly — IoT Smart Gas &amp; Logistics Ecosystem:</strong> Engineered real-time telemetry ingestion via Workerman TCP (IoT-fitted gas cylinders reporting live consumption) and a central alert engine via Redis queues. Built B2B/B2C modules, multi-tenant distributor/branch networks, and optimized nearest-neighbor search using ST_Distance_Sphere() at the DB layer.</li>
+                                <li><strong>Shift 7 — Multi-Tenant &amp; Multi-Vendor E-Commerce:</strong> Engineered a bilingual multi-tenant platform where every store runs its own dashboard for products, categories, staff roles, and incoming orders. Built map-based delivery pricing from live distance, dynamic coupons, QuickBooks integration, DB-layer query optimization, and MeiliSearch.</li>
+                                <li><strong>SAWA Academy — Clinical ERP &amp; EdTech Ecosystem:</strong> Built an ERP managing clinical assessments (VB-MAPP, ABLLS-R, Carolina), an automated specialist-to-room assignment algorithm (autoAssignSpecialist), session management, parents&#39; portal, full fleet/transportation system, strict RBAC, and secure video streaming.</li>
+                                <li><strong>Enterprise HR &amp; Workforce Management System:</strong> Designed a headless RESTful API featuring GPS/biometric offline attendance, dynamic shifts, leaves/balances, missions, public holidays, full payroll engine, and dynamic bilingual report generator.</li>
+                                <li><strong>Mursheed — Travel, Booking &amp; Tourism Platform:</strong> Developed APIs allowing users to pre-book hotels, vehicles, and tours before arrival, with drivers and hotels managing their own listings. Implemented dual rating systems, trip statuses, spatial queries (MySQL/Redis Geo), and live chats via Pusher WebSockets.</li>
+                                <li><strong>DevOps &amp; Infrastructure Automation:</strong> Automated deployments with CI/CD pipelines, eliminating manual server pulls and streamlining the production release process.</li>
+                            </ul>
+                        </article>
+                        <article class="ssr-card">
+                            <h3>Backend Software Engineer &mdash; Future Sword</h3>
+                            <p class="ssr-meta">Aug 2022 – May 2024 &bull; Saudi Arabia (Remote from Egypt)</p>
+                            <p>Engineered and maintained multi-tenant SaaS platforms, medical booking portals, real estate marketplaces, and AI-assisted archive platforms applying SOLID principles and Clean Architecture.</p>
+                            <ul>
+                                <li><strong>Paw &amp; Claw — Veterinary Multi-Tenant SaaS &amp; Clinic POS:</strong> Designed and built solo end-to-end: a multi-tenant SaaS (UUID v7 keys) featuring POS/billing, digital pet passports, WhatsApp alerts, an AI diagnostic assistant flagging differential diagnoses from vital signs, a pet-owner storefront, subscriptions, and community.</li>
+                                <li><strong>Aqar 2030 — Real Estate Marketplace &amp; Financing Platform:</strong> Developed GraphQL and REST APIs (Lighthouse) for map-based property search, custom property requests, complete real estate financing/mortgages, and subscription packages for offices and developers.</li>
+                                <li><strong>Reaya Clinics — Multi-Branch Hospital &amp; Clinic Management:</strong> Engineered multi-facility backend where patients book directly with doctors across hospital branches. Managed doctor schedules, transactional appointments, medical offers, per-branch sales &amp; booking reports, staff management, and companion mobile app API.</li>
+                                <li><strong>Waqf Al-Majed — AI-Assisted Fatwa &amp; Knowledge Platform:</strong> Built a full fatwa lifecycle pipeline (intake, review, approval, archive) utilizing Laravel Repository-Service, AI-driven historical search, smart synonyms engine, semantic indexing, and SMS alerts.</li>
+                                <li><strong>Fatwa Legacy Automation Engine:</strong> Migrated a high-volume native PHP platform to secure PDO instances, re-indexed core queries, rebuilt permissions and reporting, and developed external APIs.</li>
+                                <li><strong>Corporate Platform &amp; Bilingual CMS:</strong> Built a bilingual (RTL/LTR) CMS with services/packages management, SEO metadata automations, FAQ, media management, and an interactive rule-based client chatbot.</li>
+                            </ul>
+                        </article>
+                        <article class="ssr-card">
+                            <h3>Backend Consultant &amp; API Engineer &mdash; Freelance Backend Developer</h3>
+                            <p class="ssr-meta">Mar 2024 – Present &bull; Remote</p>
+                            <p>Deliver backend architectural consulting, API development, and legacy performance refactoring for select regional clients.</p>
+                            <ul>
+                                <li><strong>On-Demand Bus &amp; Room Booking Platform:</strong> Engineered reservation systems with passenger-driver code matching and digital wallets. Optimized booking search by moving filtering and joins to the database layer, reducing unnecessary data retrieval and improving API response time.</li>
+                                <li><strong>Dolphin Education Platform:</strong> Designed backend architecture and scalable database schemas for an interactive e-learning platform, receiving a formal Certificate of Appreciation for delivery excellence.</li>
+                                <li><strong>Agency E-Commerce Store Builds:</strong> Engineered bespoke backends using Laravel, integrating third-party payment gateways, custom promotional coupon engines, and clean service abstractions.</li>
+                            </ul>
+                        </article>
+                        <!-- /ssr:experience -->
+                    </div>
                 </div>
             </div>
         </section>
@@ -506,7 +579,79 @@
                     </button>
                 </div>
 
-                <div class="projects-grid" id="projectsGrid"></div>
+                <div class="projects-grid" id="projectsGrid">
+                    <!-- ssr:projects -->
+                    <article class="ssr-card">
+                        <h3>E-Wallet Microservices</h3>
+                        <p class="ssr-meta">Distributed Ledger &amp; Saga Transactions &bull; Java 21 • Spring Boot 3.3 • Spring Cloud • RabbitMQ • Docker</p>
+                        <p>Production-grade e-wallet microservices ecosystem across 7 services featuring double-entry accounting, idempotency protection, Saga-based distributed transfers, pessimistic concurrency locking, and RabbitMQ notifications.</p>
+                        <p><a href="https://github.com/hassan-aamer/E-Wallet-Microservices" rel="noopener noreferrer">GitHub Repository</a></p>
+                    </article>
+                    <article class="ssr-card">
+                        <h3>BookFlex Microservices</h3>
+                        <p class="ssr-meta">Design-Pattern Driven Distributed Architecture &bull; Java 21 • Spring Boot 3.3 • Spring Cloud • Spring Security • PostgreSQL • Redis</p>
+                        <p>Production-grade microservices architecture demonstrating SOLID principles, classic behavioral/creational design patterns (State, Strategy, Factory, Observer, Saga), and distributed concurrency control.</p>
+                        <p><a href="https://github.com/hassan-aamer/BookFlex-Microservices" rel="noopener noreferrer">GitHub Repository</a></p>
+                    </article>
+                    <article class="ssr-card">
+                        <h3>Spring Boot E-Commerce Engine</h3>
+                        <p class="ssr-meta">Modular REST API &amp; Inventory Locking &bull; Java 21 • Spring Boot 3.5 • Stateless JWT • MySQL/H2 • Swagger • Docker</p>
+                        <p>Modular production REST API built on Java 21 and Spring Boot 3.5 featuring stateless JWT auth, transactional inventory locking and restocking, cart state, and complete order lifecycle.</p>
+                        <p><a href="https://github.com/hassan-aamer/Spring-Boot-E-Commerce-Project" rel="noopener noreferrer">GitHub Repository</a></p>
+                    </article>
+                    <article class="ssr-card">
+                        <h3>Shopak Multi-Tenant SaaS Platform</h3>
+                        <p class="ssr-meta">B2B2C Core, Zero-Deadlock Ledger &amp; Chaos-Tested API &bull; PHP 8.4 • Laravel 12 • MySQL 8 (59 Tables) • TenantScope • Sanctum</p>
+                        <p>Personal enterprise B2B2C multi-tenant SaaS e-commerce platform built on PHP 8.4 and Laravel 12 across 59 clean MySQL tables, achieving 216 passing tests (6,447 assertions) and Zero-500 Chaos Fuzzing across 244 API endpoints.</p>
+                    </article>
+                    <article class="ssr-card">
+                        <h3>Gasly IoT &amp; Smart Logistics</h3>
+                        <p class="ssr-meta">Workerman TCP Telemetry &amp; Spatial Routing &bull; PHP 8+ • Laravel • Workerman TCP • Redis Queues • MySQL Spatial</p>
+                        <p>IoT-enabled gas telemetry &amp; logistics ecosystem ingesting live consumption streams over Workerman TCP, processing central alerts via Redis queues, and routing nearest distributors in MySQL.</p>
+                    </article>
+                    <article class="ssr-card">
+                        <h3>Shift 7 Multi-Vendor SaaS</h3>
+                        <p class="ssr-meta">Multi-Tenant Commerce, MeiliSearch &amp; QuickBooks &bull; PHP 8+ • Laravel • MeiliSearch • QuickBooks API • Map Delivery Pricing</p>
+                        <p>Bilingual multi-tenant &amp; multi-vendor platform giving each store an isolated dashboard, live distance-based delivery pricing, dynamic coupon engine, QuickBooks sync, and instant MeiliSearch discovery.</p>
+                        <p><a href="https://shift7store.com" rel="noopener noreferrer">Live Platform</a></p>
+                    </article>
+                    <article class="ssr-card">
+                        <h3>Paw &amp; Claw Veterinary SaaS</h3>
+                        <p class="ssr-meta">Solo End-to-End Multi-Tenant Clinic OS &amp; AI Triage &bull; PHP 8+ • Laravel • UUID v7 • POS/Billing • AI Diagnostics • WhatsApp</p>
+                        <p>Architected and built solo end-to-end: multi-tenant veterinary SaaS using UUID v7 keys, POS/billing, digital pet passports, WhatsApp alerts, vital-sign AI diagnostic assistant, storefront, and community.</p>
+                    </article>
+                    <article class="ssr-card">
+                        <h3>SAWA Academy Clinical ERP</h3>
+                        <p class="ssr-meta">Special-Ed Clinical Assessments &amp; Scheduling Engine &bull; PHP 8+ • Laravel • RBAC • Scheduling Algorithm • Video Streaming • Fleet</p>
+                        <p>Enterprise clinical ERP and EdTech platform managing VB-MAPP, ABLLS-R, and Carolina assessments, automated specialist-to-room matching, strict RBAC, secure video streaming, and fleet logistics.</p>
+                    </article>
+                    <article class="ssr-card">
+                        <h3>Aqar 2030 Real Estate &amp; Mortgages</h3>
+                        <p class="ssr-meta">GraphQL Lighthouse &amp; Spatial Property Search &bull; PHP 8+ • Laravel • GraphQL (Lighthouse) • REST • Map Search • Financing</p>
+                        <p>Real estate marketplace and mortgage financing platform powered by GraphQL (Lighthouse) and REST APIs for map-based property discovery, custom property requests, and office/developer subscriptions.</p>
+                    </article>
+                    <article class="ssr-card">
+                        <h3>Waqf Al-Majed AI Knowledge Platform</h3>
+                        <p class="ssr-meta">Semantic Indexing, Smart Synonyms &amp; Lifecycle Pipeline &bull; PHP 8+ • Laravel Repository-Service • AI Historical Search • Semantic Indexing</p>
+                        <p>AI-assisted fatwa &amp; knowledge archive platform managing full intake-to-archive lifecycle using Laravel Repository-Service, semantic indexing, smart synonyms engine, and SMS alerts.</p>
+                    </article>
+                    <article class="ssr-card">
+                        <h3>Mursheed Travel &amp; Tourism APIs</h3>
+                        <p class="ssr-meta">Spatial Geo Search &amp; Real-Time Pusher Chat &bull; PHP 8+ • Laravel • MySQL/Redis Geo • Pusher WebSockets • Google Auth</p>
+                        <p>Pre-arrival booking APIs for hotels, vehicles, and tours with independent driver/hotel listing portals, dual rating systems, spatial geo discovery, Google Auth, and live Pusher WebSocket chat.</p>
+                    </article>
+                    <article class="ssr-card">
+                        <h3>Reaya Multi-Branch Hospital System</h3>
+                        <p class="ssr-meta">Multi-Facility Transactional Appointments &amp; Mobile API &bull; PHP 8+ • Laravel • Transactional Booking • Branch Reporting • Mobile API</p>
+                        <p>Multi-branch hospital and clinic backend coordinating doctor schedules, transactional patient appointments, medical offers, per-branch revenue/booking analytics, nurse/staff roles, and mobile APIs.</p>
+                    </article>
+                    <article class="ssr-card">
+                        <h3>Enterprise HR &amp; Payroll Engine</h3>
+                        <p class="ssr-meta">Headless API with Offline GPS/Biometric Sync &bull; PHP 8+ • Headless REST API • Payroll Engine • Bilingual Reports</p>
+                        <p>Headless enterprise workforce backend powering offline GPS/biometric attendance reconciliation, dynamic shifts, leave balances, missions, full payroll execution, and bilingual report generation.</p>
+                    </article>
+                    <!-- /ssr:projects -->
+                </div>
             </div>
         </section>
 
@@ -550,7 +695,58 @@
                                 />
                             </label>
                         </div>
-                        <div class="skills-grid" id="skillsGrid"></div>
+                        <div class="skills-grid" id="skillsGrid">
+                            <!-- ssr:skills -->
+                            <article class="ssr-card">
+                                <h3>Languages</h3>
+                                <p>Java, PHP 8+, SQL, JavaScript (ES6+)</p>
+                            </article>
+                            <article class="ssr-card">
+                                <h3>Java / Spring Boot</h3>
+                                <p>Java 21, Spring Boot, Spring Core, Spring MVC, Spring Data JPA, Hibernate/JPA, Spring Security, Spring AOP, Spring Cloud, Microservices, Service Discovery, API Gateway, JWT, REST APIs, Transactions, JPA Relationships, Query Optimization</p>
+                            </article>
+                            <article class="ssr-card">
+                                <h3>PHP / Laravel</h3>
+                                <p>PHP 8+, Laravel, Eloquent ORM, Service Container, Dependency Injection, Service Providers, Artisan, Middleware, Form Requests, API Resources, Queues &amp; Jobs, Events &amp; Listeners, Laravel Scheduler, Webhooks, Laravel Sanctum, Gates &amp; Policies, Spatie Laravel-Permission, Multi-tenancy, Migrations &amp; Seeders, Blade, Livewire, Filament</p>
+                            </article>
+                            <article class="ssr-card">
+                                <h3>Software Architecture &amp; Design</h3>
+                                <p>Software Architecture, Clean Architecture, SOLID Principles, Design Patterns, OOP, Modular Architecture, Microservices Architecture, Event-Driven Architecture</p>
+                            </article>
+                            <article class="ssr-card">
+                                <h3>API &amp; Integration</h3>
+                                <p>RESTful API Design, GraphQL, gRPC, WebSocket, Swagger/OpenAPI, Third-Party API Integration, Payment Gateway Integration</p>
+                            </article>
+                            <article class="ssr-card">
+                                <h3>Databases &amp; Persistence</h3>
+                                <p>MySQL, PostgreSQL, MongoDB, Hibernate/JPA, Database Design, Query Optimization, Indexing</p>
+                            </article>
+                            <article class="ssr-card">
+                                <h3>Caching, Messaging &amp; Distributed Systems</h3>
+                                <p>Redis, Apache Kafka, RabbitMQ, Caching Strategies, Queues, Pub/Sub, Asynchronous Processing</p>
+                            </article>
+                            <article class="ssr-card">
+                                <h3>Security &amp; Authentication</h3>
+                                <p>Spring Security, JWT Authentication, Authentication &amp; Authorization, Role-Based Access Control (RBAC)</p>
+                            </article>
+                            <article class="ssr-card">
+                                <h3>Testing &amp; Quality</h3>
+                                <p>JUnit, Mockito, PHPUnit, Unit Testing, Integration Testing, API Testing, Automated Testing, Performance Profiling, Load Testing (Apache JMeter, k6)</p>
+                            </article>
+                            <article class="ssr-card">
+                                <h3>DevOps &amp; Cloud</h3>
+                                <p>Docker, Docker Compose, CI/CD, GitHub Actions, AWS (EC2, S3), DigitalOcean, Linux, Kubernetes, Load Balancing, Horizontal &amp; Vertical Scaling</p>
+                            </article>
+                            <article class="ssr-card">
+                                <h3>Search &amp; Tools</h3>
+                                <p>Elasticsearch, MeiliSearch, Maven, Git, GitHub, GitLab, Bitbucket, Postman, Jira</p>
+                            </article>
+                            <article class="ssr-card">
+                                <h3>AI Integration</h3>
+                                <p>LLM API Integration, Prompt Engineering, GitHub Copilot, Workflow Automation (n8n)</p>
+                            </article>
+                            <!-- /ssr:skills -->
+                        </div>
                     </div>
                 </div>
             </div>
@@ -564,15 +760,40 @@
                     <h2 class="section-title">Education, Certifications &amp; <span class="gradient-text">Standards</span></h2>
                 </header>
 
-                <div class="credentials-grid" id="credentialsGrid"></div>
+                <div class="credentials-grid" id="credentialsGrid">
+                    <!-- ssr:credentials -->
+                    <article class="ssr-card">
+                        <h3>Education</h3>
+                        <p><strong>Bachelor of Computer and Information Sciences (Information Systems)</strong></p>
+                        <p class="ssr-meta">Al-Alsun Higher Institute &bull; Cairo, Egypt &bull; 2017 – 2021</p>
+                    </article>
+                    <article class="ssr-card">
+                        <h3>Certifications</h3>
+                        <ul>
+                            <li>Claude Code in Action &mdash; Anthropic (Mar 2026)</li>
+                            <li>Spring Framework 6 &amp; Spring Boot 3 - Advanced Track &mdash; Udemy (Dec 2025)</li>
+                            <li>Laravel Mastery &mdash; Udemy (Oct 2023)</li>
+                            <li>Professional Full Stack Web Development &mdash; YAT Learning Centers (Aug 2021)</li>
+                            <li>Version Control with Git &mdash; Coursera (Jan 2021)</li>
+                        </ul>
+                    </article>
+                    <article class="ssr-card">
+                        <h3>Languages</h3>
+                        <ul>
+                            <li>Arabic &mdash; Native Proficiency</li>
+                            <li>English &mdash; Professional Working Proficiency</li>
+                        </ul>
+                    </article>
+                    <!-- /ssr:credentials -->
+                </div>
             </div>
         </section>
 
-        <!-- SECTION 7: UPLINK / CONTACT -->
+        <!-- SECTION 7: CONTACT -->
         <section id="contact" class="section" data-section="contact" data-depth="07">
             <div class="container">
                 <header class="section-header">
-                    <span class="section-kicker mono-label">07 // INITIATE UPLINK</span>
+                    <span class="section-kicker mono-label">07 // CONTACT</span>
                     <h2 class="section-title">Let's Architect Your <span class="gradient-text">Next Backend</span></h2>
                     <p class="section-subtitle">
                         Available for senior backend engineering roles, microservices architecture consulting, and high-throughput API systems.
@@ -670,7 +891,7 @@
 
                             <div class="form-footer">
                                 <button type="submit" id="submitBtn" class="btn btn-primary">
-                                    <span>Transmit Message</span>
+                                    <span>Send Message</span>
                                 </button>
                                 <span id="formStatusText" class="form-status" role="status" aria-live="polite"></span>
                             </div>
@@ -690,7 +911,7 @@
             </div>
             <div class="footer-meta">
                 <span class="mono-label">PURE HTML5 &bull; CSS3 &bull; VANILLA JS 3D</span>
-                <a href="#overview" class="ctrl-btn" data-nav="overview">Back to Z:01 &uarr;</a>
+                <a href="#overview" class="ctrl-btn" data-nav="overview">Back to top &uarr;</a>
             </div>
         </div>
     </footer>
