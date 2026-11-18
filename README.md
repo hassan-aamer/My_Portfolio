@@ -33,11 +33,29 @@ It does three things:
 2. **Versions the service-worker cache by content hash**, so returning visitors always get fresh CSS/JS after a deploy.
 3. **Bumps `sitemap.xml` `<lastmod>`** when the cached content changes.
 
+Never edit the `ssr:*` regions by hand. Change `js/data.js` and rebuild instead.
+
 To run it automatically before every commit, enable the bundled hook once per clone:
 
 ```bash
 git config core.hooksPath .githooks
 ```
+
+### Sharing links
+
+`https://hassan-aamer.github.io/My_Portfolio/#project/<id>` opens the portfolio with that project's modal already open. The modal's **Copy Link** button copies this URL.
+
+### Analytics (optional)
+
+`js/analytics.js` supports [GoatCounter](https://www.goatcounter.com), which uses no cookies and collects no personal data. It is disabled until you set `GOATCOUNTER_CODE` in that file. Once enabled, it counts page views, CV downloads, outbound GitHub/LinkedIn/WhatsApp clicks, contact copies and project opens. Visits from localhost are never counted.
+
+### Contact form spam protection
+
+The form carries a FormSubmit `_honey` honeypot and a minimum fill-time check. Automated submissions are shown a fake success message and never sent.
+
+### CI
+
+`.github/workflows/ci.yml` runs on every push and PR. It checks that generated files are in sync, that JS syntax and the manifest are valid, and that every local file referenced by the pages and the service worker exists.
 
 The social preview card (`images/og-cover.png`, 1200×630) is generated with `python3 scripts/og-image.py` (requires Pillow).
 

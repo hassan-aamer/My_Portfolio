@@ -3,12 +3,13 @@
  * Uses relative paths so offline caching works seamlessly on both root and subpath origins.
  */
 
-const CACHE_NAME = 'hassan-backend-3d-b901e9b80d';
+const CACHE_NAME = 'hassan-backend-3d-3bfacdbeda';
 const ASSETS_TO_CACHE = [
     './',
     './index.html',
     './css/fonts.css',
     './css/style.css',
+    './js/analytics.js',
     './js/math3d.js',
     './js/data.js',
     './js/scene3d.js',

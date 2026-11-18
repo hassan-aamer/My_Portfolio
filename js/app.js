@@ -549,6 +549,39 @@
         return preferredEl;
     }
 
+    /* ----------------------------------------------------------------------
+       Project Deep Links (#project/<id>)
+       ---------------------------------------------------------------------- */
+
+    const PROJECT_HASH_PREFIX = '#project/';
+
+    function projectShareUrl(projectId) {
+        return `${location.origin}${location.pathname}${PROJECT_HASH_PREFIX}${encodeURIComponent(projectId)}`;
+    }
+
+    function projectIdFromHash() {
+        if (!location.hash.startsWith(PROJECT_HASH_PREFIX)) return null;
+        const id = decodeURIComponent(location.hash.slice(PROJECT_HASH_PREFIX.length));
+        return PROJECTS.some((p) => p.id === id) ? id : null;
+    }
+
+    function setProjectHash(projectId) {
+        if (!history.replaceState) return;
+        if (projectId) {
+            history.replaceState(null, '', PROJECT_HASH_PREFIX + encodeURIComponent(projectId));
+        } else if (location.hash.startsWith(PROJECT_HASH_PREFIX)) {
+            history.replaceState(null, '', '#projects');
+        }
+    }
+
+    function openProjectFromHash() {
+        const id = projectIdFromHash();
+        if (!id) return;
+        const section = document.getElementById('projects');
+        if (section) section.scrollIntoView({ behavior: 'auto' });
+        openProjectModal(id);
+    }
+
     function openProjectModal(projectId) {
         const project = PROJECTS.find((p) => p.id === projectId);
         const modal = document.getElementById('projectModal');
@@ -599,23 +632,32 @@
                 <div class="project-stack-line">${escapeHtml(project.primaryStack)}</div>
             </div>
 
-            ${
-                project.links.length
-                    ? `<div class="hero-cta-row modal-cta-row">
-                        ${project.links
-                            .map(
-                                (link) => `
-                                <a href="${escapeHtml(safeExternalUrl(link.url))}" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
-                                    <span>${escapeHtml(link.label)}</span>
-                                    <span>&nearr;</span>
-                                </a>
-                            `
-                            )
-                            .join('')}
-                    </div>`
-                    : ''
-            }
+            <div class="hero-cta-row modal-cta-row">
+                ${project.links
+                    .map(
+                        (link) => `
+                        <a href="${escapeHtml(safeExternalUrl(link.url))}" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+                            <span>${escapeHtml(link.label)}</span>
+                            <span>&nearr;</span>
+                        </a>
+                    `
+                    )
+                    .join('')}
+                <button type="button" class="btn btn-ghost" data-copy-project-link="${escapeHtml(project.id)}">
+                    <span>Copy Link</span>
+                </button>
+            </div>
         `;
+
+        const copyLinkBtn = bodyEl.querySelector('[data-copy-project-link]');
+        if (copyLinkBtn) {
+            copyLinkBtn.addEventListener('click', () => {
+                copyToClipboard(projectShareUrl(project.id), 'Project link');
+            });
+        }
+
+        setProjectHash(project.id);
+        if (global.PortfolioAnalytics) global.PortfolioAnalytics.track(`project-${project.id}`);
 
         modal.hidden = false;
         document.body.style.overflow = 'hidden';
@@ -629,6 +671,7 @@
         const shouldRestoreFocus = !options || options.restoreFocus !== false;
         modal.hidden = true;
         document.body.style.overflow = '';
+        setProjectHash(null);
         if (
             shouldRestoreFocus &&
             AppState.lastFocusedElement &&
@@ -833,6 +876,13 @@
         const statusText = document.getElementById('formStatusText');
         if (!form || !submitBtn || !statusText) return;
 
+        // Anti-spam: bots typically fill hidden fields or submit within milliseconds of load.
+        const MIN_HUMAN_FILL_MS = 3000;
+        const formReadyAt = Date.now();
+        const honeypot = form.querySelector('input[name="_honey"]');
+        const looksAutomated = () =>
+            (honeypot && honeypot.value.trim() !== '') || Date.now() - formReadyAt < MIN_HUMAN_FILL_MS;
+
         function setFieldError(inputEl, hasError) {
             const group = inputEl.closest('.field-group');
             if (group) {
@@ -883,6 +933,13 @@
             if (!validateForm()) {
                 statusText.classList.add('is-error');
                 statusText.textContent = 'Please complete all required fields.';
+                return;
+            }
+
+            if (looksAutomated()) {
+                // Pretend success so bots get no signal, but never send the request.
+                form.reset();
+                statusText.textContent = 'Message sent successfully. Thank you!';
                 return;
             }
 
@@ -1325,6 +1382,9 @@
         initGlobalControls();
         bindTilt3D(document);
         registerServiceWorker();
+
+        openProjectFromHash();
+        window.addEventListener('hashchange', openProjectFromHash);
 
         // Dismiss preloader immediately once initial frame mounts
         const loader = document.getElementById('boot-loader');

@@ -2136,6 +2136,15 @@ img {
     color: var(--text-primary);
 }
 
+/* Off-screen (not display:none) so naive bots still fill it in. */
+.form-honeypot {
+    position: absolute !important;
+    left: -10000px;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
+
 .uplink-form {
     display: flex;
     flex-direction: column;

@@ -863,6 +863,12 @@
                             <input type="hidden" name="_template" value="table" />
                             <input type="hidden" name="_subject" value="New Portfolio Inquiry — Hassan Mohamed" />
 
+                            <!-- Anti-spam honeypot: humans never see or fill this; FormSubmit discards any submission where it has a value. -->
+                            <div class="form-honeypot" aria-hidden="true">
+                                <label for="contactWebsite">Leave this field empty</label>
+                                <input type="text" id="contactWebsite" name="_honey" tabindex="-1" autocomplete="off" />
+                            </div>
+
                             <div class="form-row-2">
                                 <div class="field-group">
                                     <label for="contactName">Name</label>
@@ -951,6 +957,7 @@
     <div id="toastContainer" class="toast-container" aria-live="polite" aria-atomic="true"></div>
 
     <!-- Pure Vanilla JS Architecture -->
+    <script defer src="./js/analytics.js"></script>
     <script defer src="./js/math3d.js"></script>
     <script defer src="./js/data.js"></script>
     <script defer src="./js/scene3d.js"></script>

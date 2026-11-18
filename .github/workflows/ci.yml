@@ -1,0 +1,58 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    name: Build sync & syntax
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Generated files are up to date
+        run: node scripts/build.mjs --check
+
+      - name: JavaScript syntax
+        run: |
+          for f in js/*.js service-worker.js scripts/*.mjs; do
+            node --check "$f"
+          done
+
+      - name: JSON manifest is valid
+        run: node -e "JSON.parse(require('fs').readFileSync('manifest.json', 'utf8'))"
+
+      - name: Local asset references resolve
+        run: |
+          node - <<'EOF'
+          const fs = require('fs');
+          const path = require('path');
+          const pages = ['index.html'];
+          const missing = [];
+          for (const page of pages) {
+            const html = fs.readFileSync(page, 'utf8');
+            for (const [, ref] of html.matchAll(/(?:src|href)="([^"#?]+)(?:[?#][^"]*)?"/g)) {
+              if (/^(https?:|mailto:|tel:|data:)/.test(ref) || ref === './' || ref.endsWith('/')) continue;
+              const target = path.join(path.dirname(page), decodeURI(ref));
+              if (!fs.existsSync(target)) missing.push(`${page} -> ${ref}`);
+            }
+          }
+          const sw = fs.readFileSync('service-worker.js', 'utf8');
+          for (const [, ref] of sw.matchAll(/'(\.\/[^']+)'/g)) {
+            if (ref !== './' && !fs.existsSync(ref)) missing.push(`service-worker.js -> ${ref}`);
+          }
+          if (missing.length) {
+            console.error('Missing files:\n' + missing.join('\n'));
+            process.exit(1);
+          }
+          console.log(`All local references resolve across ${pages.length} pages.`);
+          EOF
