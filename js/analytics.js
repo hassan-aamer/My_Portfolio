@@ -11,7 +11,7 @@
 (function (global) {
     'use strict';
 
-    const GOATCOUNTER_CODE = '';
+    const GOATCOUNTER_CODE = 'hassan-portfolio';
 
     const noop = { track: function () {} };
     if (!GOATCOUNTER_CODE || !/^[a-z0-9-]+$/i.test(GOATCOUNTER_CODE)) {
